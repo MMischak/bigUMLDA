@@ -54,3 +54,47 @@ export namespace HelloWorldActionResponse {
         };
     }
 }
+
+export interface LogModelJsonAction extends RequestAction<LogModelJsonActionResponse> {
+    kind: typeof LogModelJsonAction.KIND;
+}
+
+export namespace LogModelJsonAction {
+    export const KIND = 'logModelJsonAction';
+
+    export function is(object: unknown): object is LogModelJsonAction {
+        return RequestAction.hasKind(object, KIND);
+    }
+
+    export function create(options: Omit<LogModelJsonAction, 'kind' | 'requestId'> = {}): LogModelJsonAction {
+        return {
+            kind: KIND,
+            requestId: '',
+            ...options
+        };
+    }
+}
+
+export interface LogModelJsonActionResponse extends ResponseAction {
+    kind: typeof LogModelJsonActionResponse.KIND;
+    responsetext?: string;
+}
+
+export namespace LogModelJsonActionResponse {
+    export const KIND = 'logModelJsonActionResponse';
+
+    export function is(object: unknown): object is LogModelJsonActionResponse {
+        return Action.hasKind(object, KIND);
+    }
+
+    export function create(
+        options?: Omit<LogModelJsonActionResponse, 'kind' | 'responseId'> & { responseId?: string }
+    ): LogModelJsonActionResponse {
+        return {
+            kind: KIND,
+            responseId: '',
+            responsetext: '',
+            ...options
+        };
+    }
+}

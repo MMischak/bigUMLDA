@@ -17,6 +17,7 @@ export const helloWorldModule = new FeatureModule((bind, unbind, isBound, rebind
     bind(HelloWorldHandler).toSelf().inSingletonScope();
     configureActionHandler(context, RequestHelloWorldAction.KIND, HelloWorldHandler);
 
+
     // Allow the HelloWorldActionResponse to propagate to the server
     bind(ExtensionActionKind).toConstantValue(HelloWorldActionResponse.KIND);
 });

@@ -8,7 +8,7 @@
  **********************************************************************************/
 import { BIGReactWebview } from '@borkdominik-biguml/big-vscode-integration/vscode';
 import { inject, injectable, postConstruct } from 'inversify';
-import { HelloWorldActionResponse, RequestHelloWorldAction } from '../common/hello-world.action.js';
+import { HelloWorldActionResponse, LogModelJsonActionResponse, RequestHelloWorldAction } from '../common/hello-world.action.js';
 
 export const HelloWorldViewId = Symbol('HelloWorldViewId');
 
@@ -19,7 +19,7 @@ export class HelloWorldProvider extends BIGReactWebview {
 
     protected override cssPath = ['hello-world', 'bundle.css'];
     protected override jsPath = ['hello-world', 'bundle.js'];
-    protected readonly actionCache = this.actionListener.createCache([HelloWorldActionResponse.KIND]);
+    protected readonly actionCache = this.actionListener.createCache([HelloWorldActionResponse.KIND, LogModelJsonActionResponse.KIND]);
 
     @postConstruct()
     protected override init(): void {

@@ -35,6 +35,8 @@ export class HelloWorldActionHandler implements Disposable {
     @postConstruct()
      protected init(): void {
         this.toDispose.push(
+            this.actionListener.registerVscodeHandledAction(HelloWorldActionResponse.KIND),
+            this.actionListener.registerVscodeHandledAction(LogModelJsonActionResponse.KIND),
             this.actionListener.handleVSCodeRequest<RequestHelloWorldAction>(RequestHelloWorldAction.KIND, async message => {
                 this.count += message.action.increase;
                 console.log(`Hello World from VS Code: ${this.count}`);

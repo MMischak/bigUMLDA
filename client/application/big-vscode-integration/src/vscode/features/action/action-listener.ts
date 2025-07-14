@@ -157,6 +157,9 @@ export class ActionListener implements Disposable {
         return toDispose;
     }
 
+    registerVscodeHandledAction(kind: string): Disposable {
+        return this.connector.registerVscodeHandledAction(kind);
+    }
     /**
      * Creates a cache for action messages of the specified kinds.
      * The cache will listen for actions from the GLSP client and store them in memory.

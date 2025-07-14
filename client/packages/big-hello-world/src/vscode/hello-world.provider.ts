@@ -26,6 +26,11 @@ export class HelloWorldProvider extends BIGReactWebview {
         super.init();
 
         this.toDispose.push(this.actionCache);
+        this.toDispose.push(
+            this.actionCache,
+            this.actionListener.registerVscodeHandledAction(HelloWorldActionResponse.KIND),
+            this.actionListener.registerVscodeHandledAction(LogModelJsonActionResponse.KIND)
+        );
     }
 
     protected override handleConnection(): void {
@@ -33,6 +38,14 @@ export class HelloWorldProvider extends BIGReactWebview {
 
         this.toDispose.push(
             this.actionCache.onDidChange(message => this.webviewConnector.dispatch(message)),
+            this.actionListener.registerVSCodeListener(message => {
+                if (
+                    message.action.kind === HelloWorldActionResponse.KIND ||
+                    message.action.kind === LogModelJsonActionResponse.KIND
+                ) {
+                    this.webviewConnector.dispatch(message);
+                }
+            }),
             this.webviewConnector.onReady(() => {
                 this.requestCount();
                 this.webviewConnector.dispatch(this.actionCache.getActions());

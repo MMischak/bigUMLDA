@@ -60,7 +60,8 @@
     "@eclipse-glsp/client": "*",
     "@eclipse-glsp/protocol": "*",
     "@eclipse-glsp/vscode-integration-webview": "*",
-    "vscode-messenger-common": "^0.4.5"
+    "vscode-messenger-common": "^0.4.5",
+    "@google/generative-ai": "^0.24.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

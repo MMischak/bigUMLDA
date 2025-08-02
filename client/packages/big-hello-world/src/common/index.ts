@@ -7,4 +7,6 @@
  * SPDX-License-Identifier: MIT
  **********************************************************************************/
 
+export * from '../vscode/promptBuilder.js';
 export * from './hello-world.action.js';
+

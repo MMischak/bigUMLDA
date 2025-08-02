@@ -19,6 +19,7 @@ import { DisposableCollection } from '@eclipse-glsp/protocol';
 import { inject, injectable, postConstruct } from 'inversify';
 import { HelloWorldActionResponse, LogModelJsonAction, LogModelJsonActionResponse, RequestHelloWorldAction } from '../common/hello-world.action.js';
 import { LlmHandler } from './LLM.handler.js';
+import { DiagramType, IntentCategory, OutputModality, UserRole } from './promptBuilder.js';
 
 // Handle the action within the server and not the glsp client / server
 @injectable()
@@ -45,10 +46,16 @@ export class HelloWorldActionHandler implements Disposable {
                     count: this.count
                 });
             }),
-            this.actionListener.handleVSCodeRequest<LogModelJsonAction>(LogModelJsonAction.KIND, async () => {
+            this.actionListener.handleVSCodeRequest<LogModelJsonAction>(LogModelJsonAction.KIND, async message => {
                 const model = this.modelState.getModelState()?.getSourceModel();
                 console.log('Hello World Model from VS Code:', model);
-                const llmResponse = await LlmHandler(model);
+                const llmResponse = await LlmHandler(model, message.action.promptOptions ?? {
+                    diagramType: DiagramType.Class,
+                    intent: IntentCategory.Overview,
+                    userRole: UserRole.DomainExpert,
+                    outputModality: OutputModality.PlainText,
+                    question: ''
+                });
                 return LogModelJsonActionResponse.create({
                     responsetext: llmResponse
                 });

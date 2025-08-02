@@ -8,6 +8,7 @@
  *********************************************************************************/
 
 import { Action, RequestAction, type ResponseAction } from '@eclipse-glsp/protocol';
+import type { PromptOptions } from '../vscode/promptBuilder.js';
 
 // ========= This action will be handled by the GLSP Client =========
 
@@ -57,6 +58,7 @@ export namespace HelloWorldActionResponse {
 
 export interface LogModelJsonAction extends RequestAction<LogModelJsonActionResponse> {
     kind: typeof LogModelJsonAction.KIND;
+    promptOptions?: PromptOptions;
 }
 
 export namespace LogModelJsonAction {

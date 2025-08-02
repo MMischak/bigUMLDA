@@ -265,7 +265,7 @@
         },
         {
           "id": "bigUML.panel.hello-world",
-          "name": "Hello World",
+          "name": "AI Agent",
           "type": "webview",
           "when": "bigUML.isRunning"
         }

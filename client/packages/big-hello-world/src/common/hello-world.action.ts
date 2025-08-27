@@ -59,6 +59,7 @@ export namespace HelloWorldActionResponse {
 export interface LogModelJsonAction extends RequestAction<LogModelJsonActionResponse> {
     kind: typeof LogModelJsonAction.KIND;
     promptOptions?: PromptOptions;
+    umlFilePath?: string;
 }
 
 export namespace LogModelJsonAction {

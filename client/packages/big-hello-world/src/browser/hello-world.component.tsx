@@ -8,31 +8,27 @@
  **********************************************************************************/
 import { BigDropdown, BigTextField, VSCodeContext } from '@borkdominik-biguml/big-components';
 import { useCallback, useContext, useEffect, useState, type ReactElement } from 'react';
-import { DiagramType, HelloWorldActionResponse, IntentCategory, LogModelJsonAction, LogModelJsonActionResponse, OutputModality, UserRole } from '../common/index.js';
-
+import { DiagramType, IntentCategory, LogModelJsonAction, LogModelJsonActionResponse, OutputModality, UserRole } from '../common/index.js';
 
 export function HelloWorld(): ReactElement {
     const { listenAction, dispatchAction } = useContext(VSCodeContext);
-    const [model, setModel] = useState<string | undefined>();
+    const [response, setResponse] = useState<string | undefined>();
     const [diagramType, setDiagramType] = useState<DiagramType>(DiagramType.Class);
     const [intent, setIntent] = useState<IntentCategory>(IntentCategory.Overview);
     const [userRole, setUserRole] = useState<UserRole>(UserRole.DomainExpert);
     const [outputModality, setOutputModality] = useState<OutputModality>(OutputModality.PlainText);
     const [question, setQuestion] = useState<string>('');
+    const [umlFilePath, setUmlFilePath] = useState<string>('');
 
     useEffect(() => {
         listenAction(action => {
-            setModel("Action response");
-            if (HelloWorldActionResponse.is(action)) {
-                setModel("Action response setCount");
-            } else if (LogModelJsonActionResponse.is(action)) {
-                setModel(action.responsetext);
+            if (LogModelJsonActionResponse.is(action)) {
+                setResponse(action.responsetext);
             }
         });
     }, [listenAction]);
 
     const logModel = useCallback(() => {
-        setModel("called action");
         dispatchAction(
             LogModelJsonAction.create({
                 promptOptions: {
@@ -41,10 +37,11 @@ export function HelloWorld(): ReactElement {
                     userRole,
                     outputModality,
                     question: question || undefined
-                }
+                },
+                umlFilePath: umlFilePath || undefined
             })
         );
-    }, [dispatchAction, diagramType, intent, userRole, outputModality, question]);
+    }, [dispatchAction, diagramType, intent, userRole, outputModality, question, umlFilePath]);
 
     return (
         <div>
@@ -72,10 +69,24 @@ export function HelloWorld(): ReactElement {
                 choices={Object.values(OutputModality).map(v => ({ label: v, value: v }))}
                 onDidChangeValue={value => setOutputModality(value as OutputModality)}
             ></BigDropdown>
+            <br></br>
             <BigTextField label='Question' value={question} onDidChangeValue={setQuestion}></BigTextField>
+            <BigTextField label='PlantUML Path' value={umlFilePath} onDidChangeValue={setUmlFilePath}></BigTextField>
             <br></br>
             <button onClick={() => logModel()}>Ask Agent</button>
-            <div><span id="jsonresponse"> {model ?? "here comes text"} </span></div>
+            <div
+                style={{
+                    border: '1px solid #ccc',
+                    padding: '1rem',
+                    borderRadius: '8px',
+                    marginTop: '1rem',
+                    maxHeight: '300px',
+                    overflowY: 'auto',
+                    whiteSpace: 'pre-wrap'
+                }}
+            >
+                {response}
+            </div>
         </div>
     );
 }

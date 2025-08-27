@@ -16,6 +16,7 @@ import {
     type ExperimentalGLSPServerModelState
 } from '@borkdominik-biguml/big-vscode-integration/vscode';
 import { DisposableCollection } from '@eclipse-glsp/protocol';
+import { readFile } from 'fs/promises';
 import { inject, injectable, postConstruct } from 'inversify';
 import { HelloWorldActionResponse, LogModelJsonAction, LogModelJsonActionResponse, RequestHelloWorldAction } from '../common/hello-world.action.js';
 import { LlmHandler } from './LLM.handler.js';
@@ -47,7 +48,23 @@ export class HelloWorldActionHandler implements Disposable {
                 });
             }),
             this.actionListener.handleVSCodeRequest<LogModelJsonAction>(LogModelJsonAction.KIND, async message => {
-                const model = this.modelState.getModelState()?.getSourceModel();
+                let model: unknown;
+                console.log("------in handleVSCodeRequest:");
+                console.log(message.action);
+                if (message.action.umlFilePath) {
+                    try {
+                        console.log("try reading path");
+                        model = await readFile(message.action.umlFilePath, 'utf-8');
+                    } catch (error) {
+                        console.error('Error reading PlantUML file:', error);
+                        return LogModelJsonActionResponse.create({
+                            responsetext: 'Error reading PlantUML file'
+                        });
+                    }
+                } else {
+                    console.log("in else");
+                    model = this.modelState.getModelState()?.getSourceModel();
+                }
                 console.log('Hello World Model from VS Code:', model);
                 const llmResponse = await LlmHandler(model, message.action.promptOptions ?? {
                     diagramType: DiagramType.Class,

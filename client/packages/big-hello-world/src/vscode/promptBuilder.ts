@@ -76,13 +76,12 @@ export function buildPromptFromUml(umlData: any, options: PromptOptions): string
 
   let prompt = "";
 
- if (intent) {
+ if (intent && isNullOrEmpty(question)) {
   const snippetBuilder = INTENT_SNIPPETS[intent];
   prompt += snippetBuilder(diagramType);
-}     
   prompt += ROLE_SNIPPETS[userRole];
-
-  if (question && !intent) {
+ }
+ else if(!isNullOrEmpty(question)) {
     prompt += `Question: ${question}.\n`;
   }
 
@@ -94,6 +93,14 @@ export function buildPromptFromUml(umlData: any, options: PromptOptions): string
   }
 
   prompt += 'Here is the UML model:\n';
-  prompt += JSON.stringify(umlData, null, 2);
+  if (typeof umlData === 'string') {
+    prompt += umlData;
+  } else {
+    prompt += JSON.stringify(umlData, null, 2);
+  }
   return prompt;
+}
+
+function isNullOrEmpty(value: string | null | undefined): boolean {
+  return value === null || value === undefined || value.trim() === '';
 }

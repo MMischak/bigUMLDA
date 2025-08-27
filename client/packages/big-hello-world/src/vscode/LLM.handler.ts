@@ -9,9 +9,12 @@
 
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import dotenv from 'dotenv';
+import fs from 'fs';
+import os from "os";
+import path from "path";
 import type { PromptOptions } from './promptBuilder.js';
 import {
-    buildPromptFromUml
+  buildPromptFromUml
 } from './promptBuilder.js';
 
 
@@ -28,8 +31,8 @@ async function getSummaryFromGemini(prompt: string, apiKey: any): Promise<string
   // Initialize the Gemini client with the API key
   const client = new GoogleGenerativeAI(apiKey);
   const model = client.getGenerativeModel({
-    model: "gemini-1.5-flash-8b",
-    systemInstruction: `You are a UML expert. Your Task: Respond with a short paragraph of the users options. Follow these rules:
+    model: "gemini-2.5-flash-lite",
+    systemInstruction: `You are a UML expert. Your Task: Respond with a paragraph of the users options or question. Follow these rules:
                 1. Read the diagram and user options carefully before writing.
                 2. Use the language and style asked for in the options.
                 3. Do not hallucinate.
@@ -66,10 +69,11 @@ async function getSummaryFromGemini(prompt: string, apiKey: any): Promise<string
 }
 
 // Main function tying everything together
-export async function LlmHandler(model: unknown, options: PromptOptions, apiKey = "Add Key here"): Promise<string> {
+export async function LlmHandler(model: unknown, options: PromptOptions, apiKey = ""): Promise<string> {
   try {
     const xmlData = model;
-
+    const tempFilePath = path.join(os.tmpdir(), "xmlData2.txt");
+    fs.writeFileSync(tempFilePath, JSON.stringify(xmlData, null, 2));
     // const options: PromptOptions = {
     //   diagramType: DiagramType.Class,
     //   intent: IntentCategory.Overview,

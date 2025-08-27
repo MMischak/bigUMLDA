@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_M5XFsH0pEfCzKokeQqx5Pg">
+  <packagedElement xsi:type="uml:Class" xmi:id="_dMeH0H0pEfCzKokeQqx5Pg" name="QSqlResult" isAbstract="true">
+    <ownedOperation xmi:id="_BMtb4H0qEfCzKokeQqx5Pg" name="lastError" visibility="protected"/>
+    <ownedOperation xmi:id="_CLD6gH0qEfCzKokeQqx5Pg" name="setQuery" visibility="protected"/>
+    <ownedOperation xmi:id="_C3-q4H0qEfCzKokeQqx5Pg" name="fetch" visibility="protected"/>
+    <ownedOperation xmi:id="_DYTJsH0qEfCzKokeQqx5Pg" name="numRowsAffected" visibility="protected"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_guakkH0pEfCzKokeQqx5Pg" name="QSqlError"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_iMlLsH0pEfCzKokeQqx5Pg" name="QSqlTableModel">
+    <generalization xmi:id="_ncGSoH0rEfCzKokeQqx5Pg" general="_kXouAH0pEfCzKokeQqx5Pg"/>
+    <ownedAttribute xmi:id="_sTSrFH0rEfCzKokeQqx5Pg" name="QSqlRecord" type="_mdfnQH0pEfCzKokeQqx5Pg" association="_sTSrEH0rEfCzKokeQqx5Pg">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_sTSrFX0rEfCzKokeQqx5Pg" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_sTSrFn0rEfCzKokeQqx5Pg" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_LtkLgH0qEfCzKokeQqx5Pg" name="select"/>
+    <ownedOperation xmi:id="_MSRbEH0qEfCzKokeQqx5Pg" name="setTable"/>
+    <ownedOperation xmi:id="_NB8kgH0qEfCzKokeQqx5Pg" name="insertRowIntoTable" visibility="protected"/>
+    <ownedOperation xmi:id="_OVLG8H0qEfCzKokeQqx5Pg" name="deleteRowFromTable" visibility="protected"/>
+    <ownedOperation xmi:id="_PYzHIH0qEfCzKokeQqx5Pg" name="selectStatement" visibility="protected"/>
+    <ownedOperation xmi:id="_QR2PAH0qEfCzKokeQqx5Pg" name="setQuery" visibility="protected"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_kXouAH0pEfCzKokeQqx5Pg" name="QSqlQueryModel">
+    <ownedOperation xmi:id="_VCFD0H0qEfCzKokeQqx5Pg" name="record"/>
+    <ownedOperation xmi:id="_VzTscH0qEfCzKokeQqx5Pg" name="setQuery"/>
+    <ownedOperation xmi:id="_Wio3oH0qEfCzKokeQqx5Pg" name="indexInQuery" visibility="protected"/>
+    <ownedOperation xmi:id="_aJBIcH0qEfCzKokeQqx5Pg" name="setLastError" visibility="protected"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_mdfnQH0pEfCzKokeQqx5Pg" name="QSqlRecord">
+    <ownedAttribute xmi:id="_sTSrEX0rEfCzKokeQqx5Pg" name="QSqlTableModel" visibility="public" type="_iMlLsH0pEfCzKokeQqx5Pg" aggregation="composite" association="_sTSrEH0rEfCzKokeQqx5Pg">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_sTSrEn0rEfCzKokeQqx5Pg" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_sTSrE30rEfCzKokeQqx5Pg" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_hKPvgH0qEfCzKokeQqx5Pg" name="fieldName"/>
+    <ownedOperation xmi:id="_h3qPIH0qEfCzKokeQqx5Pg" name="append"/>
+    <ownedOperation xmi:id="_id-oQH0qEfCzKokeQqx5Pg" name="insert"/>
+    <ownedOperation xmi:id="_jO-AUH0qEfCzKokeQqx5Pg" name="count"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_oLjEgH0pEfCzKokeQqx5Pg" name="QSqlDatabase">
+    <ownedAttribute xmi:id="__YyKsH0qEfCzKokeQqx5Pg" name="defaultConnection" isStatic="true" type="_9ph-IH0rEfCzKokeQqx5Pg">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="__YyKsX0qEfCzKokeQqx5Pg" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="__YyKsn0qEfCzKokeQqx5Pg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_XkMT5H0tEfCzKokeQqx5Pg" name="QSqlQuery" type="_rGADcH0pEfCzKokeQqx5Pg" association="_XkMT4H0tEfCzKokeQqx5Pg">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_XkMT5X0tEfCzKokeQqx5Pg" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_XkMT5n0tEfCzKokeQqx5Pg" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_9AnZcH0qEfCzKokeQqx5Pg" name="record"/>
+    <ownedOperation xmi:id="_9U8DoH0qEfCzKokeQqx5Pg" name="exec"/>
+    <ownedOperation xmi:id="_9-R7kH0qEfCzKokeQqx5Pg" name="setUserName"/>
+    <ownedOperation xmi:id="_-hlc8H0qEfCzKokeQqx5Pg" name="setPassword"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_rGADcH0pEfCzKokeQqx5Pg" name="QSqlQuery">
+    <ownedAttribute xmi:id="_XkMT4X0tEfCzKokeQqx5Pg" name="QSqlDatabase" type="_oLjEgH0pEfCzKokeQqx5Pg" aggregation="composite" association="_XkMT4H0tEfCzKokeQqx5Pg">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_XkMT4n0tEfCzKokeQqx5Pg" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_XkMT430tEfCzKokeQqx5Pg" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_7s-AQH0qEfCzKokeQqx5Pg" name="record"/>
+    <ownedOperation xmi:id="_8II5UH0qEfCzKokeQqx5Pg" name="exec"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_sfJnsH0pEfCzKokeQqx5Pg" name="QSqlIndex">
+    <generalization xmi:id="_fH3gsH0tEfCzKokeQqx5Pg" general="_mdfnQH0pEfCzKokeQqx5Pg"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_to5eAH0pEfCzKokeQqx5Pg" name="QSqlField">
+    <ownedAttribute xmi:id="_kMYq0H0qEfCzKokeQqx5Pg" name="val" visibility="private" type="_qn6j0H0qEfCzKokeQqx5Pg">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_kMZR4H0qEfCzKokeQqx5Pg" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_kMZR4X0qEfCzKokeQqx5Pg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_tKkt0H0qEfCzKokeQqx5Pg" name="d" visibility="private" type="_vj4ukH0qEfCzKokeQqx5Pg">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_tKlU4H0qEfCzKokeQqx5Pg" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_tKlU4X0qEfCzKokeQqx5Pg" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_lmMWYH0qEfCzKokeQqx5Pg" name="setValue"/>
+    <ownedOperation xmi:id="_miSyQH0qEfCzKokeQqx5Pg" name="isNull"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_v4MnIH0pEfCzKokeQqx5Pg" name="QAbstractItemView" isAbstract="true">
+    <ownedOperation xmi:id="_0w_soH0qEfCzKokeQqx5Pg" name="setModel"/>
+    <ownedOperation xmi:id="_1gXUEH0qEfCzKokeQqx5Pg" name="setItemDelegate"/>
+    <ownedOperation xmi:id="_2WRBUH0qEfCzKokeQqx5Pg" name="setIndexWidget"/>
+    <ownedOperation xmi:id="_3rVW0H0qEfCzKokeQqx5Pg" name="setItemDelegateForRow"/>
+    <ownedOperation xmi:id="_43WeAH0qEfCzKokeQqx5Pg" name="update"/>
+    <ownedOperation xmi:id="_5Rli8H0qEfCzKokeQqx5Pg" name="event" visibility="protected"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_x2FQIH0pEfCzKokeQqx5Pg" name="QObject"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_zad0AH0pEfCzKokeQqx5Pg" name="QModelIndex">
+    <ownedAttribute xmi:id="_ogljkH0tEfCzKokeQqx5Pg" name="QDataWidgetMapper" type="_0evUcH0pEfCzKokeQqx5Pg" aggregation="shared" association="_ogk8gH0tEfCzKokeQqx5Pg">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_ogljkX0tEfCzKokeQqx5Pg" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_ogljkn0tEfCzKokeQqx5Pg" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_0evUcH0pEfCzKokeQqx5Pg" name="QDataWidgetMapper">
+    <generalization xmi:id="_uGYHYH0tEfCzKokeQqx5Pg" general="_x2FQIH0pEfCzKokeQqx5Pg"/>
+    <ownedAttribute xmi:id="_ogljk30tEfCzKokeQqx5Pg" name="QModelIndex" type="_zad0AH0pEfCzKokeQqx5Pg" association="_ogk8gH0tEfCzKokeQqx5Pg">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_ogljlH0tEfCzKokeQqx5Pg" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_ogljlX0tEfCzKokeQqx5Pg" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_KdNhcH0rEfCzKokeQqx5Pg" name="setModel"/>
+    <ownedOperation xmi:id="_K7PhQH0rEfCzKokeQqx5Pg" name="setItemDelegate"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_2HYGMH0pEfCzKokeQqx5Pg" name="QAbstractItemModel" isAbstract="true">
+    <ownedOperation xmi:id="_MLuRsH0rEfCzKokeQqx5Pg" name="hasIndex"/>
+    <ownedOperation xmi:id="_MsxwUH0rEfCzKokeQqx5Pg" name="setItemData"/>
+    <ownedOperation xmi:id="_NuwxwH0rEfCzKokeQqx5Pg" name="insertRows"/>
+    <ownedOperation xmi:id="_OygGsH0rEfCzKokeQqx5Pg" name="dataChanged" visibility="protected"/>
+    <ownedOperation xmi:id="_Pbs0sH0rEfCzKokeQqx5Pg" name="createIndex" visibility="protected"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_38FlEH0pEfCzKokeQqx5Pg" name="QAbstractItemDelegate" isAbstract="true">
+    <ownedOperation xmi:id="_SGVO8H0rEfCzKokeQqx5Pg" name="paint"/>
+    <ownedOperation xmi:id="_Sj4toH0rEfCzKokeQqx5Pg" name="setModelData"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_6P1JUH0pEfCzKokeQqx5Pg" name="QTableView">
+    <generalization xmi:id="_1f6gwH0tEfCzKokeQqx5Pg" general="_v4MnIH0pEfCzKokeQqx5Pg"/>
+    <ownedOperation xmi:id="_UeXdUH0rEfCzKokeQqx5Pg" name="setModel"/>
+    <ownedOperation xmi:id="_U7wj8H0rEfCzKokeQqx5Pg" name="selectRow"/>
+    <ownedOperation xmi:id="_Ve5GMH0rEfCzKokeQqx5Pg" name="sortByColumn"/>
+    <ownedOperation xmi:id="_WX0SQH0rEfCzKokeQqx5Pg" name="setModel"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_8B6K8H0pEfCzKokeQqx5Pg" name="QHeaderView">
+    <generalization xmi:id="_1_4aQH0tEfCzKokeQqx5Pg" general="_v4MnIH0pEfCzKokeQqx5Pg"/>
+    <ownedOperation xmi:id="_ZcZdkH0rEfCzKokeQqx5Pg" name="setModel"/>
+    <ownedOperation xmi:id="_aU-rYH0rEfCzKokeQqx5Pg" name="initializeSection" visibility="protected"/>
+    <ownedOperation xmi:id="_cTip0H0rEfCzKokeQqx5Pg" name="mousePressEvent" visibility="protected"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_9aMMgH0pEfCzKokeQqx5Pg" name="QTableWidget">
+    <generalization xmi:id="_4gCC0H0tEfCzKokeQqx5Pg" general="_6P1JUH0pEfCzKokeQqx5Pg"/>
+    <ownedOperation xmi:id="_XcXfgH0rEfCzKokeQqx5Pg" name="setCurrentItem"/>
+    <ownedOperation xmi:id="_YQBxEH0rEfCzKokeQqx5Pg" name="setCellWidget"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_qn6j0H0qEfCzKokeQqx5Pg" name="QVariant" visibility="private"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vj4ukH0qEfCzKokeQqx5Pg" name="QSqlFieldPrivate" visibility="private"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_ijWbAH0rEfCzKokeQqx5Pg" client="_dMeH0H0pEfCzKokeQqx5Pg" supplier="_guakkH0pEfCzKokeQqx5Pg"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_kCHfEH0rEfCzKokeQqx5Pg" client="_kXouAH0pEfCzKokeQqx5Pg" supplier="_guakkH0pEfCzKokeQqx5Pg"/>
+  <packagedElement xsi:type="uml:Association" xmi:id="_sTSrEH0rEfCzKokeQqx5Pg" visibility="public" memberEnd="_sTSrEX0rEfCzKokeQqx5Pg _sTSrFH0rEfCzKokeQqx5Pg">
+    <name xsi:nil="true"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:PrimitiveType" xmi:id="_9ph-IH0rEfCzKokeQqx5Pg" name="char"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_U_T8UH0tEfCzKokeQqx5Pg" client="_kXouAH0pEfCzKokeQqx5Pg" supplier="_rGADcH0pEfCzKokeQqx5Pg"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_Wo5JQH0tEfCzKokeQqx5Pg" client="_oLjEgH0pEfCzKokeQqx5Pg" supplier="_rGADcH0pEfCzKokeQqx5Pg"/>
+  <packagedElement xsi:type="uml:Association" xmi:id="_XkMT4H0tEfCzKokeQqx5Pg" memberEnd="_XkMT4X0tEfCzKokeQqx5Pg _XkMT5H0tEfCzKokeQqx5Pg"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_gaBsIH0tEfCzKokeQqx5Pg" client="_mdfnQH0pEfCzKokeQqx5Pg" supplier="_to5eAH0pEfCzKokeQqx5Pg"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_kdx1cH0tEfCzKokeQqx5Pg" client="_0evUcH0pEfCzKokeQqx5Pg" supplier="_2HYGMH0pEfCzKokeQqx5Pg"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_k6HMIH0tEfCzKokeQqx5Pg" client="_0evUcH0pEfCzKokeQqx5Pg" supplier="_38FlEH0pEfCzKokeQqx5Pg"/>
+  <packagedElement xsi:type="uml:Association" xmi:id="_ogk8gH0tEfCzKokeQqx5Pg" memberEnd="_ogljkH0tEfCzKokeQqx5Pg _ogljk30tEfCzKokeQqx5Pg"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_vZEeUH0tEfCzKokeQqx5Pg" client="_38FlEH0pEfCzKokeQqx5Pg" supplier="_v4MnIH0pEfCzKokeQqx5Pg"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_5pUmIH0tEfCzKokeQqx5Pg" client="_6P1JUH0pEfCzKokeQqx5Pg" supplier="_8B6K8H0pEfCzKokeQqx5Pg"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_BGeUMH0uEfCzKokeQqx5Pg" client="_6P1JUH0pEfCzKokeQqx5Pg" supplier="_iMlLsH0pEfCzKokeQqx5Pg"/>
+</uml:Model>

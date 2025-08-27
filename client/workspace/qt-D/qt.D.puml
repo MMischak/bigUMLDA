@@ -1,0 +1,138 @@
+@startuml
+
+abstract class QSqlResult {
+  # lastError()
+  # setQuery()
+  # fetch()
+  # numRowsAffected()
+}
+
+class QSqlError
+
+class QSqlQueryModel {
+  + record()
+  + setQuery()
+  # indexInQuery()
+  # setLastError()
+}
+
+class QSqlTableModel {
+  + select()
+  + setTable()
+  # insertRowIntoTable()
+  # deleteRowFromTable()
+  # selectStatement()
+  # setQuery()
+}
+
+class QSqlRecord {
+  + fieldName()
+  + append()
+  + insert()
+  + count()
+}
+
+class QSqlDatabase {
+  {static} + defaultConnection : char
+  + record()
+  + exec()
+  + setUserName()
+  + setPassword()
+}
+
+class QSqlQuery {
+  + record()
+  + exec()
+}
+
+class QSqlIndex
+
+class QSqlField {
+  - val : QVariant
+  - d : QSqlFieldPrivate
+  + setValue()
+  + isNull()
+}
+
+abstract class QAbstractItemView {
+  + setModel()
+  + setItemDelegate()
+  + setIndexWidget()
+  + setItemDelegateForRow()
+  + update()
+  # event()
+}
+
+class QObject
+
+class QModelIndex
+
+class QDataWidgetMapper {
+  + setModel()
+  + setItemDelegate()
+}
+
+abstract class QAbstractItemModel {
+  + hasIndex()
+  + setItemData()
+  + insertRows()
+  # dataChanged()
+  # createIndex()
+}
+
+abstract class QAbstractItemDelegate {
+  + paint()
+  + setModelData()
+}
+
+class QTableView {
+  + setModel()
+  + selectRow()
+  + sortByColumn()
+  + setModel()
+}
+
+class QHeaderView {
+  + setModel()
+  # initializeSection()
+  # mousePressEvent()
+}
+
+class QTableWidget {
+  + setCurrentItem()
+  + setCellWidget()
+}
+
+class QVariant <<private>>
+class QSqlFieldPrivate <<private>>
+
+' ===== Generalizations (Inheritance) =====
+QSqlTableModel --|> QSqlQueryModel
+QSqlIndex --|> QSqlRecord
+QTableWidget --|> QTableView
+QTableView --|> QAbstractItemView
+QHeaderView --|> QAbstractItemView
+QDataWidgetMapper --|> QObject
+
+' ===== Associations (with aggregation/composition & multiplicities) =====
+' QSqlRecord owns (composition) a QSqlTableModel (1..1 ↔ 1..1)
+QSqlRecord "1" *-- "1" QSqlTableModel
+
+' QSqlQuery owns (composition) a QSqlDatabase (1..1 ↔ 1..1)
+QSqlQuery "1" *-- "1" QSqlDatabase
+
+' QModelIndex aggregates (shared) a QDataWidgetMapper (1..1 ↔ 1..1)
+QModelIndex "1" o-- "1" QDataWidgetMapper
+
+' ===== Dependencies =====
+QSqlResult ..> QSqlError
+QSqlQueryModel ..> QSqlError
+QSqlQueryModel ..> QSqlQuery
+QSqlDatabase ..> QSqlQuery
+QSqlRecord ..> QSqlField
+QDataWidgetMapper ..> QAbstractItemModel
+QDataWidgetMapper ..> QAbstractItemDelegate
+QAbstractItemDelegate ..> QAbstractItemView
+QTableView ..> QHeaderView
+QTableView ..> QSqlTableModel
+@enduml

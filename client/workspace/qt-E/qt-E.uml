@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_2pChEH9TEfC_JsjicJ0oZw">
+  <packagedElement xsi:type="uml:Class" xmi:id="_3qpIAH9TEfC_JsjicJ0oZw" name="QObject">
+    <ownedOperation xmi:id="_86vTMH9UEfC_JsjicJ0oZw" name="timerEvent" visibility="protected"/>
+    <ownedOperation xmi:id="_-LDEgH9UEfC_JsjicJ0oZw" name="childEvent" visibility="protected"/>
+    <ownedOperation xmi:id="__SnwkH9UEfC_JsjicJ0oZw" name="event"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_4KXJ4H9TEfC_JsjicJ0oZw" name="QEvent">
+    <ownedOperation xmi:id="_AL0CYH9VEfC_JsjicJ0oZw" name="accept"/>
+    <ownedOperation xmi:id="_A1l_MH9VEfC_JsjicJ0oZw" name="ignore"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_4r6-0H9TEfC_JsjicJ0oZw" client="_3qpIAH9TEfC_JsjicJ0oZw" supplier="_4KXJ4H9TEfC_JsjicJ0oZw"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_5ILdAH9TEfC_JsjicJ0oZw" name="QTimer">
+    <generalization xmi:id="_6bA94H9TEfC_JsjicJ0oZw" general="_3qpIAH9TEfC_JsjicJ0oZw"/>
+    <ownedAttribute xmi:id="_eNLkQH9VEfC_JsjicJ0oZw" name="inter" visibility="private" type="_aMhyQH9VEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_eNMLUH9VEfC_JsjicJ0oZw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_eNMLUX9VEfC_JsjicJ0oZw" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_gUsDUH9VEfC_JsjicJ0oZw" name="timerId"/>
+    <ownedOperation xmi:id="_hOSk0H9VEfC_JsjicJ0oZw" name="setInterval"/>
+    <ownedOperation xmi:id="_iT5iAH9VEfC_JsjicJ0oZw" name="start"/>
+    <ownedOperation xmi:id="_iqLUAH9VEfC_JsjicJ0oZw" name="stop"/>
+    <ownedOperation xmi:id="_jGcZQH9VEfC_JsjicJ0oZw" name="timeout" visibility="protected"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_5nYhgH9TEfC_JsjicJ0oZw" name="QEventLoop">
+    <generalization xmi:id="_60AssH9TEfC_JsjicJ0oZw" general="_3qpIAH9TEfC_JsjicJ0oZw"/>
+    <ownedOperation xmi:id="_l1-hoH9VEfC_JsjicJ0oZw" name="processEvents"/>
+    <ownedOperation xmi:id="_mj_eMH9VEfC_JsjicJ0oZw" name="exec"/>
+    <ownedOperation xmi:id="_nFlvYH9VEfC_JsjicJ0oZw" name="isRunning"/>
+    <ownedOperation xmi:id="_nqa6wH9VEfC_JsjicJ0oZw" name="wakeUp"/>
+    <ownedOperation xmi:id="_oanooH9VEfC_JsjicJ0oZw" name="quit"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_57Ij8H9TEfC_JsjicJ0oZw" name="QAction">
+    <generalization xmi:id="_7RhIEH9TEfC_JsjicJ0oZw" general="_3qpIAH9TEfC_JsjicJ0oZw"/>
+    <ownedAttribute xmi:id="_tF3sRH9UEfC_JsjicJ0oZw" name="Class" type="_8blHcH9TEfC_JsjicJ0oZw" association="_tF3sQH9UEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_tF3sRX9UEfC_JsjicJ0oZw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_tF4TUH9UEfC_JsjicJ0oZw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ts0-kH9UEfC_JsjicJ0oZw" name="Class" type="_A4uoMH9UEfC_JsjicJ0oZw" aggregation="composite" association="_tszwcH9UEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_ts0-kX9UEfC_JsjicJ0oZw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_ts0-kn9UEfC_JsjicJ0oZw" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_aYqL4IKZEfCcsLDfcub4jw" name="setIconText">
+      <ownedParameter xmi:id="_niQfYIKZEfCcsLDfcub4jw" name="text"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_bro2sIKZEfCcsLDfcub4jw" name="setToolTip">
+      <ownedParameter xmi:id="_sC6nIIKZEfCcsLDfcub4jw" name="tip"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_cWiN0IKZEfCcsLDfcub4jw" name="setStatusTip">
+      <ownedParameter xmi:id="_s2agoIKZEfCcsLDfcub4jw" name="statusTip"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_dNiHQIKZEfCcsLDfcub4jw" name="setMenu">
+      <ownedParameter xmi:id="_uEqccIKZEfCcsLDfcub4jw" name="menu" visibility="public" type="_l6YioIKZEfCcsLDfcub4jw" effect="create"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_dsbCsIKZEfCcsLDfcub4jw" name="isToggleAction">
+      <ownedParameter xmi:id="_2F02gIKZEfCcsLDfcub4jw" name="Parameter" type="_PiuiAH9VEfC_JsjicJ0oZw" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_8blHcH9TEfC_JsjicJ0oZw" name="QActionEvent">
+    <generalization xmi:id="_9Zcd4H9TEfC_JsjicJ0oZw" general="_4KXJ4H9TEfC_JsjicJ0oZw"/>
+    <ownedAttribute xmi:id="_tF3sQX9UEfC_JsjicJ0oZw" name="Class" type="_57Ij8H9TEfC_JsjicJ0oZw" aggregation="composite" association="_tF3sQH9UEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_tF3sQn9UEfC_JsjicJ0oZw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_tF3sQ39UEfC_JsjicJ0oZw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_FUwCUIKbEfCcsLDfcub4jw" name="act" visibility="private" type="_57Ij8H9TEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_FUwCUYKbEfCcsLDfcub4jw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_FUwCUoKbEfCcsLDfcub4jw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Fvv8QIKbEfCcsLDfcub4jw" name="bef" visibility="private" type="_57Ij8H9TEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_FvwjUIKbEfCcsLDfcub4jw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_FvwjUYKbEfCcsLDfcub4jw" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_GaF5wIKbEfCcsLDfcub4jw" name="action">
+      <ownedParameter xmi:id="_KKQ_wIKbEfCcsLDfcub4jw" name="Parameter" type="_57Ij8H9TEfC_JsjicJ0oZw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_G6PZcIKbEfCcsLDfcub4jw" name="before">
+      <ownedParameter xmi:id="_Lx32wIKbEfCcsLDfcub4jw" name="Parameter" type="_57Ij8H9TEfC_JsjicJ0oZw" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_8sZKoH9TEfC_JsjicJ0oZw" name="QMoveEvent">
+    <generalization xmi:id="_-J3OMH9TEfC_JsjicJ0oZw" general="_4KXJ4H9TEfC_JsjicJ0oZw"/>
+    <ownedAttribute xmi:id="_S2w10IKbEfCcsLDfcub4jw" name="p" visibility="protected" type="_GGLkgH9UEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_S2w10YKbEfCcsLDfcub4jw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_S2w10oKbEfCcsLDfcub4jw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_TLoSkIKbEfCcsLDfcub4jw" name="oldp" visibility="protected" type="_GGLkgH9UEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_TLoSkYKbEfCcsLDfcub4jw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_TLoSkoKbEfCcsLDfcub4jw" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_We7PUIKbEfCcsLDfcub4jw" name="pos"/>
+    <ownedOperation xmi:id="_W9zjsIKbEfCcsLDfcub4jw" name="oldPos"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_87n5cH9TEfC_JsjicJ0oZw" name="QPaintEvent">
+    <generalization xmi:id="_-lKqIH9TEfC_JsjicJ0oZw" general="_4KXJ4H9TEfC_JsjicJ0oZw"/>
+    <ownedAttribute xmi:id="_RJcoMH9VEfC_JsjicJ0oZw" name="m_rect" visibility="protected" type="_FpSXsH9VEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_RJcoMX9VEfC_JsjicJ0oZw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_RJcoMn9VEfC_JsjicJ0oZw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_UUdLoH9VEfC_JsjicJ0oZw" name="m_region" visibility="protected" type="_GshWUH9VEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_UUdysH9VEfC_JsjicJ0oZw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_UUdysX9VEfC_JsjicJ0oZw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_WSMDoH9VEfC_JsjicJ0oZw" name="m_erased" type="_PiuiAH9VEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_WSMDoX9VEfC_JsjicJ0oZw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_WSMDon9VEfC_JsjicJ0oZw" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_CpNR4H9VEfC_JsjicJ0oZw" name="rect"/>
+    <ownedOperation xmi:id="_DKNtMH9VEfC_JsjicJ0oZw" name="region"/>
+    <ownedOperation xmi:id="_DuZ_YH9VEfC_JsjicJ0oZw" name="setErased"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="__xzcYH9TEfC_JsjicJ0oZw" name="QInputEvent">
+    <generalization xmi:id="_DN-oUH9UEfC_JsjicJ0oZw" general="_4KXJ4H9TEfC_JsjicJ0oZw"/>
+    <ownedAttribute xmi:id="_68P9cIKaEfCcsLDfcub4jw" name="modState" visibility="protected">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_68P9cYKaEfCcsLDfcub4jw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_68P9coKaEfCcsLDfcub4jw" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_7i5GsIKaEfCcsLDfcub4jw" name="modifiers"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_AVoiMH9UEfC_JsjicJ0oZw" name="QWidget">
+    <ownedOperation xmi:id="_ZUMMQIKbEfCcsLDfcub4jw" name="mouseMoveEvent" visibility="protected"/>
+    <ownedOperation xmi:id="_aoVUsIKbEfCcsLDfcub4jw" name="event"/>
+    <ownedOperation xmi:id="_bB32EIKbEfCcsLDfcub4jw" name="show"/>
+    <ownedOperation xmi:id="_bkSmoIKbEfCcsLDfcub4jw" name="paintEvent"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_A4uoMH9UEfC_JsjicJ0oZw" name="QToolBarItem">
+    <ownedAttribute xmi:id="_ts0-k39UEfC_JsjicJ0oZw" name="Class" type="_57Ij8H9TEfC_JsjicJ0oZw" association="_tszwcH9UEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_ts1loH9UEfC_JsjicJ0oZw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_ts1loX9UEfC_JsjicJ0oZw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_AKOeMIKbEfCcsLDfcub4jw" name="action" type="_57Ij8H9TEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_AKOeMYKbEfCcsLDfcub4jw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_AKOeMoKbEfCcsLDfcub4jw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_CW3U4IKbEfCcsLDfcub4jw" name="customWidget" type="_PiuiAH9VEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_CW378IKbEfCcsLDfcub4jw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_CW378YKbEfCcsLDfcub4jw" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_BRr6wH9UEfC_JsjicJ0oZw" name="QKeyMapper">
+    <generalization xmi:id="_wBV-4H9UEfC_JsjicJ0oZw" general="_3qpIAH9TEfC_JsjicJ0oZw"/>
+    <ownedOperation xmi:id="_71HUkIKZEfCcsLDfcub4jw" name="sendKeyEvent"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_CRbggH9UEfC_JsjicJ0oZw" client="_AVoiMH9UEfC_JsjicJ0oZw" supplier="_87n5cH9TEfC_JsjicJ0oZw"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_EPo5oH9UEfC_JsjicJ0oZw" name="QKeyEvent">
+    <generalization xmi:id="_0wRMIH9UEfC_JsjicJ0oZw" general="__xzcYH9TEfC_JsjicJ0oZw"/>
+    <ownedAttribute xmi:id="_-NBnIIKZEfCcsLDfcub4jw" name="k" visibility="protected" type="_aMhyQH9VEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_-NBnIYKZEfCcsLDfcub4jw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_-NBnIoKZEfCcsLDfcub4jw" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="__ydT4IKZEfCcsLDfcub4jw" name="key"/>
+    <ownedOperation xmi:id="_AGId0IKaEfCcsLDfcub4jw" name="text"/>
+    <ownedOperation xmi:id="_AixWgIKaEfCcsLDfcub4jw" name="isAutoRepeat"/>
+    <ownedOperation xmi:id="_Bmk84IKaEfCcsLDfcub4jw" name="ascii"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_ErhkYH9UEfC_JsjicJ0oZw" name="QWheelEvent">
+    <generalization xmi:id="_0FhmAH9UEfC_JsjicJ0oZw" general="__xzcYH9TEfC_JsjicJ0oZw"/>
+    <ownedAttribute xmi:id="_4DkI4X9UEfC_JsjicJ0oZw" name="Class" type="_GGLkgH9UEfC_JsjicJ0oZw" association="_4Di6wH9UEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_4DkI4n9UEfC_JsjicJ0oZw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_4DkI439UEfC_JsjicJ0oZw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_EXzuYIKaEfCcsLDfcub4jw" name="mouseState" visibility="protected">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_EX0VcIKaEfCcsLDfcub4jw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_EX0VcYKaEfCcsLDfcub4jw" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_FuChgIKaEfCcsLDfcub4jw" name="delta">
+      <ownedParameter xmi:id="_HmvIgIKaEfCcsLDfcub4jw" name="Parameter" type="_aMhyQH9VEfC_JsjicJ0oZw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_GbMicIKaEfCcsLDfcub4jw" name="pos">
+      <ownedParameter xmi:id="_JJIvYIKaEfCcsLDfcub4jw" name="Parameter" type="_GGLkgH9UEfC_JsjicJ0oZw" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_E9kWoH9UEfC_JsjicJ0oZw" name="QContextMenuEvent">
+    <generalization xmi:id="_zkjm8H9UEfC_JsjicJ0oZw" general="__xzcYH9TEfC_JsjicJ0oZw"/>
+    <ownedAttribute xmi:id="_3jjMEn9UEfC_JsjicJ0oZw" name="Class" type="_GGLkgH9UEfC_JsjicJ0oZw" association="_3jilAH9UEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_3jjME39UEfC_JsjicJ0oZw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_3jjMFH9UEfC_JsjicJ0oZw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_MFH_YIKaEfCcsLDfcub4jw" name="p" visibility="protected" type="_GGLkgH9UEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_MFH_YYKaEfCcsLDfcub4jw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_MFH_YoKaEfCcsLDfcub4jw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_MevZQIKaEfCcsLDfcub4jw" name="gp" visibility="protected" type="_GGLkgH9UEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_MewAUIKaEfCcsLDfcub4jw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_MewAUYKaEfCcsLDfcub4jw" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_QEMdAIKaEfCcsLDfcub4jw" name="x">
+      <ownedParameter xmi:id="_S1e44IKaEfCcsLDfcub4jw" name="Parameter" type="_aMhyQH9VEfC_JsjicJ0oZw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_QsM4MIKaEfCcsLDfcub4jw" name="y">
+      <ownedParameter xmi:id="_VLREgIKaEfCcsLDfcub4jw" name="Parameter" type="_aMhyQH9VEfC_JsjicJ0oZw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_RCtTsIKaEfCcsLDfcub4jw" name="pos">
+      <ownedParameter xmi:id="_W84MEIKaEfCcsLDfcub4jw" name="Parameter" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_RigOEIKaEfCcsLDfcub4jw" name="reason">
+      <ownedParameter xmi:id="_a9-C8IKaEfCcsLDfcub4jw" name="Parameter" type="_ZVMuUIKaEfCcsLDfcub4jw" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_Fc26sH9UEfC_JsjicJ0oZw" name="QTabletEvent">
+    <generalization xmi:id="_y_UL4H9UEfC_JsjicJ0oZw" general="__xzcYH9TEfC_JsjicJ0oZw"/>
+    <ownedAttribute xmi:id="_21i2lH9UEfC_JsjicJ0oZw" name="Class" type="_GGLkgH9UEfC_JsjicJ0oZw" association="_21i2kH9UEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_21i2lX9UEfC_JsjicJ0oZw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_21i2ln9UEfC_JsjicJ0oZw" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_eUt8UIKaEfCcsLDfcub4jw" name="pos">
+      <ownedParameter xmi:id="_ioI5UIKaEfCcsLDfcub4jw" name="Parameter" type="_GGLkgH9UEfC_JsjicJ0oZw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_etGAEIKaEfCcsLDfcub4jw" name="x">
+      <ownedParameter xmi:id="_gsnAwIKaEfCcsLDfcub4jw" name="Parameter" type="_aMhyQH9VEfC_JsjicJ0oZw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_fHxw8IKaEfCcsLDfcub4jw" name="y">
+      <ownedParameter xmi:id="_fma0wIKaEfCcsLDfcub4jw" name="Parameter" type="_aMhyQH9VEfC_JsjicJ0oZw" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_FwnkMH9UEfC_JsjicJ0oZw" name="QMouseEvent">
+    <generalization xmi:id="_yguLYH9UEfC_JsjicJ0oZw" general="__xzcYH9TEfC_JsjicJ0oZw"/>
+    <ownedAttribute xmi:id="_1gOCZH9UEfC_JsjicJ0oZw" name="Class" type="_GGLkgH9UEfC_JsjicJ0oZw" association="_1gOCYH9UEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_1gOCZX9UEfC_JsjicJ0oZw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_1gOCZn9UEfC_JsjicJ0oZw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_k6L0cIKaEfCcsLDfcub4jw" name="mouseState" visibility="protected">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_k6L0cYKaEfCcsLDfcub4jw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_k6MbgIKaEfCcsLDfcub4jw" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_mA3IoIKaEfCcsLDfcub4jw" name="pos">
+      <ownedParameter xmi:id="_nalUoIKaEfCcsLDfcub4jw" name="Parameter" type="_GGLkgH9UEfC_JsjicJ0oZw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_mctXIIKaEfCcsLDfcub4jw" name="x">
+      <ownedParameter xmi:id="_pCd4cIKaEfCcsLDfcub4jw" name="Parameter" type="_aMhyQH9VEfC_JsjicJ0oZw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_myJboIKaEfCcsLDfcub4jw" name="y">
+      <ownedParameter xmi:id="_qSRTcIKaEfCcsLDfcub4jw" name="Parameter" type="_aMhyQH9VEfC_JsjicJ0oZw" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_GGLkgH9UEfC_JsjicJ0oZw" name="QPoint">
+    <ownedAttribute xmi:id="_1gOCYX9UEfC_JsjicJ0oZw" name="Class" type="_FwnkMH9UEfC_JsjicJ0oZw" association="_1gOCYH9UEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_1gOCYn9UEfC_JsjicJ0oZw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_1gOCY39UEfC_JsjicJ0oZw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_21i2kX9UEfC_JsjicJ0oZw" name="Class" type="_Fc26sH9UEfC_JsjicJ0oZw" association="_21i2kH9UEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_21i2kn9UEfC_JsjicJ0oZw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_21i2k39UEfC_JsjicJ0oZw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_3jilAX9UEfC_JsjicJ0oZw" name="Class" type="_E9kWoH9UEfC_JsjicJ0oZw" association="_3jilAH9UEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_3jjMEH9UEfC_JsjicJ0oZw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_3jjMEX9UEfC_JsjicJ0oZw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_4Djh0H9UEfC_JsjicJ0oZw" name="Class" type="_ErhkYH9UEfC_JsjicJ0oZw" association="_4Di6wH9UEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_4Djh0X9UEfC_JsjicJ0oZw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_4DkI4H9UEfC_JsjicJ0oZw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_uYx10IKaEfCcsLDfcub4jw" name="xp" visibility="private" type="_aMhyQH9VEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_uYx10YKaEfCcsLDfcub4jw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_uYx10oKaEfCcsLDfcub4jw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_u01fsIKaEfCcsLDfcub4jw" name="yp" visibility="private" type="_aMhyQH9VEfC_JsjicJ0oZw">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_u01fsYKaEfCcsLDfcub4jw" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_u01fsoKaEfCcsLDfcub4jw" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_x4xx0IKaEfCcsLDfcub4jw" name="manhattenLength">
+      <ownedParameter xmi:id="_zhkUkIKaEfCcsLDfcub4jw" name="Parameter" type="_aMhyQH9VEfC_JsjicJ0oZw" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" xmi:id="_tF3sQH9UEfC_JsjicJ0oZw" memberEnd="_tF3sQX9UEfC_JsjicJ0oZw _tF3sRH9UEfC_JsjicJ0oZw"/>
+  <packagedElement xsi:type="uml:Association" xmi:id="_tszwcH9UEfC_JsjicJ0oZw" memberEnd="_ts0-kH9UEfC_JsjicJ0oZw _ts0-k39UEfC_JsjicJ0oZw"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_up5DwH9UEfC_JsjicJ0oZw" client="_BRr6wH9UEfC_JsjicJ0oZw" supplier="_EPo5oH9UEfC_JsjicJ0oZw"/>
+  <packagedElement xsi:type="uml:Association" xmi:id="_1gOCYH9UEfC_JsjicJ0oZw" memberEnd="_1gOCYX9UEfC_JsjicJ0oZw _1gOCZH9UEfC_JsjicJ0oZw"/>
+  <packagedElement xsi:type="uml:Association" xmi:id="_21i2kH9UEfC_JsjicJ0oZw" memberEnd="_21i2kX9UEfC_JsjicJ0oZw _21i2lH9UEfC_JsjicJ0oZw"/>
+  <packagedElement xsi:type="uml:Association" xmi:id="_3jilAH9UEfC_JsjicJ0oZw" memberEnd="_3jilAX9UEfC_JsjicJ0oZw _3jjMEn9UEfC_JsjicJ0oZw"/>
+  <packagedElement xsi:type="uml:Association" xmi:id="_4Di6wH9UEfC_JsjicJ0oZw" memberEnd="_4Djh0H9UEfC_JsjicJ0oZw _4DkI4X9UEfC_JsjicJ0oZw"/>
+  <packagedElement xsi:type="uml:DataType" xmi:id="_FpSXsH9VEfC_JsjicJ0oZw" name="QRect"/>
+  <packagedElement xsi:type="uml:DataType" xmi:id="_GshWUH9VEfC_JsjicJ0oZw" name="QRegion"/>
+  <packagedElement xsi:type="uml:PrimitiveType" xmi:id="_PiuiAH9VEfC_JsjicJ0oZw" name="bool"/>
+  <packagedElement xsi:type="uml:PrimitiveType" xmi:id="_aMhyQH9VEfC_JsjicJ0oZw" name="int"/>
+  <packagedElement xsi:type="uml:DataType" xmi:id="_l6YioIKZEfCcsLDfcub4jw" name="QMenu"/>
+  <packagedElement xsi:type="uml:DataType" xmi:id="_ZVMuUIKaEfCcsLDfcub4jw" name="Reason"/>
+</uml:Model>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_f0MooG1-EfCnZqImXRUoXA">
+  <packagedElement xsi:type="uml:Class" xmi:id="_vdcOYG1-EfCnZqImXRUoXA" name="QPaintDevice" visibility="public" isAbstract="true">
+    <ownedAttribute xmi:id="_JX_Z8G2BEfCnZqImXRUoXA" name="Painters" visibility="protected">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_JYABAG2BEfCnZqImXRUoXA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_JYAoEG2BEfCnZqImXRUoXA" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_hPXewG2BEfCnZqImXRUoXA" name="paintEngine">
+      <ownedParameter xmi:id="_kVsWgG2BEfCnZqImXRUoXA" name="PaintEnginge" type="_tZYooG8CEfCnZqImXRUoXA" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_Kesx8G8DEfCnZqImXRUoXA" name="width"/>
+    <ownedOperation xmi:id="_LPzewG8DEfCnZqImXRUoXA" name="height"/>
+    <ownedOperation xmi:id="_NjxFcG8DEfCnZqImXRUoXA" name="numColors"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_tZYooG8CEfCnZqImXRUoXA" name="QPaintEngine"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_UE-IoG8DEfCnZqImXRUoXA" name="QBrush">
+    <ownedOperation xmi:id="_U3vpYG8DEfCnZqImXRUoXA" name="setStyle">
+      <ownedParameter xmi:id="_WblasG8DEfCnZqImXRUoXA" name="style"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_X_YIsG8DEfCnZqImXRUoXA" name="setTransform">
+      <ownedParameter xmi:id="_iZ0HQG8DEfCnZqImXRUoXA" name="matrix"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_jO58MG8DEfCnZqImXRUoXA" name="setTexture">
+      <ownedParameter xmi:id="_nFbh0G8DEfCnZqImXRUoXA" name="pixmap"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_lgouQG8DEfCnZqImXRUoXA" name="setColor">
+      <ownedParameter xmi:id="_mAc2wG8DEfCnZqImXRUoXA" name="color"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_op5lQG8DEfCnZqImXRUoXA" name="QGraphicsView">
+    <ownedOperation xmi:id="_sq4ucG8DEfCnZqImXRUoXA" name="viewportEvent" visibility="protected"/>
+    <ownedOperation xmi:id="_uqYhAG8DEfCnZqImXRUoXA" name="scrollContentsBy" visibility="protected"/>
+    <ownedOperation xmi:id="_69_AoG8DEfCnZqImXRUoXA" name="drawItems" visibility="protected"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_9KOOsG8DEfCnZqImXRUoXA" name="QStylePainter">
+    <generalization xmi:id="_3R2tUG8oEfCnZqImXRUoXA" general="_-sCmwG8DEfCnZqImXRUoXA"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_-sCmwG8DEfCnZqImXRUoXA" name="QPainter">
+    <ownedOperation xmi:id="__4LpwG8DEfCnZqImXRUoXA" name="paintEngine"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_f3s6YG8EEfCnZqImXRUoXA" name="QStyle"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_ho-qwG8EEfCnZqImXRUoXA" name="QImage">
+    <generalization xmi:id="_rltPQG8oEfCnZqImXRUoXA" general="_vdcOYG1-EfCnZqImXRUoXA"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_iwUGQG8EEfCnZqImXRUoXA" name="QPolygon"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_kDqkgG8EEfCnZqImXRUoXA" name="QPixmap">
+    <generalization xmi:id="_cDPm8G8oEfCnZqImXRUoXA" general="_vdcOYG1-EfCnZqImXRUoXA"/>
+    <ownedOperation xmi:id="_suQWEG8EEfCnZqImXRUoXA" name="data" visibility="private">
+      <ownedParameter xmi:id="_e9CMcG8FEfCnZqImXRUoXA" name="Parameter" type="_VylPEG8FEfCnZqImXRUoXA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_udyaAG8EEfCnZqImXRUoXA" name="paintEngine">
+      <ownedParameter xmi:id="_TPfAMG8FEfCnZqImXRUoXA" name="Parameter" type="_tZYooG8CEfCnZqImXRUoXA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_uoktsG8EEfCnZqImXRUoXA" name="size">
+      <ownedParameter xmi:id="_QYKNwG8FEfCnZqImXRUoXA" name="Parameter" type="_z_Jw0G8EEfCnZqImXRUoXA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_veb-sG8EEfCnZqImXRUoXA" name="rect">
+      <ownedParameter xmi:id="_NPvEQG8FEfCnZqImXRUoXA" name="Parameter" type="_2IElIG8EEfCnZqImXRUoXA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_vyp7MG8EEfCnZqImXRUoXA" name="mask">
+      <ownedParameter xmi:id="_CpEAgG8FEfCnZqImXRUoXA" name="Parameter" type="_3EiNYG8EEfCnZqImXRUoXA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_wzSRwG8EEfCnZqImXRUoXA" name="fromImage">
+      <ownedParameter xmi:id="_--J1AG8EEfCnZqImXRUoXA" name="Parameter" type="_kDqkgG8EEfCnZqImXRUoXA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_xaIPUG8EEfCnZqImXRUoXA" name="data_ptr">
+      <ownedParameter xmi:id="_hoiwcG8FEfCnZqImXRUoXA" name="Parameter" visibility="public" type="_7r290G8EEfCnZqImXRUoXA" direction="return" effect="create"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_z_Jw0G8EEfCnZqImXRUoXA" name="QSize"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_2IElIG8EEfCnZqImXRUoXA" name="QRect"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_3EiNYG8EEfCnZqImXRUoXA" name="QBitmap"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_7r290G8EEfCnZqImXRUoXA" name="DataPtr"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_VylPEG8FEfCnZqImXRUoXA" name="QPixmapData"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_miQ4cG8FEfCnZqImXRUoXA" name="QMatrix"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_f5IrgG8JEfCnZqImXRUoXA" name="QPen">
+    <ownedOperation xmi:id="_g6lhcG8JEfCnZqImXRUoXA" name="setColor">
+      <ownedParameter xmi:id="_hVbqYG8JEfCnZqImXRUoXA" name="color"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_kHzrYG8JEfCnZqImXRUoXA" name="setBrush">
+      <ownedParameter xmi:id="_klWjAG8JEfCnZqImXRUoXA" name="brush"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_mkX0cG8JEfCnZqImXRUoXA" name="isSolid">
+      <ownedParameter xmi:id="_nx6loG8JEfCnZqImXRUoXA" name="" type="_qHKlwG8JEfCnZqImXRUoXA" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_qHKlwG8JEfCnZqImXRUoXA" name="bool"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_wXD2gG8JEfCnZqImXRUoXA" name="QSvgWidget">
+    <generalization xmi:id="_5_FvoG8oEfCnZqImXRUoXA" general="_GOtjoG8oEfCnZqImXRUoXA"/>
+    <ownedAttribute xmi:id="__GixoG8oEfCnZqImXRUoXA" name="QSvgRenderer" type="_yxEa0G8JEfCnZqImXRUoXA" association="__GiKkG8oEfCnZqImXRUoXA">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="__Gj_wG8oEfCnZqImXRUoXA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="__Gj_wW8oEfCnZqImXRUoXA" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_xdZzgG8JEfCnZqImXRUoXA" name="renderer">
+      <ownedParameter xmi:id="_zsC1UG8JEfCnZqImXRUoXA" name="Parameter" type="_yxEa0G8JEfCnZqImXRUoXA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_2HoG8G8JEfCnZqImXRUoXA" name="load">
+      <ownedParameter xmi:id="_25Mt0G8JEfCnZqImXRUoXA" name="file"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_yxEa0G8JEfCnZqImXRUoXA" name="QSvgRenderer">
+    <ownedAttribute xmi:id="__Gj_wm8oEfCnZqImXRUoXA" name="QSvgWidget" type="_wXD2gG8JEfCnZqImXRUoXA" association="__GiKkG8oEfCnZqImXRUoXA">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="__Gj_w28oEfCnZqImXRUoXA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="__Gj_xG8oEfCnZqImXRUoXA" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_Kh2vcG8KEfCnZqImXRUoXA" name="viewBox">
+      <ownedParameter xmi:id="_LHyHAG8KEfCnZqImXRUoXA" name="Parameter" type="_2IElIG8EEfCnZqImXRUoXA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_PdXnMG8KEfCnZqImXRUoXA" name="framesPerSecond">
+      <ownedParameter xmi:id="_P9AJgG8KEfCnZqImXRUoXA" name="int" type="_Rz6n0G8KEfCnZqImXRUoXA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_V0HG0G8KEfCnZqImXRUoXA" name="render">
+      <ownedParameter xmi:id="_XWii4G8KEfCnZqImXRUoXA" name="p" type="_-sCmwG8DEfCnZqImXRUoXA"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_66D7MG8JEfCnZqImXRUoXA" name="QSvgGenerator">
+    <generalization xmi:id="_khry4G8oEfCnZqImXRUoXA" general="_vdcOYG1-EfCnZqImXRUoXA"/>
+    <ownedOperation xmi:id="_7jaaMG8JEfCnZqImXRUoXA" name="paintEngine">
+      <ownedParameter xmi:id="_8Uq4AG8JEfCnZqImXRUoXA" name="Parameter" type="_tZYooG8CEfCnZqImXRUoXA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_-pxHIG8JEfCnZqImXRUoXA" name="setSize">
+      <ownedParameter xmi:id="__GBlUG8JEfCnZqImXRUoXA" name="size"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_AOj6sG8KEfCnZqImXRUoXA" name="setFileName">
+      <ownedParameter xmi:id="_BFN14G8KEfCnZqImXRUoXA" name="fileName"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_CSaBwG8KEfCnZqImXRUoXA" name="setOutputDevice">
+      <ownedParameter xmi:id="_CvPHsG8KEfCnZqImXRUoXA" name="outputDevice" type="_EaER0G8KEfCnZqImXRUoXA"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_IgzdsG8KEfCnZqImXRUoXA" name="setResolution">
+      <ownedParameter xmi:id="_I7LFgG8KEfCnZqImXRUoXA" name="dpi"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_EaER0G8KEfCnZqImXRUoXA" name="QIODevice"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_Rz6n0G8KEfCnZqImXRUoXA" name="int"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_aJlSQG8KEfCnZqImXRUoXA" name="QAbstractGraphicsShapeItem"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_dn9doG8KEfCnZqImXRUoXA" name="QGraphicsSvgItem">
+    <generalization xmi:id="_8rYWwG8oEfCnZqImXRUoXA" general="_aJlSQG8KEfCnZqImXRUoXA"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_f9iN4G8KEfCnZqImXRUoXA" name="QPrinter">
+    <generalization xmi:id="_idcqQG8oEfCnZqImXRUoXA" general="_vdcOYG1-EfCnZqImXRUoXA"/>
+    <ownedOperation xmi:id="_hnPWoG8KEfCnZqImXRUoXA" name="paintEngine">
+      <ownedParameter xmi:id="_iBoMkG8KEfCnZqImXRUoXA" name="Parameter" type="_tZYooG8CEfCnZqImXRUoXA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ke3rEG8KEfCnZqImXRUoXA" name="setOutputFormat"/>
+    <ownedOperation xmi:id="_kyi1AG8KEfCnZqImXRUoXA" name="setPrinterName"/>
+    <ownedOperation xmi:id="_mQeyoG8KEfCnZqImXRUoXA" name="setPageSize"/>
+    <ownedOperation xmi:id="_m1BqIG8KEfCnZqImXRUoXA" name="setOutputToFile"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_GOtjoG8oEfCnZqImXRUoXA" name="QWidget" isAbstract="true">
+    <generalization xmi:id="_vqky4G8oEfCnZqImXRUoXA" general="_vdcOYG1-EfCnZqImXRUoXA"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" xmi:id="__GiKkG8oEfCnZqImXRUoXA" memberEnd="__GixoG8oEfCnZqImXRUoXA __Gj_wm8oEfCnZqImXRUoXA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_CQXpUG8pEfCnZqImXRUoXA" visibility="public" client="_-sCmwG8DEfCnZqImXRUoXA" supplier="_vdcOYG1-EfCnZqImXRUoXA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_AvEJ0W-FEfC1YcoKCXeaJA" client="_miQ4cG8FEfCnZqImXRUoXA" supplier="_iwUGQG8EEfCnZqImXRUoXA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_CFJzAG-FEfC1YcoKCXeaJA" client="_66D7MG8JEfCnZqImXRUoXA" supplier="_miQ4cG8FEfCnZqImXRUoXA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_DNUU8G-FEfC1YcoKCXeaJA" client="_-sCmwG8DEfCnZqImXRUoXA" supplier="_f5IrgG8JEfCnZqImXRUoXA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_E4mLAG-FEfC1YcoKCXeaJA" client="_aJlSQG8KEfCnZqImXRUoXA" supplier="_f5IrgG8JEfCnZqImXRUoXA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_HL5qYG-FEfC1YcoKCXeaJA" client="_dn9doG8KEfCnZqImXRUoXA" supplier="_yxEa0G8JEfCnZqImXRUoXA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_Is7YQG-FEfC1YcoKCXeaJA" client="_GOtjoG8oEfCnZqImXRUoXA" supplier="_f3s6YG8EEfCnZqImXRUoXA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_JkSeEG-FEfC1YcoKCXeaJA" client="_op5lQG8DEfCnZqImXRUoXA" supplier="_-sCmwG8DEfCnZqImXRUoXA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_KX99wG-FEfC1YcoKCXeaJA" client="_-sCmwG8DEfCnZqImXRUoXA" supplier="_UE-IoG8DEfCnZqImXRUoXA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_O_qhoG-FEfC1YcoKCXeaJA" client="_-sCmwG8DEfCnZqImXRUoXA" supplier="_iwUGQG8EEfCnZqImXRUoXA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_TkTxgG-FEfC1YcoKCXeaJA" client="_yxEa0G8JEfCnZqImXRUoXA" supplier="_-sCmwG8DEfCnZqImXRUoXA"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_9HRuwHF8EfCqq7WSUnjwEA" name="QGLWidget">
+    <generalization xmi:id="_OLzmwHF9EfCqq7WSUnjwEA" general="_GOtjoG8oEfCnZqImXRUoXA"/>
+    <ownedOperation xmi:id="_FIt1oHF9EfCqq7WSUnjwEA" name="paintEngine">
+      <ownedParameter xmi:id="_GRW4sHF9EfCqq7WSUnjwEA" name="Parameter" type="_tZYooG8CEfCnZqImXRUoXA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_KHO-EHF9EfCqq7WSUnjwEA" name="updateGL"/>
+    <ownedOperation xmi:id="_KhvIwHF9EfCqq7WSUnjwEA" name="initializeGL"/>
+    <ownedOperation xmi:id="_LdCTYHF9EfCqq7WSUnjwEA" name="resizeGL"/>
+    <ownedOperation xmi:id="_MOT_UHF9EfCqq7WSUnjwEA" name="paintGL"/>
+  </packagedElement>
+</uml:Model>

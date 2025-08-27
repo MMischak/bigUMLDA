@@ -1,0 +1,156 @@
+@startuml
+class QObject {
+  # timerEvent()
+  # childEvent()
+  + event()
+}
+
+class QEvent {
+  + accept()
+  + ignore()
+}
+
+QObject ..> QEvent
+
+class QTimer {
+  - inter: int
+  + timerId()
+  + setInterval()
+  + start()
+  + stop()
+  # timeout()
+}
+QTimer --|> QObject
+
+class QEventLoop {
+  + processEvents()
+  + exec()
+  + isRunning()
+  + wakeUp()
+  + quit()
+}
+QEventLoop --|> QObject
+
+class QAction {
+  + setIconText(text)
+  + setToolTip(tip)
+  + setStatusTip(statusTip)
+  + setMenu(menu: QMenu)
+  + isToggleAction(): bool
+}
+QAction --|> QObject
+
+class QActionEvent {
+  - act: QAction
+  - bef: QAction
+  + action(): QAction
+  + before(): QAction
+}
+QActionEvent --|> QEvent
+
+class QMoveEvent {
+  # p: QPoint
+  # oldp: QPoint
+  + pos()
+  + oldPos()
+}
+QMoveEvent --|> QEvent
+
+class QPaintEvent {
+  # m_rect: QRect
+  # m_region: QRegion
+  m_erased: bool
+  + rect()
+  + region()
+  + setErased()
+}
+QPaintEvent --|> QEvent
+
+class QInputEvent {
+  # modState
+  + modifiers()
+}
+QInputEvent --|> QEvent
+
+class QWidget {
+  # mouseMoveEvent()
+  + event()
+  + show()
+  + paintEvent()
+}
+
+class QToolBarItem {
+  + action: QAction
+  + customWidget: bool
+}
+
+class QKeyMapper {
+  + sendKeyEvent()
+}
+QKeyMapper --|> QObject
+
+QObject ..> QEvent
+QWidget ..> QPaintEvent
+QKeyMapper ..> QKeyEvent
+
+class QKeyEvent {
+  # k: int
+  + key()
+  + text()
+  + isAutoRepeat()
+  + ascii()
+}
+QKeyEvent --|> QInputEvent
+
+class QWheelEvent {
+  # mouseState
+  + delta(): int
+  + pos(): QPoint
+}
+QWheelEvent --|> QInputEvent
+
+class QContextMenuEvent {
+  # p: QPoint
+  # gp: QPoint
+  + x(): int
+  + y(): int
+  + pos()
+  + reason(): Reason
+}
+QContextMenuEvent --|> QInputEvent
+
+class QTabletEvent {
+  + pos(): QPoint
+  + x(): int
+  + y(): int
+}
+QTabletEvent --|> QInputEvent
+
+class QMouseEvent {
+  # mouseState
+  + pos(): QPoint
+  + x(): int
+  + y(): int
+}
+QMouseEvent --|> QInputEvent
+
+class QPoint {
+  - xp: int
+  - yp: int
+  + manhattenLength(): int
+}
+
+QActionEvent "1" *-- "1" QAction
+QAction "1" *-- "1" QToolBarItem
+QPoint "1" -- "1" QMouseEvent
+QPoint "1" -- "1" QTabletEvent
+QPoint "1" -- "1" QContextMenuEvent
+QPoint "1" -- "1" QWheelEvent
+
+class QRect <<DataType>>
+class QRegion <<DataType>>
+class QMenu <<DataType>>
+class Reason <<DataType>>
+class bool <<PrimitiveType>>
+class int <<PrimitiveType>>
+@enduml

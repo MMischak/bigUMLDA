@@ -1,0 +1,130 @@
+@startuml
+
+' Abstract classes
+abstract class QPaintDevice {
+  # Painters : int [1..1]
+  + paintEngine() : QPaintEngine
+  + width()
+  + height()
+  + numColors()
+}
+
+abstract class QWidget
+
+' Concrete classes
+class QPaintEngine
+
+class QBrush {
+  + setStyle(style)
+  + setTransform(matrix)
+  + setTexture(pixmap)
+  + setColor(color)
+}
+
+class QGraphicsView {
+  # viewportEvent()
+  # scrollContentsBy()
+  # drawItems()
+}
+
+class QStylePainter
+class QPainter {
+  + paintEngine()
+}
+
+class QStyle
+
+class QImage
+
+class QPolygon
+
+class QPixmap {
+  - data() : QPixmapData
+  + paintEngine() : QPaintEngine
+  + size() : QSize
+  + rect() : QRect
+  + mask() : QBitmap
+  + fromImage() : QPixmap
+  + data_ptr() : DataPtr
+}
+
+class QSize
+class QRect
+class QBitmap
+class DataPtr
+class QPixmapData
+class QMatrix
+
+class QPen {
+  + setColor(color)
+  + setBrush(brush)
+  + isSolid() : bool
+}
+
+class bool
+
+class QSvgWidget {
+  + renderer() : QSvgRenderer
+  + load(file)
+}
+
+class QSvgRenderer {
+  + viewBox() : QRect
+  + framesPerSecond() : int
+  + render(p : QPainter)
+}
+
+class QSvgGenerator {
+  + paintEngine() : QPaintEngine
+  + setSize(size)
+  + setFileName(fileName)
+  + setOutputDevice(outputDevice : QIODevice)
+  + setResolution(dpi)
+}
+
+class QIODevice
+class int
+class QAbstractGraphicsShapeItem
+class QGraphicsSvgItem
+class QPrinter {
+  + paintEngine() : QPaintEngine
+  + setOutputFormat()
+  + setPrinterName()
+  + setPageSize()
+  + setOutputToFile()
+}
+class QGLWidget {
+  + paintEngine() : QPaintEngine
+  + updateGL()
+  + initializeGL()
+  + resizeGL()
+  + paintGL()
+}
+
+' Inheritance (Generalization)
+QStylePainter    --|> QPainter
+QImage           --|> QPaintDevice
+QPixmap          --|> QPaintDevice
+QSvgGenerator    --|> QPaintDevice
+QPrinter         --|> QPaintDevice
+QSvgWidget       --|> QWidget
+QGraphicsSvgItem --|> QAbstractGraphicsShapeItem
+QGLWidget        --|> QWidget
+
+' Association
+QSvgWidget "1" o-- "1" QSvgRenderer
+
+' Dependencies
+QPainter                  ..> QPaintDevice
+QMatrix                   ..> QPolygon
+QSvgGenerator             ..> QMatrix
+QPainter                  ..> QPen
+QAbstractGraphicsShapeItem ..> QPen
+QGraphicsSvgItem          ..> QSvgRenderer
+QWidget                   ..> QStyle
+QGraphicsView             ..> QPainter
+QPainter                  ..> QBrush
+QPainter                  ..> QPolygon
+QSvgRenderer              ..> QPainter
+
+@enduml

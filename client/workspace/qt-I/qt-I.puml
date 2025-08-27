@@ -1,0 +1,165 @@
+@startuml
+
+abstract class QPaintDevice {
+  # painters
+  + paintEngine() : QPaintEngine
+  + width() : int
+  + height() : int
+  + numColors() : int
+}
+
+abstract class QImageIOHandler {
+  + setDevice(device : QIODevice)
+  + setFormat(format)
+  + read(image : QImage) : bool
+  + write(image) : bool
+}
+
+abstract class QImageIOPlugin {
+  + capabilities()
+  + create()
+  + keys()
+}
+
+class QObject
+
+class QHttp
+class QFtp
+
+class QimageWriter {
+  + setFormat(format)
+  + setDevice(device : QIODevice)
+  + setFileName(fileName)
+  + write(image) : bool
+}
+
+class QIODevice {
+  + isReadable() : bool
+  + isWriteable() : bool
+  + open(mode : OpenMode) : bool
+  + close()
+  + seek(pos) : bool
+  + readBlock(data : char, maxlen) : long
+  + writeBlock(data : char, len) : long
+}
+
+class QImageReader {
+  + setFormat(format)
+  + setDevice(device : QIODevice)
+  + setFileName(fileName)
+  + read() : QImage
+}
+
+class QImage {
+  + copy()
+  + convertToFormat()
+  + width()
+  + height()
+  + size()
+  + load()
+  + save()
+}
+
+class QClipboard {
+  + setText()
+  + setImage()
+  + setPixmap()
+}
+
+class QPixmap {
+  - data : QPixmapData
+  + size() : QSize
+  + rect() : QRect
+  + mask() : QBitmap
+  {static} + fromimage() : QPixmap
+  + data_ptr() : DataPtr
+}
+
+class QDragManager {
+  + object : QDrag
+  + eventloop : QEventLoop
+  + dropData : QDropData
+  - pm_cursor : QPixmap
+  - currentDropTarget : QWidget
+  + source()
+  + dragCursor()
+}
+
+class QBuffer {
+  + setBuffer()
+  + setData()
+  + open()
+  + close()
+  + seek()
+  # readData()
+}
+
+class QFile {
+  + setFileName()
+  + rename()
+  + copy()
+  + open()
+  + close()
+  + size()
+  + pos()
+  + seek()
+  # readData()
+  # readLineData()
+}
+
+class QProcess {
+  + setReadChannel()
+  + setEnvironment()
+  {static} + excecute()
+  + terminate()
+  + kill()
+  # readData()
+}
+
+class QAbstractSocket {
+  + connectToHost()
+  + readBufferSize()
+  # readData()
+}
+
+class QTcpSocket {
+  # readData()
+}
+
+class QPaintEngine
+class QPixmapData
+class DataPtr
+class QSize
+class QRect
+class QBitmap
+class QDrag
+class QEventLoop
+class QDropData
+class QWidget
+class OpenMode
+class char
+class long
+class int
+class bool
+
+QImageIOPlugin --|> QObject
+QHttp --|> QObject
+QFtp --|> QObject
+QBuffer --|> QIODevice
+QFile --|> QIODevice
+QProcess --|> QIODevice
+QAbstractSocket --|> QIODevice
+QTcpSocket --|> QAbstractSocket
+QImage --|> QPaintDevice
+
+QImageIOHandler "1" -- "1" QImageIOPlugin
+QPixmap "1" -- "1" QDragManager
+
+QImageIOHandler ..> QImage
+QImageIOHandler ..> QIODevice
+QImageReader ..> QIODevice
+QPixmap ..> QImage
+QClipboard ..> QPixmap
+QimageWriter ..> QIODevice
+
+@enduml

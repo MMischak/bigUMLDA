@@ -1,0 +1,1434 @@
+{
+  "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Model",
+  "id": "_2pChEH9TEfC_JsjicJ0oZw",
+  "packagedElement": [
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+      "id": "_3qpIAH9TEfC_JsjicJ0oZw",
+      "name": "QObject",
+      "ownedOperation": [
+        {
+          "id": "_86vTMH9UEfC_JsjicJ0oZw",
+          "name": "timerEvent",
+          "visibility": "protected"
+        },
+        {
+          "id": "_-LDEgH9UEfC_JsjicJ0oZw",
+          "name": "childEvent",
+          "visibility": "protected"
+        },
+        {
+          "id": "__SnwkH9UEfC_JsjicJ0oZw",
+          "name": "event"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+      "id": "_4KXJ4H9TEfC_JsjicJ0oZw",
+      "name": "QEvent",
+      "ownedOperation": [
+        {
+          "id": "_AL0CYH9VEfC_JsjicJ0oZw",
+          "name": "accept"
+        },
+        {
+          "id": "_A1l_MH9VEfC_JsjicJ0oZw",
+          "name": "ignore"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Dependency",
+      "id": "_4r6-0H9TEfC_JsjicJ0oZw",
+      "client": [
+        {
+          "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+          "$ref": "_3qpIAH9TEfC_JsjicJ0oZw"
+        }
+      ],
+      "supplier": [
+        {
+          "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+          "$ref": "_4KXJ4H9TEfC_JsjicJ0oZw"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+      "id": "_5ILdAH9TEfC_JsjicJ0oZw",
+      "name": "QTimer",
+      "generalization": [
+        {
+          "id": "_6bA94H9TEfC_JsjicJ0oZw",
+          "general": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_3qpIAH9TEfC_JsjicJ0oZw"
+          }
+        }
+      ],
+      "ownedAttribute": [
+        {
+          "id": "_eNLkQH9VEfC_JsjicJ0oZw",
+          "name": "inter",
+          "visibility": "private",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType",
+            "$ref": "_aMhyQH9VEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_eNMLUH9VEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_eNMLUX9VEfC_JsjicJ0oZw",
+            "value": 1
+          }
+        }
+      ],
+      "ownedOperation": [
+        {
+          "id": "_gUsDUH9VEfC_JsjicJ0oZw",
+          "name": "timerId"
+        },
+        {
+          "id": "_hOSk0H9VEfC_JsjicJ0oZw",
+          "name": "setInterval"
+        },
+        {
+          "id": "_iT5iAH9VEfC_JsjicJ0oZw",
+          "name": "start"
+        },
+        {
+          "id": "_iqLUAH9VEfC_JsjicJ0oZw",
+          "name": "stop"
+        },
+        {
+          "id": "_jGcZQH9VEfC_JsjicJ0oZw",
+          "name": "timeout",
+          "visibility": "protected"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+      "id": "_5nYhgH9TEfC_JsjicJ0oZw",
+      "name": "QEventLoop",
+      "generalization": [
+        {
+          "id": "_60AssH9TEfC_JsjicJ0oZw",
+          "general": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_3qpIAH9TEfC_JsjicJ0oZw"
+          }
+        }
+      ],
+      "ownedOperation": [
+        {
+          "id": "_l1-hoH9VEfC_JsjicJ0oZw",
+          "name": "processEvents"
+        },
+        {
+          "id": "_mj_eMH9VEfC_JsjicJ0oZw",
+          "name": "exec"
+        },
+        {
+          "id": "_nFlvYH9VEfC_JsjicJ0oZw",
+          "name": "isRunning"
+        },
+        {
+          "id": "_nqa6wH9VEfC_JsjicJ0oZw",
+          "name": "wakeUp"
+        },
+        {
+          "id": "_oanooH9VEfC_JsjicJ0oZw",
+          "name": "quit"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+      "id": "_57Ij8H9TEfC_JsjicJ0oZw",
+      "name": "QAction",
+      "generalization": [
+        {
+          "id": "_7RhIEH9TEfC_JsjicJ0oZw",
+          "general": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_3qpIAH9TEfC_JsjicJ0oZw"
+          }
+        }
+      ],
+      "ownedAttribute": [
+        {
+          "id": "_tF3sRH9UEfC_JsjicJ0oZw",
+          "name": "Class",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_8blHcH9TEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_tF3sRX9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_tF4TUH9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "association": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Association",
+            "$ref": "_tF3sQH9UEfC_JsjicJ0oZw"
+          }
+        },
+        {
+          "id": "_ts0-kH9UEfC_JsjicJ0oZw",
+          "name": "Class",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_A4uoMH9UEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_ts0-kX9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_ts0-kn9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "aggregation": "composite",
+          "association": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Association",
+            "$ref": "_tszwcH9UEfC_JsjicJ0oZw"
+          }
+        }
+      ],
+      "ownedOperation": [
+        {
+          "id": "_aYqL4IKZEfCcsLDfcub4jw",
+          "name": "setIconText",
+          "ownedParameter": [
+            {
+              "id": "_niQfYIKZEfCcsLDfcub4jw",
+              "name": "text"
+            }
+          ]
+        },
+        {
+          "id": "_bro2sIKZEfCcsLDfcub4jw",
+          "name": "setToolTip",
+          "ownedParameter": [
+            {
+              "id": "_sC6nIIKZEfCcsLDfcub4jw",
+              "name": "tip"
+            }
+          ]
+        },
+        {
+          "id": "_cWiN0IKZEfCcsLDfcub4jw",
+          "name": "setStatusTip",
+          "ownedParameter": [
+            {
+              "id": "_s2agoIKZEfCcsLDfcub4jw",
+              "name": "statusTip"
+            }
+          ]
+        },
+        {
+          "id": "_dNiHQIKZEfCcsLDfcub4jw",
+          "name": "setMenu",
+          "ownedParameter": [
+            {
+              "id": "_uEqccIKZEfCcsLDfcub4jw",
+              "name": "menu",
+              "visibility": "public",
+              "type": {
+                "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//DataType",
+                "$ref": "_l6YioIKZEfCcsLDfcub4jw"
+              },
+              "effect": "create"
+            }
+          ]
+        },
+        {
+          "id": "_dsbCsIKZEfCcsLDfcub4jw",
+          "name": "isToggleAction",
+          "ownedParameter": [
+            {
+              "id": "_2F02gIKZEfCcsLDfcub4jw",
+              "name": "Parameter",
+              "type": {
+                "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType",
+                "$ref": "_PiuiAH9VEfC_JsjicJ0oZw"
+              },
+              "direction": "return"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+      "id": "_8blHcH9TEfC_JsjicJ0oZw",
+      "name": "QActionEvent",
+      "generalization": [
+        {
+          "id": "_9Zcd4H9TEfC_JsjicJ0oZw",
+          "general": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_4KXJ4H9TEfC_JsjicJ0oZw"
+          }
+        }
+      ],
+      "ownedAttribute": [
+        {
+          "id": "_tF3sQX9UEfC_JsjicJ0oZw",
+          "name": "Class",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_57Ij8H9TEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_tF3sQn9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_tF3sQ39UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "aggregation": "composite",
+          "association": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Association",
+            "$ref": "_tF3sQH9UEfC_JsjicJ0oZw"
+          }
+        },
+        {
+          "id": "_FUwCUIKbEfCcsLDfcub4jw",
+          "name": "act",
+          "visibility": "private",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_57Ij8H9TEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_FUwCUYKbEfCcsLDfcub4jw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_FUwCUoKbEfCcsLDfcub4jw",
+            "value": 1
+          }
+        },
+        {
+          "id": "_Fvv8QIKbEfCcsLDfcub4jw",
+          "name": "bef",
+          "visibility": "private",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_57Ij8H9TEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_FvwjUIKbEfCcsLDfcub4jw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_FvwjUYKbEfCcsLDfcub4jw",
+            "value": 1
+          }
+        }
+      ],
+      "ownedOperation": [
+        {
+          "id": "_GaF5wIKbEfCcsLDfcub4jw",
+          "name": "action",
+          "ownedParameter": [
+            {
+              "id": "_KKQ_wIKbEfCcsLDfcub4jw",
+              "name": "Parameter",
+              "type": {
+                "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+                "$ref": "_57Ij8H9TEfC_JsjicJ0oZw"
+              },
+              "direction": "return"
+            }
+          ]
+        },
+        {
+          "id": "_G6PZcIKbEfCcsLDfcub4jw",
+          "name": "before",
+          "ownedParameter": [
+            {
+              "id": "_Lx32wIKbEfCcsLDfcub4jw",
+              "name": "Parameter",
+              "type": {
+                "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+                "$ref": "_57Ij8H9TEfC_JsjicJ0oZw"
+              },
+              "direction": "return"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+      "id": "_8sZKoH9TEfC_JsjicJ0oZw",
+      "name": "QMoveEvent",
+      "generalization": [
+        {
+          "id": "_-J3OMH9TEfC_JsjicJ0oZw",
+          "general": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_4KXJ4H9TEfC_JsjicJ0oZw"
+          }
+        }
+      ],
+      "ownedAttribute": [
+        {
+          "id": "_S2w10IKbEfCcsLDfcub4jw",
+          "name": "p",
+          "visibility": "protected",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_GGLkgH9UEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_S2w10YKbEfCcsLDfcub4jw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_S2w10oKbEfCcsLDfcub4jw",
+            "value": 1
+          }
+        },
+        {
+          "id": "_TLoSkIKbEfCcsLDfcub4jw",
+          "name": "oldp",
+          "visibility": "protected",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_GGLkgH9UEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_TLoSkYKbEfCcsLDfcub4jw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_TLoSkoKbEfCcsLDfcub4jw",
+            "value": 1
+          }
+        }
+      ],
+      "ownedOperation": [
+        {
+          "id": "_We7PUIKbEfCcsLDfcub4jw",
+          "name": "pos"
+        },
+        {
+          "id": "_W9zjsIKbEfCcsLDfcub4jw",
+          "name": "oldPos"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+      "id": "_87n5cH9TEfC_JsjicJ0oZw",
+      "name": "QPaintEvent",
+      "generalization": [
+        {
+          "id": "_-lKqIH9TEfC_JsjicJ0oZw",
+          "general": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_4KXJ4H9TEfC_JsjicJ0oZw"
+          }
+        }
+      ],
+      "ownedAttribute": [
+        {
+          "id": "_RJcoMH9VEfC_JsjicJ0oZw",
+          "name": "m_rect",
+          "visibility": "protected",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//DataType",
+            "$ref": "_FpSXsH9VEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_RJcoMX9VEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_RJcoMn9VEfC_JsjicJ0oZw",
+            "value": 1
+          }
+        },
+        {
+          "id": "_UUdLoH9VEfC_JsjicJ0oZw",
+          "name": "m_region",
+          "visibility": "protected",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//DataType",
+            "$ref": "_GshWUH9VEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_UUdysH9VEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_UUdysX9VEfC_JsjicJ0oZw",
+            "value": 1
+          }
+        },
+        {
+          "id": "_WSMDoH9VEfC_JsjicJ0oZw",
+          "name": "m_erased",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType",
+            "$ref": "_PiuiAH9VEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_WSMDoX9VEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_WSMDon9VEfC_JsjicJ0oZw",
+            "value": 1
+          }
+        }
+      ],
+      "ownedOperation": [
+        {
+          "id": "_CpNR4H9VEfC_JsjicJ0oZw",
+          "name": "rect"
+        },
+        {
+          "id": "_DKNtMH9VEfC_JsjicJ0oZw",
+          "name": "region"
+        },
+        {
+          "id": "_DuZ_YH9VEfC_JsjicJ0oZw",
+          "name": "setErased"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+      "id": "__xzcYH9TEfC_JsjicJ0oZw",
+      "name": "QInputEvent",
+      "generalization": [
+        {
+          "id": "_DN-oUH9UEfC_JsjicJ0oZw",
+          "general": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_4KXJ4H9TEfC_JsjicJ0oZw"
+          }
+        }
+      ],
+      "ownedAttribute": [
+        {
+          "id": "_68P9cIKaEfCcsLDfcub4jw",
+          "name": "modState",
+          "visibility": "protected",
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_68P9cYKaEfCcsLDfcub4jw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_68P9coKaEfCcsLDfcub4jw",
+            "value": 1
+          }
+        }
+      ],
+      "ownedOperation": [
+        {
+          "id": "_7i5GsIKaEfCcsLDfcub4jw",
+          "name": "modifiers"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+      "id": "_AVoiMH9UEfC_JsjicJ0oZw",
+      "name": "QWidget",
+      "ownedOperation": [
+        {
+          "id": "_ZUMMQIKbEfCcsLDfcub4jw",
+          "name": "mouseMoveEvent",
+          "visibility": "protected"
+        },
+        {
+          "id": "_aoVUsIKbEfCcsLDfcub4jw",
+          "name": "event"
+        },
+        {
+          "id": "_bB32EIKbEfCcsLDfcub4jw",
+          "name": "show"
+        },
+        {
+          "id": "_bkSmoIKbEfCcsLDfcub4jw",
+          "name": "paintEvent"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+      "id": "_A4uoMH9UEfC_JsjicJ0oZw",
+      "name": "QToolBarItem",
+      "ownedAttribute": [
+        {
+          "id": "_ts0-k39UEfC_JsjicJ0oZw",
+          "name": "Class",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_57Ij8H9TEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_ts1loH9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_ts1loX9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "association": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Association",
+            "$ref": "_tszwcH9UEfC_JsjicJ0oZw"
+          }
+        },
+        {
+          "id": "_AKOeMIKbEfCcsLDfcub4jw",
+          "name": "action",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_57Ij8H9TEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_AKOeMYKbEfCcsLDfcub4jw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_AKOeMoKbEfCcsLDfcub4jw",
+            "value": 1
+          }
+        },
+        {
+          "id": "_CW3U4IKbEfCcsLDfcub4jw",
+          "name": "customWidget",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType",
+            "$ref": "_PiuiAH9VEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_CW378IKbEfCcsLDfcub4jw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_CW378YKbEfCcsLDfcub4jw",
+            "value": 1
+          }
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+      "id": "_BRr6wH9UEfC_JsjicJ0oZw",
+      "name": "QKeyMapper",
+      "generalization": [
+        {
+          "id": "_wBV-4H9UEfC_JsjicJ0oZw",
+          "general": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_3qpIAH9TEfC_JsjicJ0oZw"
+          }
+        }
+      ],
+      "ownedOperation": [
+        {
+          "id": "_71HUkIKZEfCcsLDfcub4jw",
+          "name": "sendKeyEvent"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Dependency",
+      "id": "_CRbggH9UEfC_JsjicJ0oZw",
+      "client": [
+        {
+          "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+          "$ref": "_AVoiMH9UEfC_JsjicJ0oZw"
+        }
+      ],
+      "supplier": [
+        {
+          "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+          "$ref": "_87n5cH9TEfC_JsjicJ0oZw"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+      "id": "_EPo5oH9UEfC_JsjicJ0oZw",
+      "name": "QKeyEvent",
+      "generalization": [
+        {
+          "id": "_0wRMIH9UEfC_JsjicJ0oZw",
+          "general": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "__xzcYH9TEfC_JsjicJ0oZw"
+          }
+        }
+      ],
+      "ownedAttribute": [
+        {
+          "id": "_-NBnIIKZEfCcsLDfcub4jw",
+          "name": "k",
+          "visibility": "protected",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType",
+            "$ref": "_aMhyQH9VEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_-NBnIYKZEfCcsLDfcub4jw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_-NBnIoKZEfCcsLDfcub4jw",
+            "value": 1
+          }
+        }
+      ],
+      "ownedOperation": [
+        {
+          "id": "__ydT4IKZEfCcsLDfcub4jw",
+          "name": "key"
+        },
+        {
+          "id": "_AGId0IKaEfCcsLDfcub4jw",
+          "name": "text"
+        },
+        {
+          "id": "_AixWgIKaEfCcsLDfcub4jw",
+          "name": "isAutoRepeat"
+        },
+        {
+          "id": "_Bmk84IKaEfCcsLDfcub4jw",
+          "name": "ascii"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+      "id": "_ErhkYH9UEfC_JsjicJ0oZw",
+      "name": "QWheelEvent",
+      "generalization": [
+        {
+          "id": "_0FhmAH9UEfC_JsjicJ0oZw",
+          "general": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "__xzcYH9TEfC_JsjicJ0oZw"
+          }
+        }
+      ],
+      "ownedAttribute": [
+        {
+          "id": "_4DkI4X9UEfC_JsjicJ0oZw",
+          "name": "Class",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_GGLkgH9UEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_4DkI4n9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_4DkI439UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "association": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Association",
+            "$ref": "_4Di6wH9UEfC_JsjicJ0oZw"
+          }
+        },
+        {
+          "id": "_EXzuYIKaEfCcsLDfcub4jw",
+          "name": "mouseState",
+          "visibility": "protected",
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_EX0VcIKaEfCcsLDfcub4jw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_EX0VcYKaEfCcsLDfcub4jw",
+            "value": 1
+          }
+        }
+      ],
+      "ownedOperation": [
+        {
+          "id": "_FuChgIKaEfCcsLDfcub4jw",
+          "name": "delta",
+          "ownedParameter": [
+            {
+              "id": "_HmvIgIKaEfCcsLDfcub4jw",
+              "name": "Parameter",
+              "type": {
+                "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType",
+                "$ref": "_aMhyQH9VEfC_JsjicJ0oZw"
+              },
+              "direction": "return"
+            }
+          ]
+        },
+        {
+          "id": "_GbMicIKaEfCcsLDfcub4jw",
+          "name": "pos",
+          "ownedParameter": [
+            {
+              "id": "_JJIvYIKaEfCcsLDfcub4jw",
+              "name": "Parameter",
+              "type": {
+                "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+                "$ref": "_GGLkgH9UEfC_JsjicJ0oZw"
+              },
+              "direction": "return"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+      "id": "_E9kWoH9UEfC_JsjicJ0oZw",
+      "name": "QContextMenuEvent",
+      "generalization": [
+        {
+          "id": "_zkjm8H9UEfC_JsjicJ0oZw",
+          "general": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "__xzcYH9TEfC_JsjicJ0oZw"
+          }
+        }
+      ],
+      "ownedAttribute": [
+        {
+          "id": "_3jjMEn9UEfC_JsjicJ0oZw",
+          "name": "Class",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_GGLkgH9UEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_3jjME39UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_3jjMFH9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "association": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Association",
+            "$ref": "_3jilAH9UEfC_JsjicJ0oZw"
+          }
+        },
+        {
+          "id": "_MFH_YIKaEfCcsLDfcub4jw",
+          "name": "p",
+          "visibility": "protected",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_GGLkgH9UEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_MFH_YYKaEfCcsLDfcub4jw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_MFH_YoKaEfCcsLDfcub4jw",
+            "value": 1
+          }
+        },
+        {
+          "id": "_MevZQIKaEfCcsLDfcub4jw",
+          "name": "gp",
+          "visibility": "protected",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_GGLkgH9UEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_MewAUIKaEfCcsLDfcub4jw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_MewAUYKaEfCcsLDfcub4jw",
+            "value": 1
+          }
+        }
+      ],
+      "ownedOperation": [
+        {
+          "id": "_QEMdAIKaEfCcsLDfcub4jw",
+          "name": "x",
+          "ownedParameter": [
+            {
+              "id": "_S1e44IKaEfCcsLDfcub4jw",
+              "name": "Parameter",
+              "type": {
+                "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType",
+                "$ref": "_aMhyQH9VEfC_JsjicJ0oZw"
+              },
+              "direction": "return"
+            }
+          ]
+        },
+        {
+          "id": "_QsM4MIKaEfCcsLDfcub4jw",
+          "name": "y",
+          "ownedParameter": [
+            {
+              "id": "_VLREgIKaEfCcsLDfcub4jw",
+              "name": "Parameter",
+              "type": {
+                "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType",
+                "$ref": "_aMhyQH9VEfC_JsjicJ0oZw"
+              },
+              "direction": "return"
+            }
+          ]
+        },
+        {
+          "id": "_RCtTsIKaEfCcsLDfcub4jw",
+          "name": "pos",
+          "ownedParameter": [
+            {
+              "id": "_W84MEIKaEfCcsLDfcub4jw",
+              "name": "Parameter",
+              "direction": "return"
+            }
+          ]
+        },
+        {
+          "id": "_RigOEIKaEfCcsLDfcub4jw",
+          "name": "reason",
+          "ownedParameter": [
+            {
+              "id": "_a9-C8IKaEfCcsLDfcub4jw",
+              "name": "Parameter",
+              "type": {
+                "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//DataType",
+                "$ref": "_ZVMuUIKaEfCcsLDfcub4jw"
+              },
+              "direction": "return"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+      "id": "_Fc26sH9UEfC_JsjicJ0oZw",
+      "name": "QTabletEvent",
+      "generalization": [
+        {
+          "id": "_y_UL4H9UEfC_JsjicJ0oZw",
+          "general": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "__xzcYH9TEfC_JsjicJ0oZw"
+          }
+        }
+      ],
+      "ownedAttribute": [
+        {
+          "id": "_21i2lH9UEfC_JsjicJ0oZw",
+          "name": "Class",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_GGLkgH9UEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_21i2lX9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_21i2ln9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "association": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Association",
+            "$ref": "_21i2kH9UEfC_JsjicJ0oZw"
+          }
+        }
+      ],
+      "ownedOperation": [
+        {
+          "id": "_eUt8UIKaEfCcsLDfcub4jw",
+          "name": "pos",
+          "ownedParameter": [
+            {
+              "id": "_ioI5UIKaEfCcsLDfcub4jw",
+              "name": "Parameter",
+              "type": {
+                "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+                "$ref": "_GGLkgH9UEfC_JsjicJ0oZw"
+              },
+              "direction": "return"
+            }
+          ]
+        },
+        {
+          "id": "_etGAEIKaEfCcsLDfcub4jw",
+          "name": "x",
+          "ownedParameter": [
+            {
+              "id": "_gsnAwIKaEfCcsLDfcub4jw",
+              "name": "Parameter",
+              "type": {
+                "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType",
+                "$ref": "_aMhyQH9VEfC_JsjicJ0oZw"
+              },
+              "direction": "return"
+            }
+          ]
+        },
+        {
+          "id": "_fHxw8IKaEfCcsLDfcub4jw",
+          "name": "y",
+          "ownedParameter": [
+            {
+              "id": "_fma0wIKaEfCcsLDfcub4jw",
+              "name": "Parameter",
+              "type": {
+                "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType",
+                "$ref": "_aMhyQH9VEfC_JsjicJ0oZw"
+              },
+              "direction": "return"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+      "id": "_FwnkMH9UEfC_JsjicJ0oZw",
+      "name": "QMouseEvent",
+      "generalization": [
+        {
+          "id": "_yguLYH9UEfC_JsjicJ0oZw",
+          "general": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "__xzcYH9TEfC_JsjicJ0oZw"
+          }
+        }
+      ],
+      "ownedAttribute": [
+        {
+          "id": "_1gOCZH9UEfC_JsjicJ0oZw",
+          "name": "Class",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_GGLkgH9UEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_1gOCZX9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_1gOCZn9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "association": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Association",
+            "$ref": "_1gOCYH9UEfC_JsjicJ0oZw"
+          }
+        },
+        {
+          "id": "_k6L0cIKaEfCcsLDfcub4jw",
+          "name": "mouseState",
+          "visibility": "protected",
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_k6L0cYKaEfCcsLDfcub4jw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_k6MbgIKaEfCcsLDfcub4jw",
+            "value": 1
+          }
+        }
+      ],
+      "ownedOperation": [
+        {
+          "id": "_mA3IoIKaEfCcsLDfcub4jw",
+          "name": "pos",
+          "ownedParameter": [
+            {
+              "id": "_nalUoIKaEfCcsLDfcub4jw",
+              "name": "Parameter",
+              "type": {
+                "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+                "$ref": "_GGLkgH9UEfC_JsjicJ0oZw"
+              },
+              "direction": "return"
+            }
+          ]
+        },
+        {
+          "id": "_mctXIIKaEfCcsLDfcub4jw",
+          "name": "x",
+          "ownedParameter": [
+            {
+              "id": "_pCd4cIKaEfCcsLDfcub4jw",
+              "name": "Parameter",
+              "type": {
+                "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType",
+                "$ref": "_aMhyQH9VEfC_JsjicJ0oZw"
+              },
+              "direction": "return"
+            }
+          ]
+        },
+        {
+          "id": "_myJboIKaEfCcsLDfcub4jw",
+          "name": "y",
+          "ownedParameter": [
+            {
+              "id": "_qSRTcIKaEfCcsLDfcub4jw",
+              "name": "Parameter",
+              "type": {
+                "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType",
+                "$ref": "_aMhyQH9VEfC_JsjicJ0oZw"
+              },
+              "direction": "return"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+      "id": "_GGLkgH9UEfC_JsjicJ0oZw",
+      "name": "QPoint",
+      "ownedAttribute": [
+        {
+          "id": "_1gOCYX9UEfC_JsjicJ0oZw",
+          "name": "Class",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_FwnkMH9UEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_1gOCYn9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_1gOCY39UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "association": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Association",
+            "$ref": "_1gOCYH9UEfC_JsjicJ0oZw"
+          }
+        },
+        {
+          "id": "_21i2kX9UEfC_JsjicJ0oZw",
+          "name": "Class",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_Fc26sH9UEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_21i2kn9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_21i2k39UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "association": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Association",
+            "$ref": "_21i2kH9UEfC_JsjicJ0oZw"
+          }
+        },
+        {
+          "id": "_3jilAX9UEfC_JsjicJ0oZw",
+          "name": "Class",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_E9kWoH9UEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_3jjMEH9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_3jjMEX9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "association": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Association",
+            "$ref": "_3jilAH9UEfC_JsjicJ0oZw"
+          }
+        },
+        {
+          "id": "_4Djh0H9UEfC_JsjicJ0oZw",
+          "name": "Class",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+            "$ref": "_ErhkYH9UEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_4Djh0X9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_4DkI4H9UEfC_JsjicJ0oZw",
+            "value": 1
+          },
+          "association": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Association",
+            "$ref": "_4Di6wH9UEfC_JsjicJ0oZw"
+          }
+        },
+        {
+          "id": "_uYx10IKaEfCcsLDfcub4jw",
+          "name": "xp",
+          "visibility": "private",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType",
+            "$ref": "_aMhyQH9VEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_uYx10YKaEfCcsLDfcub4jw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_uYx10oKaEfCcsLDfcub4jw",
+            "value": 1
+          }
+        },
+        {
+          "id": "_u01fsIKaEfCcsLDfcub4jw",
+          "name": "yp",
+          "visibility": "private",
+          "type": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType",
+            "$ref": "_aMhyQH9VEfC_JsjicJ0oZw"
+          },
+          "lowerValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger",
+            "id": "_u01fsYKaEfCcsLDfcub4jw",
+            "value": 1
+          },
+          "upperValue": {
+            "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural",
+            "id": "_u01fsoKaEfCcsLDfcub4jw",
+            "value": 1
+          }
+        }
+      ],
+      "ownedOperation": [
+        {
+          "id": "_x4xx0IKaEfCcsLDfcub4jw",
+          "name": "manhattenLength",
+          "ownedParameter": [
+            {
+              "id": "_zhkUkIKaEfCcsLDfcub4jw",
+              "name": "Parameter",
+              "type": {
+                "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType",
+                "$ref": "_aMhyQH9VEfC_JsjicJ0oZw"
+              },
+              "direction": "return"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Association",
+      "id": "_tF3sQH9UEfC_JsjicJ0oZw",
+      "memberEnd": [
+        {
+          "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Property",
+          "$ref": "_tF3sQX9UEfC_JsjicJ0oZw"
+        },
+        {
+          "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Property",
+          "$ref": "_tF3sRH9UEfC_JsjicJ0oZw"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Association",
+      "id": "_tszwcH9UEfC_JsjicJ0oZw",
+      "memberEnd": [
+        {
+          "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Property",
+          "$ref": "_ts0-kH9UEfC_JsjicJ0oZw"
+        },
+        {
+          "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Property",
+          "$ref": "_ts0-k39UEfC_JsjicJ0oZw"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Dependency",
+      "id": "_up5DwH9UEfC_JsjicJ0oZw",
+      "client": [
+        {
+          "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+          "$ref": "_BRr6wH9UEfC_JsjicJ0oZw"
+        }
+      ],
+      "supplier": [
+        {
+          "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
+          "$ref": "_EPo5oH9UEfC_JsjicJ0oZw"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Association",
+      "id": "_1gOCYH9UEfC_JsjicJ0oZw",
+      "memberEnd": [
+        {
+          "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Property",
+          "$ref": "_1gOCYX9UEfC_JsjicJ0oZw"
+        },
+        {
+          "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Property",
+          "$ref": "_1gOCZH9UEfC_JsjicJ0oZw"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Association",
+      "id": "_21i2kH9UEfC_JsjicJ0oZw",
+      "memberEnd": [
+        {
+          "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Property",
+          "$ref": "_21i2kX9UEfC_JsjicJ0oZw"
+        },
+        {
+          "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Property",
+          "$ref": "_21i2lH9UEfC_JsjicJ0oZw"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Association",
+      "id": "_3jilAH9UEfC_JsjicJ0oZw",
+      "memberEnd": [
+        {
+          "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Property",
+          "$ref": "_3jilAX9UEfC_JsjicJ0oZw"
+        },
+        {
+          "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Property",
+          "$ref": "_3jjMEn9UEfC_JsjicJ0oZw"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Association",
+      "id": "_4Di6wH9UEfC_JsjicJ0oZw",
+      "memberEnd": [
+        {
+          "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Property",
+          "$ref": "_4Djh0H9UEfC_JsjicJ0oZw"
+        },
+        {
+          "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Property",
+          "$ref": "_4DkI4X9UEfC_JsjicJ0oZw"
+        }
+      ]
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//DataType",
+      "id": "_FpSXsH9VEfC_JsjicJ0oZw",
+      "name": "QRect"
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//DataType",
+      "id": "_GshWUH9VEfC_JsjicJ0oZw",
+      "name": "QRegion"
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType",
+      "id": "_PiuiAH9VEfC_JsjicJ0oZw",
+      "name": "bool"
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType",
+      "id": "_aMhyQH9VEfC_JsjicJ0oZw",
+      "name": "int"
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//DataType",
+      "id": "_l6YioIKZEfCcsLDfcub4jw",
+      "name": "QMenu"
+    },
+    {
+      "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//DataType",
+      "id": "_ZVMuUIKaEfCcsLDfcub4jw",
+      "name": "Reason"
+    }
+  ]
+}

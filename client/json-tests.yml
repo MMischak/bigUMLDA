@@ -1,0 +1,76 @@
+###############JSON
+#########QT_I
+  - vars:
+      uml: file://workspace/qt-I/qt-I-JSON.txt
+      question: You need to improve the design of the module shown in the following diagram and remove some redundancy. Which method will most probably need to be defined in QIODevice from it’s subclasses? (Note that the method can still be reimplemented in QIODevice subclasses as needed.) Should this field be private, public or protected?
+    assert:
+      - type: contains
+        value: "readData"
+      - type: contains
+        value: "protected"
+  
+  - vars:
+      uml: file://workspace/qt-I/qt-I-JSON.txt
+      question: You need to extend Qt’s functionality to include an image plugin to read and write images using an new image format you invented. Which class do you need to subclass for this plugin?
+    assert:
+      - type: contains
+        value: "subclass"
+      - type: contains
+        value: "QImageIOPlugin"
+
+  - vars:
+      uml: file://workspace/qt-I/qt-I-JSON.txt
+      question: Is this statement true or false? The control class QDragManager is associated with the entity class QPixmap via the attribute pm_cursor.
+    assert:
+      - type: contains
+        value: "True"
+      - type: contains
+        value: "QDragManager"
+#########QT_G
+  - vars:
+      uml: file://workspace/qt-G/qt-G-JSON.txt
+      question: OpenGL is a standard API for rendering 3D graphics. To use OpenGL-enabled widgets in a Qt application, which class do you need to subclass?
+    assert:
+      - type: contains
+        value: "subclass"
+      - type: contains
+        value: "QGLWidget"
+        
+  - vars:
+      uml: file://workspace/qt-G/qt-G-JSON.txt
+      question: SVG is an XML-based file format and language for describing 2 dimensional graphics. Which class controls the drawing of SVG files to a paint device?
+    assert:
+      - type: contains
+        value: "QSvgRenderer"
+
+  - vars:
+      uml: file://workspace/qt-G/qt-G-JSON.txt
+      question: Which classes are directly depentend on QPainter?
+    assert:
+      - type: contains
+        value: "QGraphicsView"
+      - type: contains
+        value: "QSvgRenderer"
+  
+########QT_E
+  - vars:
+      uml: file://workspace/qt-E/qt-E-JSON.txt
+      question: Which input event class stores information about which key on the keyboard was pressed?
+    assert:
+      - type: contains
+        value: "QKeyEvent"
+
+  - vars:
+      uml: file://workspace/qt-E/qt-E-JSON.txt
+      question: Which class is involved in a composition relationship with QAction and is part of the QEvent hierarchy?
+    assert:
+      - type: contains
+        value: "QActionEvent"
+        
+########QT_D
+  - vars:
+      uml: file://workspace/qt-D/qt-D-JSON.txt
+      question: Qt allows data obtained from models to be related to specific widgets. Which class is responsible for setting up this data relation between SQL models and widgets?
+    assert:
+      - type: contains
+        value: "QDataWidgetMapper"

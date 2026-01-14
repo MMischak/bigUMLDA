@@ -1,0 +1,46 @@
+version: 1
+
+prompts:
+  - |-
+    You are an UML analysis assistant. Always ground your answers only in the provided UML Diagram. Format lists of classes or methods clearly. Keep your answers short
+    Question= {{question}} , UML Diagram= {{uml}}         
+
+providers:
+  # Hosted APIs
+  - id: google:gemini-2.5-flash-lite
+    config:
+      temperature: 0
+      apiKey: #add key
+  
+  - id: google:gemini-2.5-pro
+    config:
+      temperature: 0
+      apiKey: #add key
+ 
+  - id: openai:gpt-4o-mini
+    config:
+      temperature: 0
+      apiKey: #add key
+
+  - id: openai:gpt-5-mini
+    config:
+      temperature: 0
+      apiKey: #add key
+#PlantUML:
+#tests: file://plantUML-tests.yml
+#JSON:
+#tests: file://json-tests.yml
+#LargeModels:
+#tests: file://largeModels-tests.yml
+#LargeModelsJOSN:
+tests: file://largeModels-testsJSON.yml
+#PlantUML2x:
+#tests: file://plantUML-tests2x.yml
+#PlantUML20x:
+#tests: file://plantUML-tests20x.yml
+#JSON2x:
+#tests: file://JSON-tests2x.yml
+#JSON20x:
+#tests: file://JSON-tests20x.yml
+#PlantUMLDiff:
+#tests: file://plantUML-testsDiff.yml

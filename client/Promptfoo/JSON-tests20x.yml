@@ -1,0 +1,178 @@
+###############PlantUML
+#########QT_I
+  - vars:
+      uml: file://../workspace/qt-I/qt-I-20x-JSON.txt
+      question: You need to improve the design of the module shown in the following diagram and remove some redundancy. Which method will most probably need to be defined in QIODevice from it’s subclasses? (Note that the method can still be reimplemented in QIODevice subclasses as needed.) Should this field be private, public or protected?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-4o-mini
+        value: |
+          Evaluate how well the answer identifies and justifies the refactoring:
+          - It should identify **readData()** as the redundant method.
+          - It should state that the method should be defined as **protected** in QIODevice.
+          - Different wording is acceptable, but these core ideas must be correct.
+
+          Grading scale:
+          - 1.0: Correct method identified and access level correctly explained.
+          - 0.75: Both parts mostly correct but slightly imprecise wording or incomplete justification.
+          - 0.5: Only one of the two key points is addressed.
+          - 0.25: Vague or partially relevant.
+          - 0.0: Incorrect or irrelevant.
+
+          A score of 1.0 or higher should be considered a pass.
+
+  - vars:
+      uml: file://../workspace/qt-I/qt-I-20x-JSON.txt
+      question: You need to extend Qt’s functionality to include an image plugin to read and write images using an new image format you invented. Which class do you need to subclass for this plugin?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-4o-mini
+        value: |
+          Evaluate how well the answer identifies the correct class:
+          - It should identify **QImageIOPlugin** as the class to subclass.
+          
+          Grading scale:
+          - 1.0: Clearly and explicitly identifies QImageIOPlugin.
+          - 0.75: Identifies the correct class with minor wording issues.
+          - 0.5: Ambiguous reference or incomplete naming.
+          - 0.25: Vague or partially related.
+          - 0.0: Incorrect class.
+
+          A score of 1.0 or higher should be considered a pass.
+
+  - vars:
+      uml: file://../workspace/qt-I/qt-I-20x-JSON.txt
+      question: Is this statement true or false? The control class QDragManager is associated with the entity class QPixmap via the attribute pm_cursor.
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-4o-mini
+        value: |
+          Evaluate how well the answer identifies the truth value of the statement:
+          - The correct answer is **true**.
+
+          Grading scale:
+          - 1.0: Clearly states the statement is true.
+          - 0.75: States “true” with slightly vague justification or phrasing.
+          - 0.5: Ambiguous wording but leaning correct.
+          - 0.25: Guess without clarity.
+          - 0.0: Incorrect (false).
+
+          A score of 1.0 or higher should be considered a pass.
+
+#########QT_G
+  - vars:
+      uml: file://../workspace/qt-G/qt-G-20x-JSON.txt
+      question: OpenGL is a standard API for rendering 3D graphics. To use OpenGL-enabled widgets in a Qt application, which class do you need to subclass?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-4o-mini
+        value: |
+          Evaluate how well the answer identifies the correct class:
+          - The correct class to subclass is **QGLWidget**.
+
+          Grading scale:
+          - 1.0: Clearly identifies QGLWidget.
+          - 0.75: Identifies the class but phrasing is slightly off.
+          - 0.5: Ambiguous reference to OpenGL widgets.
+          - 0.25: Vague or partially related.
+          - 0.0: Incorrect class.
+
+          A score of 1.0 or higher should be considered a pass.
+        
+  - vars:
+      uml: file://../workspace/qt-G/qt-G-20x-JSON.txt
+      question: SVG is an XML-based file format and language for describing 2 dimensional graphics. Which class controls the drawing of SVG files to a paint device?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-4o-mini
+        value: |
+          Evaluate how well the answer identifies the correct class:
+          - The correct class is **QSvgRenderer**.
+
+          Grading scale:
+          - 1.0: Clearly identifies QSvgRenderer.
+          - 0.75: Minor wording or phrasing issues but clearly refers to QSvgRenderer.
+          - 0.5: Ambiguous or incomplete reference.
+          - 0.25: Vague or partially related.
+          - 0.0: Incorrect class.
+
+          A score of 1.0 or higher should be considered a pass.
+
+  - vars:
+      uml: file://../workspace/qt-G/qt-G-20x-JSON.txt
+      question: Which classes are directly depentend on QPainter?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-4o-mini
+        value: |
+          Evaluate how well the answer identifies the correct dependent classes:
+          - The correct classes are **QGraphicsView** and **QSvgRenderer**.
+
+          Grading scale:
+          - 1.0: Both classes clearly identified.
+          - 0.75: One class identified correctly, the other missing or slightly misstated.
+          - 0.5: Only one mentioned, ambiguous phrasing.
+          - 0.25: Vague or partially related.
+          - 0.0: Incorrect or unrelated.
+
+          A score of 1.0 or higher should be considered a pass.
+  
+########QT_E
+  - vars:
+      uml: file://../workspace/qt-E/qt-E-20x-JSON.txt
+      question: Which input event class stores information about which key on the keyboard was pressed?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-4o-mini
+        value: |
+          Evaluate how well the answer identifies the correct class:
+          - The correct class is **QKeyEvent**.
+
+          Grading scale:
+          - 1.0: Clearly identifies QKeyEvent.
+          - 0.75: Minor wording or phrasing issues but clearly refers to QKeyEvent.
+          - 0.5: Ambiguous or incomplete reference.
+          - 0.25: Vague or partially related.
+          - 0.0: Incorrect class.
+
+          A score of 1.0 or higher should be considered a pass.
+
+  - vars:
+      uml: file://../workspace/qt-E/qt-E-20x-JSON.txt
+      question: Which class is involved in a composition relationship with QAction and is part of the QEvent hierarchy?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-4o-mini
+        value: |
+          Evaluate how well the answer identifies the correct class and relationship:
+          - The correct class is **QActionEvent**.
+          - It should mention the composition relationship with QAction.
+
+          Grading scale:
+          - 1.0: Identifies QActionEvent and describes the relationship correctly.
+          - 0.75: Identifies the class correctly but relationship description is minimal.
+          - 0.5: Ambiguous or incomplete mention.
+          - 0.25: Vague or partially related.
+          - 0.0: Incorrect class.
+
+          A score of 1.0 or higher should be considered a pass.
+        
+########QT_D
+  - vars:
+      uml: file://../workspace/qt-D/qt-D-20x-JSON.txt
+      question: Qt allows data obtained from models to be related to specific widgets. Which class is responsible for setting up this data relation between SQL models and widgets?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-4o-mini
+        value: |
+          Evaluate how well the answer identifies the correct class:
+          - The correct class is **QDataWidgetMapper**.
+
+          Grading scale:
+          - 1.0: Clearly identifies QDataWidgetMapper.
+          - 0.75: Minor wording issues but the class is clearly identified.
+          - 0.5: Ambiguous or incomplete reference.
+          - 0.25: Vague or partially related.
+          - 0.0: Incorrect class.
+
+          A score of 1.0 or higher should be considered a pass.

@@ -1,0 +1,452 @@
+@startuml
+skinparam classAttributeIconSize 0
+ class GeppettoModel {
+  String id
+  String name
+}
+abstract class Node {
+  String id
+  String name
+}
+ class GeppettoLibrary {
+}
+ class LibraryManager {
+}
+ class ExperimentState {
+  String experimentId
+  String projectId
+}
+ class VariableValue {
+}
+ class Tag {
+  String name
+}
+ class DomainModel {
+  String domainModel
+}
+ class ModelFormat {
+  String modelFormat
+}
+ class ExternalDomainModel {
+  String fileFormat
+}
+ class StringToStringMap {
+  String key
+  String value
+}
+interface ISynchable {
+  String synched
+}
+ class World {
+}
+ class Variable {
+  String static
+}
+ class DataSource {
+  String dataSourceService
+  String url
+}
+abstract class Query {
+  String description
+  String runForCount
+}
+abstract class Type {
+  String abstract
+}
+ class Pointer {
+  String path
+}
+abstract class Value {
+}
+abstract class Instance {
+}
+ class VisualType {
+}
+ class ImportType {
+  String url
+  String referenceURL
+  String modelInterpreterId
+  String autoresolve
+}
+ class CompositeType {
+}
+ class PointerType {
+}
+ class QuantityType {
+}
+ class ParameterType {
+}
+ class StateVariableType {
+}
+ class DynamicsType {
+}
+ class ArgumentType {
+}
+ class ExpressionType {
+}
+ class HTMLType {
+}
+ class JSONType {
+}
+ class TextType {
+}
+ class URLType {
+}
+ class PointType {
+}
+ class ArrayType {
+  String size
+}
+ class CompositeVisualType {
+}
+ class ConnectionType {
+}
+ class SimpleType {
+}
+ class ImageType {
+}
+ class SimpleArrayType {
+}
+ class MetadataType {
+}
+abstract class VisualValue {
+}
+ class Composite {
+}
+ class Quantity {
+  String scalingFactor
+  String value
+}
+ class Dynamics {
+}
+ class Argument {
+  String argument
+}
+ class Expression {
+  String expression
+}
+ class HTML {
+  String html
+}
+ class JSON {
+  String json
+}
+ class Text {
+  String text
+}
+ class URL {
+  String url
+}
+ class Point {
+  String x
+  String y
+  String z
+}
+ class ArrayValue {
+}
+ class VisualGroup {
+  String lowSpectrumColor
+  String highSpectrumColor
+  String type
+}
+ class Image {
+  String data
+  String name
+  String reference
+  String format
+}
+abstract class AArrayValue {
+}
+ class StringToValueMap {
+  String key
+}
+ class PhysicalQuantity {
+}
+ class Unit {
+  String unit
+}
+ class TimeSeries {
+  String scalingFactor
+  String value
+}
+ class MDTimeSeries {
+}
+abstract class MetadataValue {
+}
+ class PointerElement {
+  String index
+}
+ class FunctionPlot {
+  String title
+  String xAxisLabel
+  String yAxisLabel
+  String initialValue
+  String finalValue
+  String stepValue
+}
+ class Function {
+}
+ class Collada {
+  String collada
+}
+ class OBJ {
+  String obj
+}
+ class Sphere {
+  String radius
+}
+ class Cylinder {
+  String bottomRadius
+  String topRadius
+  String height
+}
+ class Particles {
+}
+ class SkeletonAnimation {
+}
+ class SkeletonTransformation {
+  String skeletonTransformation
+}
+ class VisualGroupElement {
+  String defaultColor
+}
+ class Connection {
+  String connectivity
+}
+ class ArrayElement {
+  String index
+}
+ class ImportValue {
+  String modelInterpreterId
+}
+ class Metadata {
+}
+ class GenericArray {
+}
+ class StringArray {
+  String elements
+}
+ class IntArray {
+  String elements
+}
+ class DoubleArray {
+  String elements
+}
+ class TypeToValueMap {
+}
+ class DataSourceLibraryConfiguration {
+  String modelInterpreterId
+  String format
+}
+ class ProcessQuery {
+  String queryProcessorId
+}
+ class SimpleQuery {
+  String query
+  String countQuery
+}
+ class CompoundQuery {
+}
+ class CompoundRefQuery {
+}
+ class QueryResults {
+  String id
+  String header
+}
+ class RunnableQuery {
+  String targetVariablePath
+  String queryPath
+  String booleanOperator
+}
+abstract class AQueryResult {
+}
+ class QueryResult {
+  String values
+}
+ class SerializableQueryResult {
+  String values
+}
+ class QueryMatchingCriteria {
+}
+ class SimpleInstance {
+}
+ class SimpleConnectionInstance {
+  String connectivity
+}
+GeppettoModel *--> Variable : variables [0..*]
+GeppettoModel *--> World : worlds [0..*]
+GeppettoModel *--> GeppettoLibrary : libraries [0..*]
+GeppettoModel *--> Tag : tags [0..*]
+GeppettoModel *--> DataSource : dataSources [0..*]
+GeppettoModel *--> Query : queries [0..*]
+Node --> Tag : tags [0..*]
+GeppettoLibrary *--> Type : types [0..*]
+GeppettoLibrary --> Type : sharedTypes [0..*]
+LibraryManager *--> GeppettoLibrary : libraries [0..*]
+ExperimentState *--> VariableValue : recordedVariables [0..*]
+ExperimentState *--> VariableValue : setParameters [0..*]
+VariableValue *--> Pointer : pointer [1..1]
+VariableValue *--> Value : value [0..1]
+Tag *--> Tag : tags [0..*]
+DomainModel *--> ModelFormat : format [0..1]
+World *--> Variable : variables [0..*]
+World *--> Instance : instances [0..*]
+Variable *--> Type : anonymousTypes [0..*]
+Variable --> Type : types [0..*]
+Variable *--> TypeToValueMap : initialValues [0..*]
+Variable *--> Point : position [0..1]
+DataSource *--> DataSourceLibraryConfiguration : libraryConfigurations [0..*]
+DataSource *--> Query : queries [0..*]
+DataSource --> GeppettoLibrary : dependenciesLibrary [0..*]
+DataSource --> GeppettoLibrary : targetLibrary [1..1]
+DataSource *--> Query : fetchVariableQuery [0..1]
+Query *--> QueryMatchingCriteria : matchingCriteria [0..*]
+Query --> Type : returnType [0..1]
+Type --> Type : superType [0..*]
+Type --> VisualType : visualType [0..1]
+Type --> Variable : referencedVariables [0..*]
+Type --> DomainModel : domainModel [0..1]
+Pointer *--> PointerElement : elements [0..*]
+Pointer *--> Point : point [0..1]
+Instance --> Type : type [0..1]
+Instance *--> Value : value [0..1]
+VisualType *--> VisualValue : defaultValue [0..1]
+CompositeType *--> Variable : variables [0..*]
+CompositeType *--> Composite : defaultValue [0..1]
+PointerType *--> Pointer : defaultValue [0..1]
+QuantityType *--> Quantity : defaultValue [0..1]
+ParameterType *--> Quantity : defaultValue [0..1]
+StateVariableType *--> Quantity : defaultValue [0..1]
+DynamicsType *--> Dynamics : defaultValue [0..1]
+ArgumentType *--> Argument : defaultValue [0..1]
+ExpressionType *--> Expression : defaultValue [0..1]
+HTMLType *--> HTML : defaultValue [0..1]
+JSONType *--> JSON : defaultValue [0..1]
+TextType *--> Text : defaultValue [0..1]
+URLType *--> URL : defaultValue [0..1]
+PointType *--> Point : defaultValue [0..1]
+ArrayType --> Type : arrayType [1..1]
+ArrayType *--> ArrayValue : defaultValue [0..1]
+CompositeVisualType *--> Variable : variables [0..*]
+CompositeVisualType *--> VisualGroup : visualGroups [0..*]
+ConnectionType *--> Variable : variables [0..*]
+ConnectionType *--> Composite : defaultValue [0..1]
+ImageType --> Image : defaultValue [0..1]
+SimpleArrayType *--> AArrayValue : defaultValue [0..1]
+VisualValue --> VisualGroupElement : groupElements [0..*]
+VisualValue *--> Point : position [0..1]
+Composite *--> StringToValueMap : value [0..*]
+Dynamics *--> PhysicalQuantity : initialCondition [0..1]
+Dynamics *--> Function : dynamics [0..1]
+ArrayValue *--> ArrayElement : elements [1..*]
+VisualGroup *--> VisualGroupElement : visualGroupElements [1..*]
+StringToValueMap *--> Value : value [0..1]
+PhysicalQuantity *--> Unit : unit [0..1]
+TimeSeries *--> Unit : unit [0..1]
+MDTimeSeries *--> Value : value [0..*]
+PointerElement --> Variable : variable [0..1]
+PointerElement --> Type : type [0..1]
+Function *--> Argument : arguments [0..*]
+Function *--> Expression : expression [1..1]
+Function *--> FunctionPlot : functionPlot [0..1]
+Cylinder *--> Point : distal [0..1]
+Particles *--> Point : particles [0..*]
+SkeletonAnimation --> SkeletonTransformation : skeletonTransformationSeries [0..*]
+VisualGroupElement *--> Quantity : parameter [0..1]
+Connection *--> Pointer : a [1..1]
+Connection *--> Pointer : b [1..1]
+ArrayElement *--> Point : position [0..1]
+ArrayElement *--> Value : initialValue [0..1]
+Metadata *--> StringToValueMap : value [0..*]
+GenericArray *--> Value : elements [0..*]
+TypeToValueMap --> Type : key [1..1]
+TypeToValueMap *--> Value : value [1..1]
+DataSourceLibraryConfiguration --> GeppettoLibrary : library [1..1]
+ProcessQuery *--> StringToStringMap : parameters [0..*]
+CompoundQuery *--> Query : queryChain [1..*]
+CompoundRefQuery --> Query : queryChain [1..*]
+QueryResults *--> AQueryResult : results [0..*]
+QueryMatchingCriteria --> Type : type [0..*]
+SimpleInstance *--> VisualValue : visualValue [0..1]
+SimpleInstance *--> Point : position [0..1]
+SimpleConnectionInstance --> Instance : a [1..1]
+SimpleConnectionInstance --> Instance : b [1..1]
+ISynchable <|-- Node
+Node <|-- GeppettoLibrary
+ISynchable <|-- Tag
+DomainModel <|-- ExternalDomainModel
+Node <|-- World
+Node <|-- Variable
+Node <|-- DataSource
+Node <|-- Query
+Node <|-- Type
+Value <|-- Pointer
+ISynchable <|-- Value
+Node <|-- Instance
+Type <|-- VisualType
+Type <|-- ImportType
+Type <|-- CompositeType
+Type <|-- PointerType
+Type <|-- QuantityType
+Type <|-- ParameterType
+Type <|-- StateVariableType
+Type <|-- DynamicsType
+Type <|-- ArgumentType
+Type <|-- ExpressionType
+Type <|-- HTMLType
+Type <|-- JSONType
+Type <|-- TextType
+Type <|-- URLType
+Type <|-- PointType
+Type <|-- ArrayType
+VisualType <|-- CompositeVisualType
+Type <|-- ConnectionType
+Type <|-- SimpleType
+Type <|-- ImageType
+Type <|-- SimpleArrayType
+Type <|-- MetadataType
+Value <|-- VisualValue
+Value <|-- Composite
+Value <|-- Quantity
+Value <|-- Dynamics
+Value <|-- Argument
+Value <|-- Expression
+MetadataValue <|-- HTML
+MetadataValue <|-- JSON
+MetadataValue <|-- Text
+MetadataValue <|-- URL
+Value <|-- Point
+Value <|-- ArrayValue
+Node <|-- VisualGroup
+Value <|-- Image
+Value <|-- AArrayValue
+Quantity <|-- PhysicalQuantity
+Value <|-- Unit
+Value <|-- TimeSeries
+Value <|-- MDTimeSeries
+Value <|-- MetadataValue
+Value <|-- Function
+VisualValue <|-- Collada
+VisualValue <|-- OBJ
+VisualValue <|-- Sphere
+VisualValue <|-- Cylinder
+Value <|-- Particles
+VisualValue <|-- SkeletonAnimation
+Node <|-- VisualGroupElement
+Value <|-- Connection
+Value <|-- ArrayElement
+Value <|-- ImportValue
+MetadataValue <|-- Metadata
+AArrayValue <|-- GenericArray
+AArrayValue <|-- StringArray
+AArrayValue <|-- IntArray
+AArrayValue <|-- DoubleArray
+Query <|-- ProcessQuery
+Query <|-- SimpleQuery
+Query <|-- CompoundQuery
+Query <|-- CompoundRefQuery
+AQueryResult <|-- QueryResult
+AQueryResult <|-- SerializableQueryResult
+Instance <|-- SimpleInstance
+Instance <|-- SimpleConnectionInstance
+@enduml

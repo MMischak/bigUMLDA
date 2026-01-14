@@ -1,0 +1,474 @@
+@startuml
+
+abstract class QPaintDevice {
+  # painters
+  + paintEngine() : QPaintEngine
+  + width() : int
+  + height() : int
+  + numColors() : int
+}
+
+abstract class QImageIOHandler {
+  + setDevice(device : QIODevice)
+  + setFormat(format)
+  + read(image : QImage) : bool
+  + write(image) : bool
+}
+
+abstract class QImageIOPlugin {
+  + capabilities()
+  + create()
+  + keys()
+}
+
+class QObject
+class QHttp
+class QFtp
+
+class QimageWriter {
+  + setFormat(format)
+  + setDevice(device : QIODevice)
+  + setFileName(fileName)
+  + write(image) : bool
+}
+
+class QIODevice {
+  + isReadable() : bool
+  + isWriteable() : bool
+  + open(mode : OpenMode) : bool
+  + close()
+  + seek(pos) : bool
+  + readBlock(data : char, maxlen) : long
+  + writeBlock(data : char, len) : long
+}
+
+class QImageReader {
+  + setFormat(format)
+  + setDevice(device : QIODevice)
+  + setFileName(fileName)
+  + read() : QImage
+}
+
+class QImage {
+  + copy()
+  + convertToFormat()
+  + width()
+  + height()
+  + size()
+  + load()
+  + save()
+}
+
+class QClipboard {
+  + setText()
+  + setImage()
+  + setPixmap()
+}
+
+class QPixmap {
+  - data : QPixmapData
+  + size() : QSize
+  + rect() : QRect
+  + mask() : QBitmap
+  {static} + fromimage() : QPixmap
+  + data_ptr() : DataPtr
+}
+
+class QDragManager {
+  + object : QDrag
+  + eventloop : QEventLoop
+  + dropData : QDropData
+  - pm_cursor : QPixmap
+  - currentDropTarget : QWidget
+  + source()
+  + dragCursor()
+}
+
+class QBuffer {
+  + setBuffer()
+  + setData()
+  + open()
+  + close()
+  + seek()
+  # readData()
+}
+
+class QFile {
+  + setFileName()
+  + rename()
+  + copy()
+  + open()
+  + close()
+  + size()
+  + pos()
+  + seek()
+  # readData()
+  # readLineData()
+}
+
+class QProcess {
+  + setReadChannel()
+  + setEnvironment()
+  {static} + excecute()
+  + terminate()
+  + kill()
+  # readData()
+}
+
+class QAbstractSocket {
+  + connectToHost()
+  + readBufferSize()
+  # readData()
+}
+
+class QTcpSocket {
+  # readData()
+}
+
+class QPaintEngine
+class QPixmapData
+class DataPtr
+class QSize
+class QRect
+class QBitmap
+class QDrag
+class QEventLoop
+class QDropData
+class QWidget
+class OpenMode
+class char
+class long
+class int
+class bool
+
+QImageIOPlugin --|> QObject
+QHttp --|> QObject
+QFtp --|> QObject
+QBuffer --|> QIODevice
+QFile --|> QIODevice
+QProcess --|> QIODevice
+QAbstractSocket --|> QIODevice
+QTcpSocket --|> QAbstractSocket
+QImage --|> QPaintDevice
+
+QImageIOHandler "1" -- "1" QImageIOPlugin
+QPixmap "1" -- "1" QDragManager
+
+QImageIOHandler ..> QImage
+QImageIOHandler ..> QIODevice
+QImageReader ..> QIODevice
+QPixmap ..> QImage
+QClipboard ..> QPixmap
+QimageWriter ..> QIODevice
+
+enum RenderMode { Software Hardware Hybrid Virtual }
+
+enum ResourceState { Unloaded Loading Ready Failed }
+
+enum AccessLevel { Public Protected Private Internal }
+
+struct FileDescriptor {
+  id : int
+  path : string
+  open : bool
+}
+
+struct BufferMetrics {
+  capacity : int
+  used : int
+  freeSpace : int
+}
+
+struct NetworkAddress {
+  host : string
+  port : int
+  protocol : string
+}
+
+class ConfigItem {
+  + key : string
+  + value : string
+  + type : string
+}
+
+class ConfigGroup {
+  + name : string
+  + addItem(item : ConfigItem)
+  + removeItem(key : string)
+}
+
+class Configuration {
+  + load()
+  + save()
+  + merge(other : Configuration)
+  + getValue(key : string)
+  + setValue(key : string, value : string)
+}
+
+class Logger {
+  + logInfo(msg)
+  + logWarn(msg)
+  + logError(msg)
+  + logDebug(msg)
+}
+
+class LogMessage {
+  + timestamp : Date
+  + level : int
+  + message : string
+}
+
+class CacheEntry {
+  + key : string
+  + dataSize : int
+  + valid : bool
+}
+
+class CacheStorage {
+  + insert(entry : CacheEntry)
+  + remove(key : string)
+  + find(key : string)
+  + clear()
+}
+
+class Statistic {
+  + name : string
+  + value : double
+}
+
+class StatisticGroup {
+  + title : string
+  + add(stat : Statistic)
+  + average() : double
+}
+
+class PerformanceMonitor {
+  + start()
+  + stop()
+  + record()
+  + report()
+}
+
+class Scheduler {
+  + schedule(task)
+  + cancel(taskId)
+  + nextTick()
+}
+
+class Task {
+  + id : int
+  + name : string
+  + execute()
+}
+
+class ThreadPool {
+  + enqueue(task : Task)
+  + shutdown()
+  + workerCount() : int
+}
+
+class RandomGenerator {
+  + seed(val : int)
+  + nextInt() : int
+  + nextFloat() : float
+}
+
+class ResourceLoader {
+  + load(name : string)
+  + unload(name : string)
+  + listLoaded()
+}
+
+class Resource {
+  + id : int
+  + state : ResourceState
+  + name : string
+}
+
+class Theme {
+  + name : string
+  + colorPrimary : string
+  + colorAccent : string
+}
+
+class ThemeManager {
+  + apply(theme : Theme)
+  + currentTheme() : Theme
+  + listThemes()
+}
+
+class Language {
+  + code : string
+  + name : string
+}
+
+class Localization {
+  + translate(key : string)
+  + addLanguage(lang : Language)
+  + setCurrent(lang : Language)
+}
+
+class Validator {
+  + validate(data)
+  + lastError() : string
+}
+
+class Encryption {
+  + encrypt(data)
+  + decrypt(data)
+  + setKey(key : string)
+}
+
+class FileSystem {
+  + listFiles(path : string)
+  + exists(path : string) : bool
+  + createDirectory(path : string)
+  + deleteFile(path : string)
+}
+
+class FileWatcher {
+  + watch(path : string)
+  + unwatch(path : string)
+  + watchedCount() : int
+}
+
+class Command {
+  + execute()
+  + undo()
+  + redo()
+}
+
+class CommandManager {
+  + addCommand(cmd : Command)
+  + undoLast()
+  + redoLast()
+  + clear()
+}
+
+class HistoryEntry {
+  + id : int
+  + timestamp : Date
+  + description : string
+}
+
+class History {
+  + add(entry : HistoryEntry)
+  + clear()
+  + list()
+}
+
+class ClipboardHistory {
+  + addEntry(text : string)
+  + latest() : string
+  + count() : int
+}
+
+class JsonDocument {
+  + parse(text : string)
+  + stringify() : string
+}
+
+class XmlParser {
+  + parse(xml : string)
+  + toJson() : string
+}
+
+class Geometry {
+  + width : int
+  + height : int
+  + area() : int
+}
+
+class Point {
+  + x : int
+  + y : int
+  + distanceTo(p : Point) : double
+}
+
+class Rectangle {
+  + topLeft : Point
+  + bottomRight : Point
+  + contains(p : Point) : bool
+}
+
+class Matrix {
+  + multiply(m : Matrix) : Matrix
+  + determinant() : double
+  + transpose() : Matrix
+}
+
+class Timer {
+  + start()
+  + stop()
+  + elapsed() : long
+}
+
+class Stopwatch {
+  + begin()
+  + end()
+  + duration() : long
+}
+
+class Event {
+  + name : string
+  + timestamp : Date
+}
+
+class EventQueue {
+  + post(e : Event)
+  + next() : Event
+  + size() : int
+}
+
+class Notification {
+  + title : string
+  + message : string
+  + send()
+}
+
+class NotificationCenter {
+  + add(notification : Notification)
+  + dispatchAll()
+  + clear()
+}
+
+class Sound {
+  + play()
+  + pause()
+  + stop()
+}
+
+class AudioEngine {
+  + loadSound(name : string)
+  + playSound(name : string)
+  + stopAll()
+}
+
+class ImageFilter {
+  + apply(image)
+  + reset()
+}
+
+class FilterChain {
+  + add(filter : ImageFilter)
+  + remove(filter : ImageFilter)
+  + applyAll()
+}
+
+Configuration *-- ConfigGroup
+ConfigGroup *-- ConfigItem
+Logger "1" o-- "*" LogMessage
+CacheStorage *-- CacheEntry
+StatisticGroup *-- Statistic
+ThreadPool *-- Task
+ResourceLoader *-- Resource
+ThemeManager *-- Theme
+Localization *-- Language
+CommandManager *-- Command
+History *-- HistoryEntry
+Rectangle *-- Point
+NotificationCenter *-- Notification
+AudioEngine *-- Sound
+FilterChain *-- ImageFilter
+
+@enduml

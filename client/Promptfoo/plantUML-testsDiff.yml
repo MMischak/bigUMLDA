@@ -1,0 +1,178 @@
+###############PlantUML
+#########QT_I
+  - vars:
+      uml: file://../workspace/qt-I/qt-I-plantUml.txt
+      question: You need to improve the design of the module and remove redundancy between different QIODevice subclasses. Which method will most probably need to be defined in QIODevice from its subclasses for writing data? Should this method be private, public, or protected?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-4o-mini
+        value: |
+          Evaluate how well the answer identifies and justifies the refactoring:
+          - It should identify **writeBlock()** as the redundant method.
+          - It should state that the method should be **protected** in QIODevice.
+          - Different wording is acceptable, but these core ideas must be correct.
+
+          Grading scale:
+          - 1.0: Correct method identified and access level correctly explained.
+          - 0.75: Both parts mostly correct but slightly imprecise wording or incomplete justification.
+          - 0.5: Only one of the two key points is addressed.
+          - 0.25: Vague or partially relevant.
+          - 0.0: Incorrect or irrelevant.
+
+          A score of 1.0 or higher should be considered a pass.
+
+  - vars:
+      uml: file://../workspace/qt-I/qt-I-plantUml.txt
+      question: You need to extend Qt’s functionality to include a new custom device type for reading and writing data streams. Which class do you need to subclass to implement this device?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-4o-mini
+        value: |
+          Evaluate how well the answer identifies the correct class:
+          - It should identify **QIODevice** as the class to subclass.
+          
+          Grading scale:
+          - 1.0: Clearly and explicitly identifies QIODevice.
+          - 0.75: Identifies the correct class with minor wording issues.
+          - 0.5: Ambiguous reference or incomplete naming.
+          - 0.25: Vague or partially related.
+          - 0.0: Incorrect class.
+
+          A score of 1.0 or higher should be considered a pass.
+
+  - vars:
+      uml: file://../workspace/qt-I/qt-I-plantUml.txt
+      question: Is this statement true or false? The control class QPixmap is associated with the entity class QDragManager via the attribute pm_cursor.
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-4o-mini
+        value: |
+          Evaluate how well the answer identifies the truth value of the statement:
+          - The correct answer is **true**.
+
+          Grading scale:
+          - 1.0: Clearly states the statement is true.
+          - 0.75: States “true” with slightly vague justification or phrasing.
+          - 0.5: Ambiguous wording but leaning correct.
+          - 0.25: Guess without clarity.
+          - 0.0: Incorrect (false).
+
+          A score of 1.0 or higher should be considered a pass.
+
+#########QT_G
+  - vars:
+      uml: file://../workspace/qt-G/qt-G-plantUML.txt
+      question: To create custom painting behavior that follows a particular visual style, which class can you subclass to combine QPainter functionality with widget styling?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-4o-mini
+        value: |
+          Evaluate how well the answer identifies the correct class:
+          - The correct class to subclass is **QStylePainter**.
+
+          Grading scale:
+          - 1.0: Clearly identifies QStylePainter.
+          - 0.75: Identifies the class but phrasing is slightly off.
+          - 0.5: Ambiguous reference but conceptually correct.
+          - 0.25: Vague or partially related.
+          - 0.0: Incorrect class.
+
+          A score of 1.0 or higher should be considered a pass.
+        
+  - vars:
+      uml: file://../workspace/qt-G/qt-G-plantUML.txt
+      question: Printing in Qt relies on a paint device abstraction. Which class controls the drawing of output to a physical or virtual printer device?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-4o-mini
+        value: |
+          Evaluate how well the answer identifies the correct class:
+          - The correct class is **QPrinter**.
+
+          Grading scale:
+          - 1.0: Clearly identifies QPrinter.
+          - 0.75: Minor wording or phrasing issues but clearly refers to QPrinter.
+          - 0.5: Ambiguous or incomplete reference.
+          - 0.25: Vague or partially related.
+          - 0.0: Incorrect class.
+
+          A score of 1.0 or higher should be considered a pass.
+
+  - vars:
+      uml: file://../workspace/qt-G/qt-G-plantUML.txt
+      question: Which classes are directly dependent on QPen?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-4o-mini
+        value: |
+          Evaluate how well the answer identifies the correct dependent classes:
+          - The correct classes are **QPainter** and **QAbstractGraphicsShapeItem**.
+
+          Grading scale:
+          - 1.0: Both classes clearly identified.
+          - 0.75: One class identified correctly, the other missing or slightly misstated.
+          - 0.5: Only one mentioned, ambiguous phrasing.
+          - 0.25: Vague or partially related.
+          - 0.0: Incorrect or unrelated.
+
+          A score of 1.0 or higher should be considered a pass.
+  
+########QT_E
+  - vars:
+      uml: file://../workspace/qt-E/qt-E-plantUML.txt
+      question: Which input event class stores information about the amount of wheel rotation performed by the user?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-4o-mini
+        value: |
+          Evaluate how well the answer identifies the correct class:
+          - The correct class is **QWheelEvent**.
+
+          Grading scale:
+          - 1.0: Clearly identifies QWheelEvent.
+          - 0.75: Minor wording or phrasing issues but clearly refers to QWheelEvent.
+          - 0.5: Ambiguous or incomplete reference.
+          - 0.25: Vague or partially related.
+          - 0.0: Incorrect class.
+
+          A score of 1.0 or higher should be considered a pass.
+
+  - vars:
+      uml: file://../workspace/qt-E/qt-E-plantUML.txt
+      question: Which class is involved in an association with QPoint and is part of the QInputEvent hierarchy?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-4o-mini
+        value: |
+          Evaluate how well the answer identifies the correct class and relationship:
+          - The correct class is **QMouseEvent**.
+          - It should mention the association with **QPoint** and the fact that it belongs to the QInputEvent hierarchy.
+
+          Grading scale:
+          - 1.0: Identifies QMouseEvent and describes the relationship correctly.
+          - 0.75: Identifies the class correctly but relationship description is minimal.
+          - 0.5: Ambiguous or incomplete mention.
+          - 0.25: Vague or partially related.
+          - 0.0: Incorrect class.
+
+          A score of 1.0 or higher should be considered a pass.
+        
+########QT_D
+  - vars:
+      uml: file://../workspace/qt-D/qt-D-plantUML.txt
+      question: Qt allows data from models to be displayed in table-based widgets. Which class is responsible for setting up this data relation between models and table views?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-4o-mini
+        value: |
+          Evaluate how well the answer identifies the correct class:
+          - The correct class is **QTableView**.
+
+          Grading scale:
+          - 1.0: Clearly identifies QTableView.
+          - 0.75: Minor wording issues but the class is clearly identified.
+          - 0.5: Ambiguous or incomplete reference.
+          - 0.25: Vague or partially related.
+          - 0.0: Incorrect class.
+
+          A score of 1.0 or higher should be considered a pass.

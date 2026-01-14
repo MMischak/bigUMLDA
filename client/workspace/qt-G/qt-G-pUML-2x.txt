@@ -1,0 +1,445 @@
+@startuml
+
+abstract class QPaintDevice {
+  # Painters : int [1..1]
+  + paintEngine() : QPaintEngine
+  + width()
+  + height()
+  + numColors()
+}
+
+abstract class QWidget
+
+class QPaintEngine
+
+class QBrush {
+  + setStyle(style)
+  + setTransform(matrix)
+  + setTexture(pixmap)
+  + setColor(color)
+}
+
+class QGraphicsView {
+  # viewportEvent()
+  # scrollContentsBy()
+  # drawItems()
+}
+
+class QStylePainter
+class QPainter {
+  + paintEngine()
+}
+
+class QStyle
+class QImage
+class QPolygon
+
+class QPixmap {
+  - data() : QPixmapData
+  + paintEngine() : QPaintEngine
+  + size() : QSize
+  + rect() : QRect
+  + mask() : QBitmap
+  + fromImage() : QPixmap
+  + data_ptr() : DataPtr
+}
+
+class QSize
+class QRect
+class QBitmap
+class DataPtr
+class QPixmapData
+class QMatrix
+
+class QPen {
+  + setColor(color)
+  + setBrush(brush)
+  + isSolid() : bool
+}
+
+class bool
+
+class QSvgWidget {
+  + renderer() : QSvgRenderer
+  + load(file)
+}
+
+class QSvgRenderer {
+  + viewBox() : QRect
+  + framesPerSecond() : int
+  + render(p : QPainter)
+}
+
+class QSvgGenerator {
+  + paintEngine() : QPaintEngine
+  + setSize(size)
+  + setFileName(fileName)
+  + setOutputDevice(outputDevice : QIODevice)
+  + setResolution(dpi)
+}
+
+class QIODevice
+class int
+class QAbstractGraphicsShapeItem
+class QGraphicsSvgItem
+class QPrinter {
+  + paintEngine() : QPaintEngine
+  + setOutputFormat()
+  + setPrinterName()
+  + setPageSize()
+  + setOutputToFile()
+}
+class QGLWidget {
+  + paintEngine() : QPaintEngine
+  + updateGL()
+  + initializeGL()
+  + resizeGL()
+  + paintGL()
+}
+
+QStylePainter    --|> QPainter
+QImage           --|> QPaintDevice
+QPixmap          --|> QPaintDevice
+QSvgGenerator    --|> QPaintDevice
+QPrinter         --|> QPaintDevice
+QSvgWidget       --|> QWidget
+QGraphicsSvgItem --|> QAbstractGraphicsShapeItem
+QGLWidget        --|> QWidget
+
+QSvgWidget "1" o-- "1" QSvgRenderer
+
+QPainter                  ..> QPaintDevice
+QMatrix                   ..> QPolygon
+QSvgGenerator             ..> QMatrix
+QPainter                  ..> QPen
+QAbstractGraphicsShapeItem ..> QPen
+QGraphicsSvgItem          ..> QSvgRenderer
+QWidget                   ..> QStyle
+QGraphicsView             ..> QPainter
+QPainter                  ..> QBrush
+QPainter                  ..> QPolygon
+QSvgRenderer              ..> QPainter
+
+enum RenderMode { Basic Advanced Extended Optimized }
+enum LayerType { Background Foreground Overlay Mask }
+enum TextureFormat { RGB RGBA Grayscale Indexed }
+enum LogLevel { Info Warning Error Debug }
+enum DeviceState { Ready Busy Disabled Error }
+
+struct RenderMetrics {
+  frameCount : int
+  frameTime : double
+  drawCalls : int
+  memoryUsage : int
+}
+
+struct DeviceSpec {
+  id : int
+  name : string
+  driver : string
+  version : string
+}
+
+struct ColorProfile {
+  name : string
+  gamma : double
+  contrast : double
+  brightness : double
+}
+
+struct Transform {
+  translateX : double
+  translateY : double
+  rotate : double
+  scale : double
+}
+
+class ConfigItem {
+  + key : string
+  + value : string
+}
+
+class ConfigSet {
+  + add(item : ConfigItem)
+  + remove(key : string)
+  + listAll()
+}
+
+class Logger {
+  + info(msg)
+  + warn(msg)
+  + error(msg)
+  + debug(msg)
+}
+
+class LogEntry {
+  + time : Date
+  + level : int
+  + text : string
+}
+
+class SystemMonitor {
+  + start()
+  + stop()
+  + sample()
+  + report()
+}
+
+class Resource {
+  + id : int
+  + type : string
+  + valid : bool
+}
+
+class ResourceManager {
+  + load(name : string)
+  + unload(name : string)
+  + listResources()
+}
+
+class Cache {
+  + add(key : string)
+  + remove(key : string)
+  + clear()
+}
+
+class CacheItem {
+  + key : string
+  + size : int
+  + timestamp : Date
+}
+
+class ThreadPool {
+  + addWorker()
+  + removeWorker()
+  + jobCount() : int
+}
+
+class Worker {
+  + id : int
+  + name : string
+  + status : string
+}
+
+class Job {
+  + id : int
+  + name : string
+  + execute()
+}
+
+class TaskScheduler {
+  + schedule(job : Job)
+  + cancel(id : int)
+  + runNext()
+}
+
+class Theme {
+  + name : string
+  + primaryColor : string
+  + accentColor : string
+}
+
+class ThemeSet {
+  + add(theme : Theme)
+  + get(name : string)
+  + count() : int
+}
+
+class Timer {
+  + start()
+  + stop()
+  + elapsed() : double
+}
+
+class Stopwatch {
+  + begin()
+  + end()
+  + duration() : double
+}
+
+class Event {
+  + name : string
+  + timestamp : Date
+}
+
+class EventBus {
+  + publish(event : Event)
+  + subscribe(listener)
+  + unsubscribe(listener)
+}
+
+class Signal {
+  + name : string
+  + connect()
+  + disconnect()
+}
+
+class Slot {
+  + name : string
+  + invoke()
+}
+
+class Command {
+  + execute()
+  + undo()
+  + redo()
+}
+
+class CommandStack {
+  + push(cmd : Command)
+  + undo()
+  + redo()
+}
+
+class HistoryEntry {
+  + id : int
+  + action : string
+  + timestamp : Date
+}
+
+class History {
+  + add(entry : HistoryEntry)
+  + clear()
+  + size() : int
+}
+
+class JsonDocument {
+  + parse(text : string)
+  + stringify() : string
+}
+
+class XmlDocument {
+  + parse(text : string)
+  + toJson() : string
+}
+
+class Vector2D {
+  + x : double
+  + y : double
+  + length() : double
+}
+
+class Vector3D {
+  + x : double
+  + y : double
+  + z : double
+  + normalize()
+}
+
+class Matrix4 {
+  + multiply(m : Matrix4)
+  + invert()
+  + transpose()
+}
+
+class Mesh {
+  + vertexCount : int
+  + faceCount : int
+  + load()
+}
+
+class Material {
+  + name : string
+  + diffuseColor : string
+  + specularColor : string
+}
+
+class Renderer {
+  + begin()
+  + end()
+  + draw(mesh : Mesh)
+}
+
+class FrameBuffer {
+  + width : int
+  + height : int
+  + clear()
+  + bind()
+}
+
+class Texture {
+  + width : int
+  + height : int
+  + format : TextureFormat
+  + upload()
+}
+
+class Shader {
+  + loadSource(code : string)
+  + compile()
+  + bind()
+}
+
+class Pipeline {
+  + attach(shader : Shader)
+  + link()
+  + use()
+}
+
+class AudioClip {
+  + load(file : string)
+  + play()
+  + stop()
+}
+
+class AudioManager {
+  + addClip(clip : AudioClip)
+  + playAll()
+  + stopAll()
+}
+
+class Font {
+  + name : string
+  + size : int
+  + load()
+}
+
+class FontManager {
+  + registerFont(font : Font)
+  + listFonts()
+  + get(name : string)
+}
+
+class Notification {
+  + title : string
+  + message : string
+  + send()
+}
+
+class NotificationService {
+  + queue(note : Notification)
+  + deliverAll()
+  + clear()
+}
+
+class Statistic {
+  + name : string
+  + value : double
+}
+
+class StatsCollector {
+  + record(stat : Statistic)
+  + average() : double
+  + clear()
+}
+
+ConfigSet *-- ConfigItem
+Logger "1" o-- "*" LogEntry
+ResourceManager *-- Resource
+Cache *-- CacheItem
+ThreadPool *-- Worker
+TaskScheduler *-- Job
+ThemeSet *-- Theme
+EventBus *-- Event
+CommandStack *-- Command
+History *-- HistoryEntry
+Renderer *-- Mesh
+Renderer *-- Material
+FrameBuffer *-- Texture
+Pipeline *-- Shader
+AudioManager *-- AudioClip
+FontManager *-- Font
+NotificationService *-- Notification
+StatsCollector *-- Statistic
+
+@enduml

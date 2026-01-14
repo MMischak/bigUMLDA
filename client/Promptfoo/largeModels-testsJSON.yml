@@ -1,0 +1,122 @@
+###############LargeModels
+#########processModellingMetaModel
+  - vars:
+      uml: file://../workspace/processModeling/processModelingJSON.txt
+      question: What’s the difference between a Task and a TaskDescriptor in this model?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-5
+        value: |
+          Evaluate how well the answer explains the distinction between **Task** and **TaskDescriptor**.  
+          Grade on a scale from 0.0 to 1.0:
+          - 1.0: Fully and clearly states that Task is a definition of work **and** that TaskDescriptor is a process-specific instance contextualized with performers, inputs, and outputs.
+          - 0.75: Mostly correct — both concepts mentioned but with minor detail missing or slight vagueness.
+          - 0.5: Captures the main idea but lacks one key detail or is less precise.
+          - 0.25: Only partially describes the difference with vague or incomplete information.
+          - 0.0: Incorrect or irrelevant explanation.
+
+          A score of 0.25 or higher should be considered a pass; lower scores should fail.
+
+  - vars:
+      uml: file://../workspace/processModeling/processModelingJSON.txt
+      question: Distinguish Role, RoleDescriptor, CompositeRole, and RoleSet definitions.
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-5
+        value: |
+          Evaluate how well the answer distinguishes the four elements:
+          - **Role** as a reusable role definition
+          - **RoleDescriptor** as a role in a specific process context
+          - **CompositeRole** as grouping multiple roles
+          - **RoleSet** as categorizing or organizing roles
+
+          Grade on a scale from 0.0 to 1.0:
+          - 1.0: Clearly and accurately explains all four concepts.
+          - 0.75: Covers most (3/4) correctly with minor omissions.
+          - 0.5: Covers about half with some vagueness or errors.
+          - 0.25: Barely touches on one concept.
+          - 0.0: No meaningful distinction or incorrect information.
+
+          A score of 0.25 or higher should be considered a pass.
+
+#########gepettoCoreModel
+  - vars:
+      uml: file://../workspace/gepetto/gepettoJSON.txt
+      question: What is the role of DataSourceLibraryConfiguration within a DataSource, and how does it interact with libraries?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-5
+        value: |
+          Evaluate how well the answer explains the role of **DataSourceLibraryConfiguration**:
+          - It binds a GeppettoLibrary to an interpreter ID and format.
+          - It specifies how a DataSource interprets incoming data using the library.
+
+          Grade on a scale from 0.0 to 1.0:
+          - 1.0: Both aspects are explained clearly and accurately.
+          - 0.75: Covers most of it, minor detail missing.
+          - 0.5: Captures only one key point.
+          - 0.25: Vague or partially relevant.
+          - 0.0: Incorrect or irrelevant.
+
+          A score of 0.25 or higher should be considered a pass.
+
+  - vars:
+      uml: file://../workspace/gepetto/gepettoJSON.txt
+      question: What’s the distinction between DomainModel and ExternalDomainModel, and how is format represented?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-5
+        value: |
+          Evaluate how well the answer distinguishes:
+          - **DomainModel** references a ModelFormat, separating metadata.
+          - **ExternalDomainModel** extends DomainModel to specify a file format for external models.
+
+          Grading scale:
+          - 1.0: Explains both clearly and correctly.
+          - 0.75: Minor detail missing but distinction clear.
+          - 0.5: Covers only one part.
+          - 0.25: Vague reference to the concepts.
+          - 0.0: Incorrect or irrelevant.
+
+          A score of 0.25 or higher should be considered a pass.
+
+#########SoftwareMetaModel 
+  - vars:
+      uml: file://../workspace/softwareMetaModel/SoftwareMetaModelJSON.txt
+      question: What is the structural role of an Activity in a process, and how is its decomposition modeled?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-5
+        value: |
+          Evaluate how well the answer explains:
+          - **Activity** is a WorkBreakdownElement in a process.
+          - It decomposes into zero or more BreakdownElements via the breakdownElement relationship.
+
+          Grading scale:
+          - 1.0: Both aspects clearly explained.
+          - 0.75: One aspect slightly underexplained but correct.
+          - 0.5: Only one key point present.
+          - 0.25: Vague or partially relevant.
+          - 0.0: Incorrect or irrelevant.
+
+          A score of 0.25 or higher should be considered a pass.
+
+  - vars:
+      uml: file://../workspace/softwareMetaModel/SoftwareMetaModelJSON.txt
+      question: How are work products specialized and described across content and breakdown views?
+    assert:
+      - type: llm-rubric
+        provider: openai:gpt-5
+        value: |
+          Evaluate how well the answer explains:
+          - **WorkProduct** is a content element specialized into Artifact, Deliverable, and Outcome.
+          - **WorkProductDescriptor** represents its usage in processes (breakdown view).
+
+          Grading scale:
+          - 1.0: Fully and clearly explains both parts.
+          - 0.75: Covers most but missing some detail.
+          - 0.5: Only covers one aspect.
+          - 0.25: Vague or partially relevant.
+          - 0.0: Incorrect or irrelevant.
+
+          A score of 0.25 or higher should be considered a pass.

@@ -1,0 +1,508 @@
+@startuml
+skinparam classAttributeIconSize 0
+ class ActivityDescription {
+  String alternatives
+  String howToStaff
+  String purpose
+}
+ class ApplicableMetaClassInfo {
+  String isPrimaryExtension
+}
+ class Artifact {
+  String group3
+}
+ class ArtifactDescription {
+  String briefOutline
+  String representationOptions
+  String representation
+  String notation
+}
+ class BreakdownElement {
+  String presentedAfter
+  String presentedBefore
+  String planningData
+  String superActivity
+  String group1
+  String checklist
+  String concept
+  String example
+  String guideline
+  String reusableAsset
+  String supportingMaterial
+  String whitepaper
+  String hasMultipleOccurrences
+  String isOptional
+  String isPlanned
+  String prefix
+}
+ class BreakdownElementDescription {
+  String usageGuidance
+}
+ class CapabilityPattern {
+}
+ class Checklist {
+}
+ class CompositeRole {
+  String group2
+}
+ class Concept {
+}
+ class Constraint {
+  String mainDescription
+}
+ class ContentCategory {
+}
+ class ContentCategoryPackage {
+  String group2
+}
+ class ContentDescription {
+  String mainDescription
+  String keyConsiderations
+  String externalId
+}
+ class ContentElement {
+  String group1
+  String checklist
+  String concept
+  String example
+  String guideline
+  String reusableAsset
+  String supportingMaterial
+  String whitepaper
+  String variabilityBasedOnElement
+  String variabilityType
+}
+ class Activity {
+  String roadmap
+  String precondition
+  String postcondition
+  String group3
+  String isEnactable
+  String variabilityBasedOnElement
+  String variabilityType
+}
+ class ContentPackage {
+  String group2
+}
+ class CustomCategory {
+  String group2
+  String categorizedElement
+  String subCategory
+}
+ class Deliverable {
+  String group3
+  String deliveredWorkProduct
+}
+ class DeliverableDescription {
+  String externalDescription
+  String packagingGuidance
+}
+ class DeliveryProcess {
+  String group4
+  String communicationsMaterial
+  String educationMaterial
+}
+ class DeliveryProcessDescription {
+  String scale
+  String projectCharacteristics
+  String riskLevel
+  String estimatingTechnique
+  String projectMemberExpertise
+  String typeOfContract
+}
+ class DescribableElement {
+  String fulfill
+  String isAbstract
+  String nodeicon
+  String shapeicon
+}
+ class Descriptor {
+  String isSynchronizedWithSource
+}
+ class DescriptorDescription {
+  String refinedDescription
+}
+ class Discipline {
+  String group2
+  String task
+  String referenceWorkflow
+}
+ class DisciplineGrouping {
+  String group2
+  String discipline
+}
+ class DocumentRoot {
+  String mixed
+}
+ class Domain {
+  String group2
+  String workProduct
+}
+ class Element {
+}
+ class Estimate {
+  String group2
+  String estimationMetric
+  String estimationConsiderations
+}
+ class EstimatingMetric {
+}
+ class EstimationConsiderations {
+}
+ class Example {
+}
+ class Guidance {
+}
+ class GuidanceDescription {
+  String attachment
+}
+ class Guideline {
+}
+ class Iteration {
+}
+ class Kind {
+  String applicableMetaClassInfo
+}
+ class MethodConfiguration {
+  String baseConfiguration
+  String methodPluginSelection
+  String methodPackageSelection
+  String defaultView
+  String processView
+  String subtractedCategory
+  String addedCategory
+}
+ class MethodElement {
+  String group
+  String briefDescription
+  String id
+  String orderingGuide
+  String presentationName
+  String suppressed
+}
+ class MethodElementProperty {
+  String value
+}
+ class MethodLibrary {
+  String tool
+}
+ class MethodPackage {
+  String group1
+  String reusedPackage
+  String global
+}
+ class MethodPlugin {
+  String referencedMethodPlugin
+  String supporting
+  String userChangeable
+}
+ class MethodUnit {
+  String copyright
+  String authors
+  String changeDate
+  String changeDescription
+  String version
+}
+ class Milestone {
+  String requiredResult
+}
+ class NamedElement {
+  String name
+}
+ class Outcome {
+}
+ class PackageableElement {
+}
+ class Phase {
+}
+ class PlanningData {
+  String finishDate
+  String rank
+  String startDate
+}
+ class Practice {
+  String group2
+  String activityReference
+  String contentReference
+}
+ class PracticeDescription {
+  String additionalInfo
+  String application
+  String background
+  String goals
+  String levelsOfAdoption
+  String problem
+}
+ class Process {
+  String includesPattern
+  String defaultContext
+  String validContext
+  String diagramURI
+}
+ class ProcessComponent {
+  String copyright
+  String authors
+  String changeDate
+  String changeDescription
+  String version
+}
+ class ProcessComponentInterface {
+  String group2
+}
+ class ProcessDescription {
+  String scope
+  String usageNotes
+}
+ class ProcessElement {
+}
+ class ProcessPackage {
+  String group2
+}
+ class ProcessPlanningTemplate {
+  String group4
+  String baseProcess
+}
+ class Report {
+}
+ class ReusableAsset {
+}
+ class Roadmap {
+}
+ class Role {
+  String group2
+  String responsibleFor
+}
+ class RoleDescription {
+  String assignmentApproaches
+  String skills
+  String synonyms
+}
+ class RoleDescriptor {
+  String role
+  String responsibleFor
+}
+ class RoleSet {
+  String group2
+  String role
+}
+ class RoleSetGrouping {
+  String group2
+  String roleSet
+}
+ class Section {
+  String predecessor
+  String description
+  String sectionName
+  String variabilityBasedOnElement
+  String variabilityType
+}
+ class SupportingMaterial {
+}
+ class Task {
+  String precondition
+  String postcondition
+  String performedBy
+  String group2
+  String mandatoryInput
+  String output
+  String additionallyPerformedBy
+  String optionalInput
+  String estimate
+  String estimationConsiderations
+  String toolMentor
+}
+ class TaskDescription {
+  String alternatives
+  String purpose
+}
+ class TaskDescriptor {
+  String task
+  String group3
+  String performedPrimarilyBy
+  String additionallyPerformedBy
+  String assistedBy
+  String externalInput
+  String mandatoryInput
+  String optionalInput
+  String output
+  String isSynchronizedWithSource
+}
+ class TeamProfile {
+  String group2
+  String role
+  String superTeam
+  String subTeam
+}
+ class Template {
+}
+ class TermDefinition {
+}
+ class Tool {
+  String group2
+  String toolMentor
+}
+ class ToolMentor {
+}
+ class Whitepaper {
+}
+ class WorkBreakdownElement {
+  String group2
+  String isEventDriven
+  String isOngoing
+  String isRepeatable
+}
+ class WorkDefinition {
+  String precondition
+  String postcondition
+}
+ class WorkOrder {
+  String value
+  String id
+  String linkType
+  String properties
+}
+ class WorkProduct {
+  String group2
+  String estimate
+  String estimationConsiderations
+  String report
+  String template
+  String toolMentor
+}
+ class WorkProductDescription {
+  String impactOfNotHaving
+  String purpose
+  String reasonsForNotNeeding
+}
+ class WorkProductDescriptor {
+  String workProduct
+  String responsibleRole
+  String group2
+  String externalInputTo
+  String impactedBy
+  String impacts
+  String mandatoryInputTo
+  String optionalInputTo
+  String outputFrom
+  String deliverableParts
+  String activityEntryState
+  String activityExitState
+}
+ class WorkProductType {
+  String group2
+  String workProduct
+}
+Artifact *--> Artifact : containedArtifact [0..*]
+CompositeRole *--> Role : aggregatedRole [0..*]
+ContentCategoryPackage *--> ContentCategory : contentCategory [0..*]
+ContentDescription *--> Section : section [0..*]
+Activity *--> BreakdownElement : breakdownElement [0..*]
+ContentPackage *--> ContentElement : contentElement [0..*]
+DescribableElement *--> ContentDescription : presentation [0..1]
+Discipline *--> Discipline : subDiscipline [0..*]
+DocumentRoot *--> DocumentRoot : xMLNSPrefixMap [0..*]
+DocumentRoot *--> DocumentRoot : xSISchemaLocation [0..*]
+DocumentRoot *--> MethodConfiguration : methodConfiguration [0..-2]
+DocumentRoot *--> MethodLibrary : methodLibrary [0..-2]
+DocumentRoot *--> MethodPlugin : methodPlugin [0..-2]
+Domain *--> Domain : subdomain [0..*]
+MethodElement *--> Constraint : ownedRule [0..*]
+MethodElement *--> MethodElementProperty : methodElementProperty [0..*]
+MethodLibrary *--> MethodPlugin : methodPlugin [0..*]
+MethodLibrary *--> MethodConfiguration : methodConfiguration [0..*]
+MethodPackage *--> MethodPackage : methodPackage [0..*]
+MethodPlugin *--> MethodPackage : methodPackage [0..*]
+Practice *--> Practice : subPractice [0..*]
+ProcessComponent *--> ProcessComponentInterface : interface [0..1]
+ProcessComponent *--> Process : process [1..1]
+ProcessComponentInterface *--> TaskDescriptor : interfaceSpecification [0..*]
+ProcessComponentInterface *--> WorkProductDescriptor : interfaceIO [0..*]
+ProcessPackage *--> ProcessElement : processElement [0..*]
+Section *--> Section : subSection [0..1]
+TaskDescriptor *--> Section : step [0..*]
+WorkBreakdownElement *--> WorkOrder : predecessor [0..*]
+BreakdownElementDescription <|-- ActivityDescription
+PackageableElement <|-- ApplicableMetaClassInfo
+WorkProduct <|-- Artifact
+WorkProductDescription <|-- ArtifactDescription
+ProcessElement <|-- BreakdownElement
+ContentDescription <|-- BreakdownElementDescription
+Process <|-- CapabilityPattern
+Guidance <|-- Checklist
+RoleDescriptor <|-- CompositeRole
+Guidance <|-- Concept
+MethodElement <|-- Constraint
+ContentElement <|-- ContentCategory
+MethodPackage <|-- ContentCategoryPackage
+MethodUnit <|-- ContentDescription
+DescribableElement <|-- ContentElement
+WorkBreakdownElement <|-- Activity
+MethodPackage <|-- ContentPackage
+ContentCategory <|-- CustomCategory
+WorkProduct <|-- Deliverable
+WorkProductDescription <|-- DeliverableDescription
+Process <|-- DeliveryProcess
+ProcessDescription <|-- DeliveryProcessDescription
+MethodElement <|-- DescribableElement
+BreakdownElement <|-- Descriptor
+BreakdownElementDescription <|-- DescriptorDescription
+ContentCategory <|-- Discipline
+ContentCategory <|-- DisciplineGrouping
+ContentCategory <|-- Domain
+Guidance <|-- Estimate
+Guidance <|-- EstimatingMetric
+Guidance <|-- EstimationConsiderations
+Guidance <|-- Example
+ContentElement <|-- Guidance
+ContentDescription <|-- GuidanceDescription
+Guidance <|-- Guideline
+Activity <|-- Iteration
+ContentElement <|-- Kind
+MethodUnit <|-- MethodConfiguration
+PackageableElement <|-- MethodElement
+PackageableElement <|-- MethodElementProperty
+MethodUnit <|-- MethodLibrary
+MethodElement <|-- MethodPackage
+MethodUnit <|-- MethodPlugin
+MethodElement <|-- MethodUnit
+WorkBreakdownElement <|-- Milestone
+Element <|-- NamedElement
+WorkProduct <|-- Outcome
+NamedElement <|-- PackageableElement
+Activity <|-- Phase
+ProcessElement <|-- PlanningData
+Guidance <|-- Practice
+ContentDescription <|-- PracticeDescription
+Activity <|-- Process
+ProcessPackage <|-- ProcessComponent
+BreakdownElement <|-- ProcessComponentInterface
+ActivityDescription <|-- ProcessDescription
+DescribableElement <|-- ProcessElement
+MethodPackage <|-- ProcessPackage
+Process <|-- ProcessPlanningTemplate
+Guidance <|-- Report
+Guidance <|-- ReusableAsset
+Guidance <|-- Roadmap
+ContentElement <|-- Role
+ContentDescription <|-- RoleDescription
+Descriptor <|-- RoleDescriptor
+ContentCategory <|-- RoleSet
+ContentCategory <|-- RoleSetGrouping
+MethodElement <|-- Section
+Guidance <|-- SupportingMaterial
+ContentElement <|-- Task
+ContentDescription <|-- TaskDescription
+WorkBreakdownElement <|-- TaskDescriptor
+BreakdownElement <|-- TeamProfile
+Guidance <|-- Template
+Guidance <|-- TermDefinition
+ContentCategory <|-- Tool
+Guidance <|-- ToolMentor
+Concept <|-- Whitepaper
+BreakdownElement <|-- WorkBreakdownElement
+MethodElement <|-- WorkDefinition
+ContentElement <|-- WorkProduct
+ContentDescription <|-- WorkProductDescription
+Descriptor <|-- WorkProductDescriptor
+ContentCategory <|-- WorkProductType
+@enduml

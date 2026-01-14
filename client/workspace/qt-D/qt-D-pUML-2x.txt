@@ -1,0 +1,440 @@
+@startuml
+
+abstract class QSqlResult {
+  # lastError()
+  # setQuery()
+  # fetch()
+  # numRowsAffected()
+}
+
+class QSqlError
+
+class QSqlQueryModel {
+  + record()
+  + setQuery()
+  # indexInQuery()
+  # setLastError()
+}
+
+class QSqlTableModel {
+  + select()
+  + setTable()
+  # insertRowIntoTable()
+  # deleteRowFromTable()
+  # selectStatement()
+  # setQuery()
+}
+
+class QSqlRecord {
+  + fieldName()
+  + append()
+  + insert()
+  + count()
+}
+
+class QSqlDatabase {
+  {static} + defaultConnection : char
+  + record()
+  + exec()
+  + setUserName()
+  + setPassword()
+}
+
+class QSqlQuery {
+  + record()
+  + exec()
+}
+
+class QSqlIndex
+
+class QSqlField {
+  - val : QVariant
+  - d : QSqlFieldPrivate
+  + setValue()
+  + isNull()
+}
+
+abstract class QAbstractItemView {
+  + setModel()
+  + setItemDelegate()
+  + setIndexWidget()
+  + setItemDelegateForRow()
+  + update()
+  # event()
+}
+
+class QObject
+class QModelIndex
+
+class QDataWidgetMapper {
+  + setModel()
+  + setItemDelegate()
+}
+
+abstract class QAbstractItemModel {
+  + hasIndex()
+  + setItemData()
+  + insertRows()
+  # dataChanged()
+  # createIndex()
+}
+
+abstract class QAbstractItemDelegate {
+  + paint()
+  + setModelData()
+}
+
+class QTableView {
+  + setModel()
+  + selectRow()
+  + sortByColumn()
+  + setModel()
+}
+
+class QHeaderView {
+  + setModel()
+  # initializeSection()
+  # mousePressEvent()
+}
+
+class QTableWidget {
+  + setCurrentItem()
+  + setCellWidget()
+}
+
+class QVariant <<private>>
+class QSqlFieldPrivate <<private>>
+
+enum TransactionState { Idle Active Committed RolledBack }
+enum LogSeverity { Info Warning Error Debug Critical }
+enum ConnectionType { Primary Secondary Replica Backup }
+enum MetricType { Counter Gauge Histogram Summary }
+enum JobStatus { Waiting Running Finished Failed }
+
+struct NetworkStats {
+  packetsSent : long
+  packetsReceived : long
+  latencyMs : int
+}
+
+struct CacheEntry {
+  key : string
+  size : int
+  valid : bool
+  timestamp : Date
+}
+
+struct Metric {
+  name : string
+  value : double
+  timestamp : Date
+}
+
+struct TaskInfo {
+  id : int
+  name : string
+  progress : double
+}
+
+struct FileMeta {
+  name : string
+  size : long
+  created : Date
+  modified : Date
+}
+
+class Logger {
+  + logInfo(msg)
+  + logWarn(msg)
+  + logError(msg)
+  + logDebug(msg)
+}
+
+class LogRecord {
+  + level : LogSeverity
+  + message : string
+  + timestamp : Date
+}
+
+class ConfigItem {
+  + key : string
+  + value : string
+}
+
+class ConfigManager {
+  + load(path : string)
+  + save(path : string)
+  + get(key : string)
+  + set(key : string, value : string)
+}
+
+class CacheManager {
+  + add(entry : CacheEntry)
+  + remove(key : string)
+  + clear()
+  + count() : int
+}
+
+class ThreadPool {
+  + start(count : int)
+  + submit(task : TaskInfo)
+  + shutdown()
+}
+
+class WorkerThread {
+  + id : int
+  + active : bool
+  + execute()
+}
+
+class Job {
+  + id : int
+  + name : string
+  + status : JobStatus
+  + run()
+}
+
+class Scheduler {
+  + schedule(job : Job)
+  + cancel(id : int)
+  + next() : Job
+}
+
+class Resource {
+  + id : int
+  + type : string
+  + allocated : bool
+}
+
+class ResourcePool {
+  + acquire() : Resource
+  + release(res : Resource)
+  + available() : int
+}
+
+class Timer {
+  + start()
+  + stop()
+  + elapsed() : double
+}
+
+class Stopwatch {
+  + begin()
+  + end()
+  + duration() : double
+}
+
+class Event {
+  + name : string
+  + timestamp : Date
+}
+
+class EventBus {
+  + publish(e : Event)
+  + subscribe(name : string)
+  + unsubscribe(name : string)
+}
+
+class Notification {
+  + title : string
+  + message : string
+  + send()
+}
+
+class NotificationCenter {
+  + post(note : Notification)
+  + clear()
+  + size() : int
+}
+
+class Report {
+  + title : string
+  + generate()
+  + exportCsv()
+  + exportJson()
+}
+
+class AnalyticsEngine {
+  + collect(metric : Metric)
+  + computeAverages()
+  + report() : Report
+}
+
+class DataSerializer {
+  + serialize(obj)
+  + deserialize(data)
+  + toJson()
+  + fromJson()
+}
+
+class Encryption {
+  + encrypt(data)
+  + decrypt(data)
+  + setKey(key : string)
+}
+
+class Compression {
+  + compress(data)
+  + decompress(data)
+  + ratio() : double
+}
+
+class Validator {
+  + validate(obj)
+  + lastError() : string
+}
+
+class Localization {
+  + translate(key : string)
+  + setLanguage(lang : string)
+}
+
+class Theme {
+  + name : string
+  + primaryColor : string
+  + accentColor : string
+}
+
+class ThemeManager {
+  + apply(theme : Theme)
+  + listThemes()
+  + currentTheme() : Theme
+}
+
+class NetworkClient {
+  + connect(addr : string)
+  + disconnect()
+  + send(data)
+  + receive() : string
+}
+
+class NetworkServer {
+  + start(port : int)
+  + stop()
+  + status() : string
+}
+
+class StorageFile {
+  + open(path : string)
+  + close()
+  + read()
+  + write(data)
+}
+
+class StorageManager {
+  + addFile(file : StorageFile)
+  + removeFile(name : string)
+  + listFiles()
+}
+
+class ImageProcessor {
+  + load(path : string)
+  + filter(name : string)
+  + save(path : string)
+}
+
+class AudioProcessor {
+  + load(file : string)
+  + play()
+  + stop()
+}
+
+class VideoProcessor {
+  + open(file : string)
+  + renderFrame()
+  + close()
+}
+
+class Vector2 {
+  + x : double
+  + y : double
+  + length() : double
+}
+
+class Vector3 {
+  + x : double
+  + y : double
+  + z : double
+  + normalize()
+}
+
+class Matrix4 {
+  + multiply(m : Matrix4)
+  + invert()
+  + transpose()
+}
+
+class Geometry {
+  + width : int
+  + height : int
+  + area() : int
+}
+
+class Shape {
+  + name : string
+  + draw()
+}
+
+class Renderer {
+  + begin()
+  + draw(shape : Shape)
+  + end()
+}
+
+class Scene {
+  + add(shape : Shape)
+  + remove(name : string)
+  + render()
+}
+
+class AudioClip {
+  + play()
+  + pause()
+  + stop()
+}
+
+class AudioManager {
+  + addClip(c : AudioClip)
+  + playAll()
+  + stopAll()
+}
+
+QSqlTableModel --|> QSqlQueryModel
+QSqlIndex --|> QSqlRecord
+QTableWidget --|> QTableView
+QTableView --|> QAbstractItemView
+QHeaderView --|> QAbstractItemView
+QDataWidgetMapper --|> QObject
+
+
+QSqlTableModel *--> QSqlRecord : record [1..1]
+QSqlQuery *--> QSqlDatabase : database [1..1]
+ThreadPool *--> WorkerThread : workers [0..*]
+Scheduler *--> Job : jobs [0..*]
+ResourcePool *--> Resource : resources [0..*]
+EventBus *--> Event : events [0..*]
+NotificationCenter *--> Notification : notifications [0..*]
+AnalyticsEngine *--> Metric : metrics [0..*]
+Report *--> AnalyticsEngine : engine [1..1]
+ThemeManager *--> Theme : themes [0..*]
+NetworkServer *--> NetworkClient : clients [0..*]
+StorageManager *--> StorageFile : files [0..*]
+Scene *--> Shape : shapes [0..*]
+Renderer *--> Geometry : geometry [1..1]
+AudioManager *--> AudioClip : clips [0..*]
+CacheManager *--> CacheEntry : entries [0..*]
+
+QDataWidgetMapper o--> QModelIndex : index [1..1]
+
+QSqlResult ..> QSqlError : error [0..1]
+QSqlQueryModel ..> QSqlError : error [0..1]
+QSqlQueryModel ..> QSqlQuery : query [0..1]
+QSqlDatabase ..> QSqlQuery : query [0..1]
+QSqlRecord ..> QSqlField : field [0..*]
+QDataWidgetMapper ..> QAbstractItemModel : model [0..1]
+QDataWidgetMapper ..> QAbstractItemDelegate : delegate [0..1]
+QAbstractItemDelegate ..> QAbstractItemView : view [0..1]
+QTableView ..> QHeaderView : header [0..1]
+QTableView ..> QSqlTableModel : tableModel [0..1]
+
+@enduml

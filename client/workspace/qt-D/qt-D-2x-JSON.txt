@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_t3W4QMJrEfCvLOkI6MIUpA">
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNvgIMLeEfCvLOkI6MIUpA" name="QSqlResult" isAbstract="true">
+    <ownedOperation xmi:id="_vNzxkMLeEfCvLOkI6MIUpA" name="lastError"/>
+    <ownedOperation xmi:id="_vN0YoMLeEfCvLOkI6MIUpA" name="setQuery"/>
+    <ownedOperation xmi:id="_vN0YpcLeEfCvLOkI6MIUpA" name="fetch"/>
+    <ownedOperation xmi:id="_vN0YqsLeEfCvLOkI6MIUpA" name="numRowsAffected"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNvgJcLeEfCvLOkI6MIUpA" name="QSqlError"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNvgKsLeEfCvLOkI6MIUpA" name="QSqlQueryModel">
+    <ownedOperation xmi:id="_vN0Yr8LeEfCvLOkI6MIUpA" name="record"/>
+    <ownedOperation xmi:id="_vN0YtMLeEfCvLOkI6MIUpA" name="setQuery"/>
+    <ownedOperation xmi:id="_vN0YucLeEfCvLOkI6MIUpA" name="indexInQuery"/>
+    <ownedOperation xmi:id="_vN0YvsLeEfCvLOkI6MIUpA" name="setLastError"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNvgL8LeEfCvLOkI6MIUpA" name="QSqlTableModel">
+    <ownedAttribute xmi:id="_vOBM98LeEfCvLOkI6MIUpA" name="Class" type="_vNvgNMLeEfCvLOkI6MIUpA" aggregation="composite" association="_vOBM9sLeEfCvLOkI6MIUpA">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vOBM-MLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vOBM-cLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_vN0Yw8LeEfCvLOkI6MIUpA" name="select"/>
+    <ownedOperation xmi:id="_vN0_sMLeEfCvLOkI6MIUpA" name="setTable"/>
+    <ownedOperation xmi:id="_vN0_tcLeEfCvLOkI6MIUpA" name="insertRowIntoTable"/>
+    <ownedOperation xmi:id="_vN0_usLeEfCvLOkI6MIUpA" name="deleteRowFromTable"/>
+    <ownedOperation xmi:id="_vN0_v8LeEfCvLOkI6MIUpA" name="selectStatement"/>
+    <ownedOperation xmi:id="_vN0_xMLeEfCvLOkI6MIUpA" name="setQuery"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNvgNMLeEfCvLOkI6MIUpA" name="QSqlRecord">
+    <ownedAttribute xmi:id="_vOBM-sLeEfCvLOkI6MIUpA" name="Class" type="_vNvgL8LeEfCvLOkI6MIUpA" association="_vOBM9sLeEfCvLOkI6MIUpA">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vOBM-8LeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vOBM_MLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_vN0_ycLeEfCvLOkI6MIUpA" name="fieldName"/>
+    <ownedOperation xmi:id="_vN0_zsLeEfCvLOkI6MIUpA" name="append"/>
+    <ownedOperation xmi:id="_vN0_08LeEfCvLOkI6MIUpA" name="insert"/>
+    <ownedOperation xmi:id="_vN1mwMLeEfCvLOkI6MIUpA" name="count"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNvgOcLeEfCvLOkI6MIUpA" name="QSqlDatabase">
+    <ownedAttribute xmi:id="_vOBNAMLeEfCvLOkI6MIUpA" name="Class" type="_vNvgPsLeEfCvLOkI6MIUpA" aggregation="composite" association="_vOBM_8LeEfCvLOkI6MIUpA">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vOBNAcLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vOBNAsLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_vN1mxcLeEfCvLOkI6MIUpA" name="record"/>
+    <ownedOperation xmi:id="_vN1mysLeEfCvLOkI6MIUpA" name="exec"/>
+    <ownedOperation xmi:id="_vN1mz8LeEfCvLOkI6MIUpA" name="setUserName"/>
+    <ownedOperation xmi:id="_vN1m1MLeEfCvLOkI6MIUpA" name="setPassword"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNvgPsLeEfCvLOkI6MIUpA" name="QSqlQuery">
+    <ownedAttribute xmi:id="_vOBNA8LeEfCvLOkI6MIUpA" name="Class" type="_vNvgOcLeEfCvLOkI6MIUpA" association="_vOBM_8LeEfCvLOkI6MIUpA">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vOBNBMLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vOBNBcLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_vN1m2cLeEfCvLOkI6MIUpA" name="record"/>
+    <ownedOperation xmi:id="_vN1m3sLeEfCvLOkI6MIUpA" name="exec"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNvgQ8LeEfCvLOkI6MIUpA" name="QSqlIndex"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwHMMLeEfCvLOkI6MIUpA" name="QSqlField">
+    <ownedAttribute xmi:id="_vN2N1MLeEfCvLOkI6MIUpA" name="val">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN2N1cLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN2N1sLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_vN2N28LeEfCvLOkI6MIUpA" name="d">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN2N3MLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN2N3cLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_vN2N4sLeEfCvLOkI6MIUpA" name="setValue"/>
+    <ownedOperation xmi:id="_vN2N58LeEfCvLOkI6MIUpA" name="isNull"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwHNcLeEfCvLOkI6MIUpA" name="QAbstractItemView" isAbstract="true">
+    <ownedOperation xmi:id="_vN2N7MLeEfCvLOkI6MIUpA" name="setModel"/>
+    <ownedOperation xmi:id="_vN205MLeEfCvLOkI6MIUpA" name="setItemDelegate"/>
+    <ownedOperation xmi:id="_vN206cLeEfCvLOkI6MIUpA" name="setIndexWidget"/>
+    <ownedOperation xmi:id="_vN207sLeEfCvLOkI6MIUpA" name="setItemDelegateForRow"/>
+    <ownedOperation xmi:id="_vN2088LeEfCvLOkI6MIUpA" name="update"/>
+    <ownedOperation xmi:id="_vN20-MLeEfCvLOkI6MIUpA" name="event"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwHOsLeEfCvLOkI6MIUpA" name="QObject"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwHP8LeEfCvLOkI6MIUpA" name="QModelIndex">
+    <ownedAttribute xmi:id="_vOB0BMLeEfCvLOkI6MIUpA" name="Class" type="_vNwHRMLeEfCvLOkI6MIUpA" association="_vOB0AMLeEfCvLOkI6MIUpA">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vOB0BcLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vOB0BsLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwHRMLeEfCvLOkI6MIUpA" name="QDataWidgetMapper">
+    <ownedAttribute xmi:id="_vOB0AcLeEfCvLOkI6MIUpA" name="Class" type="_vNwHP8LeEfCvLOkI6MIUpA" aggregation="shared" association="_vOB0AMLeEfCvLOkI6MIUpA">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vOB0AsLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vOB0A8LeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_vN20_cLeEfCvLOkI6MIUpA" name="setModel"/>
+    <ownedOperation xmi:id="_vN3b9MLeEfCvLOkI6MIUpA" name="setItemDelegate"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwHScLeEfCvLOkI6MIUpA" name="QAbstractItemModel" isAbstract="true">
+    <ownedOperation xmi:id="_vN3b-cLeEfCvLOkI6MIUpA" name="hasIndex"/>
+    <ownedOperation xmi:id="_vN3b_sLeEfCvLOkI6MIUpA" name="setItemData"/>
+    <ownedOperation xmi:id="_vN3cA8LeEfCvLOkI6MIUpA" name="insertRows"/>
+    <ownedOperation xmi:id="_vN3cCMLeEfCvLOkI6MIUpA" name="dataChanged"/>
+    <ownedOperation xmi:id="_vN3cDcLeEfCvLOkI6MIUpA" name="createIndex"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwHTsLeEfCvLOkI6MIUpA" name="QAbstractItemDelegate" isAbstract="true">
+    <ownedOperation xmi:id="_vN4DAMLeEfCvLOkI6MIUpA" name="paint"/>
+    <ownedOperation xmi:id="_vN4DBcLeEfCvLOkI6MIUpA" name="setModelData"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwHU8LeEfCvLOkI6MIUpA" name="QTableView">
+    <ownedOperation xmi:id="_vN4DCsLeEfCvLOkI6MIUpA" name="setModel"/>
+    <ownedOperation xmi:id="_vN4DD8LeEfCvLOkI6MIUpA" name="selectRow"/>
+    <ownedOperation xmi:id="_vN4DFMLeEfCvLOkI6MIUpA" name="sortByColumn"/>
+    <ownedOperation xmi:id="_vN4qEMLeEfCvLOkI6MIUpA" name="setModel"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwHWMLeEfCvLOkI6MIUpA" name="QHeaderView">
+    <ownedOperation xmi:id="_vN4qFcLeEfCvLOkI6MIUpA" name="setModel"/>
+    <ownedOperation xmi:id="_vN4qGsLeEfCvLOkI6MIUpA" name="initializeSection"/>
+    <ownedOperation xmi:id="_vN4qH8LeEfCvLOkI6MIUpA" name="mousePressEvent"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwHXcLeEfCvLOkI6MIUpA" name="QTableWidget">
+    <ownedOperation xmi:id="_vN4qJMLeEfCvLOkI6MIUpA" name="setCurrentItem"/>
+    <ownedOperation xmi:id="_vN5RJMLeEfCvLOkI6MIUpA" name="setCellWidget"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwHYsLeEfCvLOkI6MIUpA" name="QVariant"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwHZ8LeEfCvLOkI6MIUpA" name="QSqlFieldPrivate"/>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwuQMLeEfCvLOkI6MIUpA" name="NetworkStats">
+    <ownedAttribute xmi:id="_vN5RKcLeEfCvLOkI6MIUpA" name="packetsSent">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN5RKsLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN5RK8LeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_vN5RMMLeEfCvLOkI6MIUpA" name="packetsReceived">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN5RMcLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN5RMsLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_vN5RN8LeEfCvLOkI6MIUpA" name="latencyMs">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN5ROMLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN5ROcLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwuRcLeEfCvLOkI6MIUpA" name="CacheEntry">
+    <ownedAttribute xmi:id="_vN54MMLeEfCvLOkI6MIUpA" name="key">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN54McLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN54MsLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_vN54N8LeEfCvLOkI6MIUpA" name="size">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN54OMLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN54OcLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_vN54PsLeEfCvLOkI6MIUpA" name="valid">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN54P8LeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN54QMLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_vN54RcLeEfCvLOkI6MIUpA" name="timestamp">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN54RsLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN54R8LeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwuSsLeEfCvLOkI6MIUpA" name="Metric">
+    <ownedAttribute xmi:id="_vN6fQMLeEfCvLOkI6MIUpA" name="name">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN6fQcLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN6fQsLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_vN6fR8LeEfCvLOkI6MIUpA" name="value">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN6fSMLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN6fScLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_vN6fTsLeEfCvLOkI6MIUpA" name="timestamp">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN6fT8LeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN6fUMLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwuT8LeEfCvLOkI6MIUpA" name="TaskInfo">
+    <ownedAttribute xmi:id="_vN6fVcLeEfCvLOkI6MIUpA" name="id">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN6fVsLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN6fV8LeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_vN7GUMLeEfCvLOkI6MIUpA" name="name">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN7GUcLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN7GUsLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_vN7GV8LeEfCvLOkI6MIUpA" name="progress">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN7GWMLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN7GWcLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwuVMLeEfCvLOkI6MIUpA" name="FileMeta">
+    <ownedAttribute xmi:id="_vN7GXsLeEfCvLOkI6MIUpA" name="name">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN7GX8LeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN7GYMLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_vN7GZcLeEfCvLOkI6MIUpA" name="size">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN7GZsLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN7GZ8LeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_vN7tYMLeEfCvLOkI6MIUpA" name="created">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN7tYcLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN7tYsLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_vN7tZ8LeEfCvLOkI6MIUpA" name="modified">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN7taMLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN7tacLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwuWcLeEfCvLOkI6MIUpA" name="Logger">
+    <ownedOperation xmi:id="_vN7tbsLeEfCvLOkI6MIUpA" name="logInfo"/>
+    <ownedOperation xmi:id="_vN7tc8LeEfCvLOkI6MIUpA" name="logWarn"/>
+    <ownedOperation xmi:id="_vN7teMLeEfCvLOkI6MIUpA" name="logError"/>
+    <ownedOperation xmi:id="_vN8UcMLeEfCvLOkI6MIUpA" name="logDebug"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwuXsLeEfCvLOkI6MIUpA" name="LogRecord">
+    <ownedAttribute xmi:id="_vN8UdcLeEfCvLOkI6MIUpA" name="level">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN8UdsLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN8Ud8LeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_vN8UfMLeEfCvLOkI6MIUpA" name="message">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN8UfcLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN8UfsLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_vN8Ug8LeEfCvLOkI6MIUpA" name="timestamp">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN8UhMLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN8UhcLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" xmi:id="_vNwuY8LeEfCvLOkI6MIUpA" name="ConfigItem">
+    <ownedAttribute xmi:id="_vN8UisLeEfCvLOkI6MIUpA" name="key">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN8Ui8LeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN8UjMLeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_vN8UkcLeEfCvLOkI6MIUpA" name="value">
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_vN8UksLeEfCvLOkI6MIUpA" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_vN8Uk8LeEfCvLOkI6MIUpA" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Realization" xmi:id="_vOAl4MLeEfCvLOkI6MIUpA" client="_vNvgL8LeEfCvLOkI6MIUpA" supplier="_vNvgKsLeEfCvLOkI6MIUpA"/>
+  <packagedElement xsi:type="uml:Realization" xmi:id="_vOAl48LeEfCvLOkI6MIUpA" client="_vNvgQ8LeEfCvLOkI6MIUpA" supplier="_vNvgNMLeEfCvLOkI6MIUpA"/>
+  <packagedElement xsi:type="uml:Realization" xmi:id="_vOAl5sLeEfCvLOkI6MIUpA" client="_vNwHXcLeEfCvLOkI6MIUpA" supplier="_vNwHU8LeEfCvLOkI6MIUpA"/>
+  <packagedElement xsi:type="uml:Realization" xmi:id="_vOAl6cLeEfCvLOkI6MIUpA" client="_vNwHU8LeEfCvLOkI6MIUpA" supplier="_vNwHNcLeEfCvLOkI6MIUpA"/>
+  <packagedElement xsi:type="uml:Realization" xmi:id="_vOBM8MLeEfCvLOkI6MIUpA" client="_vNwHWMLeEfCvLOkI6MIUpA" supplier="_vNwHNcLeEfCvLOkI6MIUpA"/>
+  <packagedElement xsi:type="uml:Realization" xmi:id="_vOBM88LeEfCvLOkI6MIUpA" client="_vNwHRMLeEfCvLOkI6MIUpA" supplier="_vNwHOsLeEfCvLOkI6MIUpA"/>
+  <packagedElement xsi:type="uml:Association" xmi:id="_vOBM9sLeEfCvLOkI6MIUpA" memberEnd="_vOBM98LeEfCvLOkI6MIUpA _vOBM-sLeEfCvLOkI6MIUpA"/>
+  <packagedElement xsi:type="uml:Association" xmi:id="_vOBM_8LeEfCvLOkI6MIUpA" memberEnd="_vOBNAMLeEfCvLOkI6MIUpA _vOBNA8LeEfCvLOkI6MIUpA"/>
+  <packagedElement xsi:type="uml:Association" xmi:id="_vOB0AMLeEfCvLOkI6MIUpA" memberEnd="_vOB0AcLeEfCvLOkI6MIUpA _vOB0BMLeEfCvLOkI6MIUpA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_vOB0CcLeEfCvLOkI6MIUpA" client="_vNvgIMLeEfCvLOkI6MIUpA" supplier="_vNvgJcLeEfCvLOkI6MIUpA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_vOB0DMLeEfCvLOkI6MIUpA" client="_vNvgKsLeEfCvLOkI6MIUpA" supplier="_vNvgJcLeEfCvLOkI6MIUpA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_vOB0D8LeEfCvLOkI6MIUpA" client="_vNvgKsLeEfCvLOkI6MIUpA" supplier="_vNvgPsLeEfCvLOkI6MIUpA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_vOB0EsLeEfCvLOkI6MIUpA" client="_vNvgOcLeEfCvLOkI6MIUpA" supplier="_vNvgPsLeEfCvLOkI6MIUpA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_vOCbEMLeEfCvLOkI6MIUpA" client="_vNvgNMLeEfCvLOkI6MIUpA" supplier="_vNwHMMLeEfCvLOkI6MIUpA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_vOCbE8LeEfCvLOkI6MIUpA" client="_vNwHRMLeEfCvLOkI6MIUpA" supplier="_vNwHScLeEfCvLOkI6MIUpA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_vOCbFsLeEfCvLOkI6MIUpA" client="_vNwHRMLeEfCvLOkI6MIUpA" supplier="_vNwHTsLeEfCvLOkI6MIUpA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_vODCIMLeEfCvLOkI6MIUpA" client="_vNwHTsLeEfCvLOkI6MIUpA" supplier="_vNwHNcLeEfCvLOkI6MIUpA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_vODCI8LeEfCvLOkI6MIUpA" client="_vNwHU8LeEfCvLOkI6MIUpA" supplier="_vNwHWMLeEfCvLOkI6MIUpA"/>
+  <packagedElement xsi:type="uml:Dependency" xmi:id="_vODCJsLeEfCvLOkI6MIUpA" client="_vNwHU8LeEfCvLOkI6MIUpA" supplier="_vNvgL8LeEfCvLOkI6MIUpA"/>
+</uml:Model>

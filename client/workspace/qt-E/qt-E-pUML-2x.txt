@@ -1,0 +1,430 @@
+@startuml
+
+class QObject {
+  # timerEvent()
+  # childEvent()
+  + event()
+}
+
+class QEvent {
+  + accept()
+  + ignore()
+}
+
+QObject ..> QEvent
+
+class QTimer {
+  - inter: int
+  + timerId()
+  + setInterval()
+  + start()
+  + stop()
+  # timeout()
+}
+QTimer --|> QObject
+
+class QEventLoop {
+  + processEvents()
+  + exec()
+  + isRunning()
+  + wakeUp()
+  + quit()
+}
+QEventLoop --|> QObject
+
+class QAction {
+  + setIconText(text)
+  + setToolTip(tip)
+  + setStatusTip(statusTip)
+  + setMenu(menu: QMenu)
+  + isToggleAction(): bool
+}
+QAction --|> QObject
+
+class QActionEvent {
+  - act: QAction
+  - bef: QAction
+  + action(): QAction
+  + before(): QAction
+}
+QActionEvent --|> QEvent
+
+class QMoveEvent {
+  # p: QPoint
+  # oldp: QPoint
+  + pos()
+  + oldPos()
+}
+QMoveEvent --|> QEvent
+
+class QPaintEvent {
+  # m_rect: QRect
+  # m_region: QRegion
+  m_erased: bool
+  + rect()
+  + region()
+  + setErased()
+}
+QPaintEvent --|> QEvent
+
+class QInputEvent {
+  # modState
+  + modifiers()
+}
+QInputEvent --|> QEvent
+
+class QWidget {
+  # mouseMoveEvent()
+  + event()
+  + show()
+  + paintEvent()
+}
+
+class QToolBarItem {
+  + action: QAction
+  + customWidget: bool
+}
+
+class QKeyMapper {
+  + sendKeyEvent()
+}
+QKeyMapper --|> QObject
+
+QObject ..> QEvent
+QWidget ..> QPaintEvent
+QKeyMapper ..> QKeyEvent
+
+class QKeyEvent {
+  # k: int
+  + key()
+  + text()
+  + isAutoRepeat()
+  + ascii()
+}
+QKeyEvent --|> QInputEvent
+
+class QWheelEvent {
+  # mouseState
+  + delta(): int
+  + pos(): QPoint
+}
+QWheelEvent --|> QInputEvent
+
+class QContextMenuEvent {
+  # p: QPoint
+  # gp: QPoint
+  + x(): int
+  + y(): int
+  + pos()
+  + reason(): Reason
+}
+QContextMenuEvent --|> QInputEvent
+
+class QTabletEvent {
+  + pos(): QPoint
+  + x(): int
+  + y(): int
+}
+QTabletEvent --|> QInputEvent
+
+class QMouseEvent {
+  # mouseState
+  + pos(): QPoint
+  + x(): int
+  + y(): int
+}
+QMouseEvent --|> QInputEvent
+
+class QPoint {
+  - xp: int
+  - yp: int
+  + manhattenLength(): int
+}
+
+QActionEvent "1" *-- "1" QAction
+QAction "1" *-- "1" QToolBarItem
+QPoint "1" -- "1" QMouseEvent
+QPoint "1" -- "1" QTabletEvent
+QPoint "1" -- "1" QContextMenuEvent
+QPoint "1" -- "1" QWheelEvent
+
+class QRect <<DataType>>
+class QRegion <<DataType>>
+class QMenu <<DataType>>
+class Reason <<DataType>>
+class bool <<PrimitiveType>>
+class int <<PrimitiveType>>
+
+enum TaskState { Created Scheduled Running Completed Failed }
+enum PriorityLevel { Low Normal High Critical }
+enum InputType { Keyboard Mouse Touch Pen Controller }
+enum RenderMode { Normal Fast Safe Diagnostic }
+enum CommandType { Start Stop Pause Resume Reset }
+
+struct FrameStats {
+  frameCount : int
+  avgFrameTime : double
+  maxFrameTime : double
+  droppedFrames : int
+}
+
+struct SystemInfo {
+  os : string
+  cpu : string
+  memoryGB : int
+  cores : int
+}
+
+struct NetworkStatus {
+  connected : bool
+  ipAddress : string
+  latencyMs : int
+}
+
+struct ThemeInfo {
+  name : string
+  primaryColor : string
+  accentColor : string
+}
+
+class ConfigItem {
+  + key : string
+  + value : string
+  + type : string
+}
+
+class ConfigSet {
+  + add(item : ConfigItem)
+  + remove(key : string)
+  + get(key : string)
+}
+
+class Logger {
+  + info(msg)
+  + warn(msg)
+  + error(msg)
+  + debug(msg)
+}
+
+class LogEntry {
+  + time : Date
+  + level : int
+  + text : string
+}
+
+class Metric {
+  + name : string
+  + value : double
+  + timestamp : Date
+}
+
+class MetricStore {
+  + add(m : Metric)
+  + average() : double
+  + max() : double
+}
+
+class Worker {
+  + id : int
+  + name : string
+  + active : bool
+}
+
+class ThreadPool {
+  + addWorker(w : Worker)
+  + removeWorker(id : int)
+  + shutdown()
+}
+
+class Job {
+  + id : int
+  + name : string
+  + execute()
+}
+
+class Scheduler {
+  + schedule(j : Job)
+  + cancel(id : int)
+  + nextJob()
+}
+
+class EventBus {
+  + publish(eventName : string)
+  + subscribe(name : string)
+  + unsubscribe(name : string)
+}
+
+class Command {
+  + execute()
+  + undo()
+  + redo()
+}
+
+class CommandManager {
+  + push(cmd : Command)
+  + undo()
+  + redo()
+  + clear()
+}
+
+class HistoryItem {
+  + id : int
+  + description : string
+  + timestamp : Date
+}
+
+class History {
+  + add(item : HistoryItem)
+  + size() : int
+  + clear()
+}
+
+class CacheItem {
+  + key : string
+  + size : int
+  + valid : bool
+}
+
+class CacheStorage {
+  + insert(i : CacheItem)
+  + remove(key : string)
+  + find(key : string)
+}
+
+class Timer {
+  + start()
+  + stop()
+  + elapsed() : double
+}
+
+class Stopwatch {
+  + begin()
+  + end()
+  + duration() : double
+}
+
+class Sensor {
+  + name : string
+  + value : double
+  + read()
+}
+
+class SensorArray {
+  + add(s : Sensor)
+  + remove(name : string)
+  + average() : double
+}
+
+class Localization {
+  + translate(key : string)
+  + setLanguage(lang : string)
+}
+
+class ThemeManager {
+  + loadTheme(name : string)
+  + currentTheme() : string
+  + listThemes()
+}
+
+class Renderer {
+  + begin()
+  + draw()
+  + end()
+}
+
+class Texture {
+  + id : int
+  + width : int
+  + height : int
+  + format : string
+}
+
+class Shader {
+  + compile()
+  + link()
+  + use()
+}
+
+class Material {
+  + name : string
+  + color : string
+  + opacity : double
+}
+
+class Mesh {
+  + vertices : int
+  + faces : int
+  + load()
+}
+
+class Scene {
+  + addMesh(m : Mesh)
+  + removeMesh(name : string)
+  + draw()
+}
+
+class Entity {
+  + id : int
+  + name : string
+  + active : bool
+}
+
+class EntityManager {
+  + createEntity(name : string)
+  + destroyEntity(id : int)
+  + listEntities()
+}
+
+class AudioClip {
+  + play()
+  + pause()
+  + stop()
+}
+
+class AudioSystem {
+  + addClip(c : AudioClip)
+  + playAll()
+  + stopAll()
+}
+
+class InputDevice {
+  + type : InputType
+  + connected : bool
+  + poll()
+}
+
+class InputManager {
+  + registerDevice(d : InputDevice)
+  + removeDevice(id : int)
+  + readAll()
+}
+
+class Notification {
+  + title : string
+  + message : string
+  + send()
+}
+
+class NotificationCenter {
+  + post(n : Notification)
+  + clear()
+  + count() : int
+}
+
+ConfigSet *-- ConfigItem
+Logger "1" o-- "*" LogEntry
+MetricStore *-- Metric
+ThreadPool *-- Worker
+Scheduler *-- Job
+CommandManager *-- Command
+History *-- HistoryItem
+CacheStorage *-- CacheItem
+SensorArray *-- Sensor
+Scene *-- Mesh
+Scene *-- Material
+EntityManager *-- Entity
+AudioSystem *-- AudioClip
+InputManager *-- InputDevice
+NotificationCenter *-- Notification
+
+@enduml

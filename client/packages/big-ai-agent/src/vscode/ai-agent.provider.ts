@@ -8,18 +8,18 @@
  **********************************************************************************/
 import { BIGReactWebview } from '@borkdominik-biguml/big-vscode-integration/vscode';
 import { inject, injectable, postConstruct } from 'inversify';
-import { HelloWorldActionResponse, LogModelJsonActionResponse, RequestHelloWorldAction } from '../common/hello-world.action.js';
+import { LogModelJsonActionResponse } from '../common/ai-agent.action.js';
 
-export const HelloWorldViewId = Symbol('HelloWorldViewId');
+export const AiAgentViewId = Symbol('AiAgentViewId');
 
 @injectable()
-export class HelloWorldProvider extends BIGReactWebview {
-    @inject(HelloWorldViewId)
+export class AiAgentProvider extends BIGReactWebview {
+    @inject(AiAgentViewId)
     viewId: string;
 
-    protected override cssPath = ['hello-world', 'bundle.css'];
-    protected override jsPath = ['hello-world', 'bundle.js'];
-    protected readonly actionCache = this.actionListener.createCache([HelloWorldActionResponse.KIND, LogModelJsonActionResponse.KIND]);
+    protected override cssPath = ['ai-agent', 'bundle.css'];
+    protected override jsPath = ['ai-agent', 'bundle.js'];
+    protected readonly actionCache = this.actionListener.createCache([LogModelJsonActionResponse.KIND]);
 
     @postConstruct()
     protected override init(): void {
@@ -28,7 +28,6 @@ export class HelloWorldProvider extends BIGReactWebview {
         this.toDispose.push(this.actionCache);
         this.toDispose.push(
             this.actionCache,
-            this.actionListener.registerVscodeHandledAction(HelloWorldActionResponse.KIND),
             this.actionListener.registerVscodeHandledAction(LogModelJsonActionResponse.KIND)
         );
     }
@@ -40,39 +39,15 @@ export class HelloWorldProvider extends BIGReactWebview {
             this.actionCache.onDidChange(message => this.webviewConnector.dispatch(message)),
             this.actionListener.registerVSCodeListener(message => {
                 if (
-                    message.action.kind === HelloWorldActionResponse.KIND ||
                     message.action.kind === LogModelJsonActionResponse.KIND
                 ) {
                     this.webviewConnector.dispatch(message);
                 }
             }),
             this.webviewConnector.onReady(() => {
-                this.requestCount();
                 this.webviewConnector.dispatch(this.actionCache.getActions());
             }),
             this.webviewConnector.onVisible(() => this.webviewConnector.dispatch(this.actionCache.getActions())),
-            this.connectionManager.onDidActiveClientChange(() => {
-                this.requestCount();
-            }),
-            this.connectionManager.onNoActiveClient(() => {
-                // Send a message to the webview when there is no active client
-                this.webviewConnector.dispatch(HelloWorldActionResponse.create());
-            }),
-            this.connectionManager.onNoConnection(() => {
-                // Send a message to the webview when there is no glsp client
-                this.webviewConnector.dispatch(HelloWorldActionResponse.create());
-            }),
-            this.modelState.onDidChangeModelState(() => {
-                this.requestCount();
-            })
-        );
-    }
-
-    protected requestCount(): void {
-        this.actionDispatcher.dispatch(
-            RequestHelloWorldAction.create({
-                increase: 0
-            })
         );
     }
 }

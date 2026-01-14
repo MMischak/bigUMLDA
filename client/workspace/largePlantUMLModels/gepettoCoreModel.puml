@@ -37,7 +37,7 @@ abstract class Node {
 interface ISynchable {
   String synched
 }
- class World {
+ class Agent {
 }
  class Variable {
   String static
@@ -274,7 +274,7 @@ abstract class AQueryResult {
   String connectivity
 }
 GeppettoModel *--> Variable : variables [0..*]
-GeppettoModel *--> World : worlds [0..*]
+GeppettoModel *--> Agent : worlds [0..*]
 GeppettoModel *--> GeppettoLibrary : libraries [0..*]
 GeppettoModel *--> Tag : tags [0..*]
 GeppettoModel *--> DataSource : dataSources [0..*]
@@ -289,8 +289,8 @@ VariableValue *--> Pointer : pointer [1..1]
 VariableValue *--> Value : value [0..1]
 Tag *--> Tag : tags [0..*]
 DomainModel *--> ModelFormat : format [0..1]
-World *--> Variable : variables [0..*]
-World *--> Instance : instances [0..*]
+Agent *--> Variable : variables [0..*]
+Agent *--> Instance : instances [0..*]
 Variable *--> Type : anonymousTypes [0..*]
 Variable --> Type : types [0..*]
 Variable *--> TypeToValueMap : initialValues [0..*]
@@ -375,7 +375,7 @@ ISynchable <|-- Node
 Node <|-- GeppettoLibrary
 ISynchable <|-- Tag
 DomainModel <|-- ExternalDomainModel
-Node <|-- World
+Node <|-- Agent
 Node <|-- Variable
 Node <|-- DataSource
 Node <|-- Query

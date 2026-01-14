@@ -24,7 +24,7 @@ dotenv.config({ path: 'gem.env' });
 // Function to send the prompt to Gemini and retrieve the summary
 async function getSummaryFromGemini(prompt: string, apiKey: any): Promise<string> {
   // Use a separate API key for Gemini, if required
-  if (!apiKey) {
+  if (!apiKey || apiKey === "<API_KEY>") {
     throw new Error('GEMINI_API_KEY is not defined in the environment.');
   }
 
@@ -69,7 +69,7 @@ async function getSummaryFromGemini(prompt: string, apiKey: any): Promise<string
 }
 
 // Main function tying everything together
-export async function LlmHandler(model: unknown, options: PromptOptions, apiKey = ""): Promise<string> {
+export async function LlmHandler(model: unknown, options: PromptOptions, apiKey = "<API_KEY>"): Promise<string> {
   try {
     const xmlData = model;
     const tempFilePath = path.join(os.tmpdir(), "xmlData2.txt");

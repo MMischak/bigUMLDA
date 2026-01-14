@@ -10,52 +10,6 @@
 import { Action, RequestAction, type ResponseAction } from '@eclipse-glsp/protocol';
 import type { PromptOptions } from '../vscode/promptBuilder.js';
 
-// ========= This action will be handled by the GLSP Client =========
-
-export interface RequestHelloWorldAction extends RequestAction<HelloWorldActionResponse> {
-    kind: typeof RequestHelloWorldAction.KIND;
-    increase: number;
-}
-
-export namespace RequestHelloWorldAction {
-    export const KIND = 'requestHelloWorld';
-
-    export function is(object: unknown): object is RequestHelloWorldAction {
-        return RequestAction.hasKind(object, KIND);
-    }
-
-    export function create(options: Omit<RequestHelloWorldAction, 'kind' | 'requestId'>): RequestHelloWorldAction {
-        return {
-            kind: KIND,
-            requestId: '',
-            ...options
-        };
-    }
-}
-
-export interface HelloWorldActionResponse extends ResponseAction {
-    kind: typeof HelloWorldActionResponse.KIND;
-    count: number;
-}
-export namespace HelloWorldActionResponse {
-    export const KIND = 'helloWorldResponse';
-
-    export function is(object: unknown): object is HelloWorldActionResponse {
-        return Action.hasKind(object, KIND);
-    }
-
-    export function create(
-        options?: Omit<HelloWorldActionResponse, 'kind' | 'responseId'> & { responseId?: string }
-    ): HelloWorldActionResponse {
-        return {
-            kind: KIND,
-            responseId: '',
-            count: 0,
-            ...options
-        };
-    }
-}
-
 export interface LogModelJsonAction extends RequestAction<LogModelJsonActionResponse> {
     kind: typeof LogModelJsonAction.KIND;
     promptOptions?: PromptOptions;

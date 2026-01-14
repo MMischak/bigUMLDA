@@ -7,4 +7,6 @@
  * SPDX-License-Identifier: MIT
  **********************************************************************************/
 
-export * from './hello-world.module.js';
+export * from './ai-agent.module.js';
+export * from './ai-agent.provider.js';
+

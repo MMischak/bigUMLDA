@@ -18,13 +18,13 @@ import {
 import { DisposableCollection } from '@eclipse-glsp/protocol';
 import { readFile } from 'fs/promises';
 import { inject, injectable, postConstruct } from 'inversify';
-import { HelloWorldActionResponse, LogModelJsonAction, LogModelJsonActionResponse, RequestHelloWorldAction } from '../common/hello-world.action.js';
+import { LogModelJsonAction, LogModelJsonActionResponse } from '../common/ai-agent.action.js';
 import { LlmHandler } from './LLM.handler.js';
 import { DiagramType, IntentCategory, OutputModality, UserRole } from './promptBuilder.js';
 
 // Handle the action within the server and not the glsp client / server
 @injectable()
-export class HelloWorldActionHandler implements Disposable {
+export class AiAgentActionHandler implements Disposable {
     @inject(TYPES.ActionDispatcher)
     protected readonly actionDispatcher: ActionDispatcher;
     @inject(TYPES.ActionListener)
@@ -33,20 +33,11 @@ export class HelloWorldActionHandler implements Disposable {
     protected readonly modelState: ExperimentalGLSPServerModelState;
 
     private readonly toDispose = new DisposableCollection();
-    private count = 0;
 
     @postConstruct()
      protected init(): void {
         this.toDispose.push(
-            this.actionListener.registerVscodeHandledAction(HelloWorldActionResponse.KIND),
             this.actionListener.registerVscodeHandledAction(LogModelJsonActionResponse.KIND),
-            this.actionListener.handleVSCodeRequest<RequestHelloWorldAction>(RequestHelloWorldAction.KIND, async message => {
-                this.count += message.action.increase;
-                console.log(`Hello World from VS Code: ${this.count}`);
-                return HelloWorldActionResponse.create({
-                    count: this.count
-                });
-            }),
             this.actionListener.handleVSCodeRequest<LogModelJsonAction>(LogModelJsonAction.KIND, async message => {
                 let model: unknown;
                 console.log("------in handleVSCodeRequest:");
@@ -65,7 +56,7 @@ export class HelloWorldActionHandler implements Disposable {
                     console.log("in else");
                     model = this.modelState.getModelState()?.getSourceModel();
                 }
-                console.log('Hello World Model from VS Code:', model);
+                console.log('Ai Agent Model from VS Code:', model);
                 const llmResponse = await LlmHandler(model, message.action.promptOptions ?? {
                     diagramType: DiagramType.Class,
                     intent: IntentCategory.Overview,

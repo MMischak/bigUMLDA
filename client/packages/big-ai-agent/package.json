@@ -1,7 +1,7 @@
 {
-  "name": "@borkdominik-biguml/big-hello-world",
+  "name": "@borkdominik-biguml/big-ai-agent",
   "version": "0.6.3",
-  "description": "UML-Hello World",
+  "description": "UML-Ai Agent",
   "homepage": "https://github.com/borkdominik/bigUML",
   "bugs": "https://github.com/borkdominik/bigUML/issues",
   "repository": {

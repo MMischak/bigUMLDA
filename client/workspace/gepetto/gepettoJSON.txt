@@ -760,7 +760,7 @@
     {
       "eClass": "http://www.eclipse.org/uml2/5.0.0/UML#//Class",
       "id": "_Ij7eWrm1EfC1XIiRLnmxWQ",
-      "name": "World",
+      "name": "Agent",
       "ownedAttribute": [
         {
           "id": "_IliA0bm1EfC1XIiRLnmxWQ",

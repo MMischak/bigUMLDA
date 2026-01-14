@@ -10,7 +10,7 @@ import { BigDropdown, BigTextField, VSCodeContext } from '@borkdominik-biguml/bi
 import { useCallback, useContext, useEffect, useState, type ReactElement } from 'react';
 import { DiagramType, IntentCategory, LogModelJsonAction, LogModelJsonActionResponse, OutputModality, UserRole } from '../common/index.js';
 
-export function HelloWorld(): ReactElement {
+export function AiAgent(): ReactElement {
     const { listenAction, dispatchAction } = useContext(VSCodeContext);
     const [response, setResponse] = useState<string | undefined>();
     const [diagramType, setDiagramType] = useState<DiagramType>(DiagramType.Class);

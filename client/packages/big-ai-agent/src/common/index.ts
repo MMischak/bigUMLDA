@@ -8,5 +8,5 @@
  **********************************************************************************/
 
 export * from '../vscode/promptBuilder.js';
-export * from './hello-world.action.js';
+export * from './ai-agent.action.js';
 

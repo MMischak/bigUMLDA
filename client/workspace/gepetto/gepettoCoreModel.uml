@@ -161,7 +161,7 @@
   <packagedElement xsi:type="uml:Enumeration" xmi:id="_Ij7eVbm1EfC1XIiRLnmxWQ" name="ISynchable">
     <ownedLiteral xmi:id="_Ikp3ELm1EfC1XIiRLnmxWQ" name="synched" classifier="_Ij7eVbm1EfC1XIiRLnmxWQ"/>
   </packagedElement>
-  <packagedElement xsi:type="uml:Class" xmi:id="_Ij7eWrm1EfC1XIiRLnmxWQ" name="World">
+  <packagedElement xsi:type="uml:Class" xmi:id="_Ij7eWrm1EfC1XIiRLnmxWQ" name="Agent">
     <ownedAttribute xmi:id="_IliA0bm1EfC1XIiRLnmxWQ" name="Class" type="_Ij5CELm1EfC1XIiRLnmxWQ" aggregation="composite" association="_IliA0Lm1EfC1XIiRLnmxWQ">
       <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_IliA0rm1EfC1XIiRLnmxWQ" value="1"/>
       <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_IliA07m1EfC1XIiRLnmxWQ" value="1"/>

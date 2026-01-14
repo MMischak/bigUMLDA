@@ -264,7 +264,7 @@
           "when": "bigUML.isRunning"
         },
         {
-          "id": "bigUML.panel.hello-world",
+          "id": "bigUML.panel.ai-agent",
           "name": "AI Agent",
           "type": "webview",
           "when": "bigUML.isRunning"
@@ -288,7 +288,7 @@
     "onView:bigUML.outlineView"
   ],
   "dependencies": {
-    "@borkdominik-biguml/big-hello-world": "*",
+    "@borkdominik-biguml/big-ai-agent": "*",
     "@borkdominik-biguml/big-minimap": "*",
     "@borkdominik-biguml/big-outline": "*",
     "@borkdominik-biguml/big-property-palette": "*",
